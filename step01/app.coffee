@@ -1,16 +1,15 @@
-{FullScreenApp} = require 'art-engine'
+Engine = require 'art-engine'
 React = require 'art-react'
 
-{createComponentFactory, Element, RectangleElement, TextElement, CanvasElement} = React
+{createAndInstantiateTopComponent, RectangleElement, TextElement, CanvasElement} = React
 
-App = createComponentFactory
-  render: ->
-    CanvasElement
-      canvasId: "artCanvas"
-      RectangleElement color: "white"
-      TextElement
-        padding: 10
-        text: "Hello world!"
+Engine.FullScreenApp.init().then ->
+  createAndInstantiateTopComponent
 
-FullScreenApp.init()
-.then -> App.instantiateAsTopComponent()
+    render: ->
+      CanvasElement
+        canvasId: "artCanvas"
+
+        RectangleElement color: "white"
+
+        TextElement text: "Hello world!"
