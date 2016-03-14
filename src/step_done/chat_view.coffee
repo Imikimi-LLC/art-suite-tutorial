@@ -80,6 +80,7 @@ module.exports = createFluxComponentFactory
           padding: 10
           size: hch: 1, ww: 1
           childrenLayout: "column"
+          Element inFlow: false, size: 0 # hack ensures first added message animates in
           for post in history
             Message currentUser: currentUser, post
 
