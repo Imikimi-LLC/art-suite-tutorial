@@ -4,8 +4,9 @@
 module.exports =
 StepDone            = require './namespace'
 StepDone.App        = require './app'
-StepDone.Components = require './components'
-StepDone.Models     = require './models'
+StepDone.ChatModel  = require './chat_model'
+StepDone.ChatView   = require './chat_view'
+StepDone.StyleProps = require './style_props'
 StepDone.finishLoad(
-  ["App"]
+  ["App","ChatModel","ChatView","StyleProps"]
 )

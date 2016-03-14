@@ -1,11 +1,10 @@
 {FullScreenApp} = require 'art-engine'
 React = require 'art-react'
 
-Models = require './models'
-Components = require './components'
+require './chat_model'
+ChatView = require './chat_view'
 
 {createComponentFactory, Element, RectangleElement, TextElement, CanvasElement} = React
-{ChatView} = Components
 
 App = createComponentFactory
   module: module
