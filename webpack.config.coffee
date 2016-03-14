@@ -1,6 +1,6 @@
 module.exports = (require "art-foundation/configure_webpack")
   entries: """
     src/step01
-    src/stepDone
+    step_done
     """
   dirname: __dirname
