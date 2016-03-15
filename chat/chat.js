@@ -44,20 +44,21 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(278);
+	module.exports = __webpack_require__(296);
 
 
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(4);
+	module.exports = __webpack_require__(5);
 
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {var Base, Neptune,
@@ -133,53 +134,78 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 5 */,
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(7);
-
-
-/***/ },
+/* 6 */,
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	var Engine;
-
-	module.exports = Engine = __webpack_require__(8);
-
-	Engine.All = __webpack_require__(10);
-
-	Engine.FullScreenApp = __webpack_require__(203);
-
-	Engine.Animation = __webpack_require__(196);
-
-	Engine.Core = __webpack_require__(85);
-
-	Engine.DevTools = __webpack_require__(215);
-
-	Engine.Elements = __webpack_require__(82);
-
-	Engine.Events = __webpack_require__(125);
-
-	Engine.File = __webpack_require__(218);
-
-	Engine.Forms = __webpack_require__(199);
-
-	Engine.Layout = __webpack_require__(146);
-
-	Engine.finishLoad(["All", "FullScreenApp"]);
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
 
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
+	__webpack_require__(9);
+
+	module.exports = __webpack_require__(231);
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(10);
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Engine;
+
+	module.exports = Engine = __webpack_require__(11);
+
+	Engine.All = __webpack_require__(13);
+
+	Engine.FullScreenApp = __webpack_require__(205);
+
+	Engine.Animation = __webpack_require__(198);
+
+	Engine.Core = __webpack_require__(87);
+
+	Engine.DevTools = __webpack_require__(217);
+
+	Engine.Elements = __webpack_require__(84);
+
+	Engine.Events = __webpack_require__(127);
+
+	Engine.File = __webpack_require__(220);
+
+	Engine.Forms = __webpack_require__(201);
+
+	Engine.Layout = __webpack_require__(148);
+
+	Engine.finishLoad(["All", "FullScreenApp"]);
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(9);
+	Art = __webpack_require__(12);
 
 	module.exports = Art.Engine || (Art.Engine = (function(superClass) {
 	  extend(Engine, superClass);
@@ -200,13 +226,13 @@
 
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -227,20 +253,20 @@
 
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Animation, Elements, Engine, Forms, Foundation, createAllClass, select;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
-	Elements = __webpack_require__(82);
+	Elements = __webpack_require__(84);
 
-	Animation = __webpack_require__(196);
+	Animation = __webpack_require__(198);
 
-	Forms = __webpack_require__(199);
+	Forms = __webpack_require__(201);
 
 	createAllClass = Foundation.createAllClass, select = Foundation.select;
 
@@ -248,104 +274,104 @@
 
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(12);
+	module.exports = __webpack_require__(15);
 
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation;
 
-	module.exports = Foundation = __webpack_require__(13);
+	module.exports = Foundation = __webpack_require__(16);
 
-	Foundation.All = __webpack_require__(15);
+	Foundation.All = __webpack_require__(18);
 
-	Foundation.Analytics = __webpack_require__(59);
+	Foundation.Analytics = __webpack_require__(61);
 
-	Foundation.Array = __webpack_require__(16);
+	Foundation.Array = __webpack_require__(19);
 
-	Foundation.BaseModule = __webpack_require__(60);
+	Foundation.BaseModule = __webpack_require__(62);
 
-	Foundation.BaseObject = __webpack_require__(31);
+	Foundation.BaseObject = __webpack_require__(33);
 
-	Foundation.BatchLoader = __webpack_require__(61);
+	Foundation.BatchLoader = __webpack_require__(63);
 
-	Foundation.CallStack = __webpack_require__(32);
+	Foundation.CallStack = __webpack_require__(34);
 
-	Foundation.Clone = __webpack_require__(39);
+	Foundation.Clone = __webpack_require__(41);
 
-	Foundation.Epoch = __webpack_require__(62);
+	Foundation.Epoch = __webpack_require__(64);
 
-	Foundation.Eq = __webpack_require__(52);
+	Foundation.Eq = __webpack_require__(54);
 
-	Foundation.Function = __webpack_require__(54);
+	Foundation.Function = __webpack_require__(56);
 
-	Foundation.Hash = __webpack_require__(53);
+	Foundation.Hash = __webpack_require__(55);
 
-	Foundation.JsonStore = __webpack_require__(63);
+	Foundation.JsonStore = __webpack_require__(65);
 
-	Foundation.Log = __webpack_require__(19);
+	Foundation.Log = __webpack_require__(22);
 
-	Foundation.Map = __webpack_require__(40);
+	Foundation.Map = __webpack_require__(42);
 
-	Foundation.Math = __webpack_require__(17);
+	Foundation.Math = __webpack_require__(20);
 
-	Foundation.Promise = __webpack_require__(25);
+	Foundation.Promise = __webpack_require__(28);
 
-	Foundation.PromisedFileReader = __webpack_require__(58);
+	Foundation.PromisedFileReader = __webpack_require__(60);
 
-	Foundation.Regexp = __webpack_require__(18);
+	Foundation.Regexp = __webpack_require__(21);
 
-	Foundation.RestClient = __webpack_require__(64);
+	Foundation.RestClient = __webpack_require__(66);
 
-	Foundation.Ruby = __webpack_require__(55);
+	Foundation.Ruby = __webpack_require__(57);
 
-	Foundation.ShallowClone = __webpack_require__(36);
+	Foundation.ShallowClone = __webpack_require__(38);
 
-	Foundation.SingleObjectTransaction = __webpack_require__(65);
+	Foundation.SingleObjectTransaction = __webpack_require__(67);
 
-	Foundation.Stat = __webpack_require__(66);
+	Foundation.Stat = __webpack_require__(68);
 
-	Foundation.String = __webpack_require__(35);
+	Foundation.String = __webpack_require__(37);
 
-	Foundation.Time = __webpack_require__(56);
+	Foundation.Time = __webpack_require__(58);
 
-	Foundation.Transaction = __webpack_require__(67);
+	Foundation.Transaction = __webpack_require__(69);
 
-	Foundation.Types = __webpack_require__(20);
+	Foundation.Types = __webpack_require__(23);
 
-	Foundation.Unique = __webpack_require__(34);
+	Foundation.Unique = __webpack_require__(36);
 
-	Foundation.WebWorker = __webpack_require__(57);
+	Foundation.WebWorker = __webpack_require__(59);
 
-	Foundation.WebpackHotLoader = __webpack_require__(37);
+	Foundation.WebpackHotLoader = __webpack_require__(39);
 
-	Foundation.WorkerRpc = __webpack_require__(68);
+	Foundation.WorkerRpc = __webpack_require__(70);
 
-	Foundation.Async = __webpack_require__(21);
+	Foundation.Async = __webpack_require__(24);
 
-	Foundation.Binary = __webpack_require__(69);
+	Foundation.Binary = __webpack_require__(71);
 
-	Foundation.Browser = __webpack_require__(79);
+	Foundation.Browser = __webpack_require__(81);
 
-	Foundation.Inspect = __webpack_require__(41);
+	Foundation.Inspect = __webpack_require__(43);
 
 	Foundation.finishLoad(["All", "Analytics", "Array", "BaseModule", "BaseObject", "BatchLoader", "CallStack", "Clone", "Epoch", "Eq", "Function", "Hash", "JsonStore", "Log", "Map", "Math", "Promise", "PromisedFileReader", "Regexp", "RestClient", "Ruby", "ShallowClone", "SingleObjectTransaction", "Stat", "String", "Time", "Transaction", "Types", "Unique", "WebWorker", "WebpackHotLoader", "WorkerRpc"]);
 
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(14);
+	Art = __webpack_require__(17);
 
 	module.exports = Art.Foundation || (Art.Foundation = (function(superClass) {
 	  extend(Foundation, superClass);
@@ -366,13 +392,13 @@
 
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -393,54 +419,54 @@
 
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Array, Async, BaseObject, CallStack, Clone, Eq, Foundation, Function, GlobalCounts, Hash, Inspect, Log, Map, Math, PFileReader, Promise, Regexp, Ruby, ShallowClone, String, Time, Types, WebWorker, createAllClass, select;
 
-	Array = __webpack_require__(16);
+	Array = __webpack_require__(19);
 
-	Async = __webpack_require__(21);
+	Async = __webpack_require__(24);
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	CallStack = __webpack_require__(32);
+	CallStack = __webpack_require__(34);
 
-	Clone = __webpack_require__(39);
+	Clone = __webpack_require__(41);
 
-	Eq = __webpack_require__(52);
+	Eq = __webpack_require__(54);
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
-	Function = __webpack_require__(54);
+	Function = __webpack_require__(56);
 
-	Hash = __webpack_require__(53);
+	Hash = __webpack_require__(55);
 
-	Inspect = __webpack_require__(41);
+	Inspect = __webpack_require__(43);
 
-	Log = __webpack_require__(19);
+	Log = __webpack_require__(22);
 
-	Map = __webpack_require__(40);
+	Map = __webpack_require__(42);
 
-	Math = __webpack_require__(17);
+	Math = __webpack_require__(20);
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
-	Regexp = __webpack_require__(18);
+	Regexp = __webpack_require__(21);
 
-	Ruby = __webpack_require__(55);
+	Ruby = __webpack_require__(57);
 
-	ShallowClone = __webpack_require__(36);
+	ShallowClone = __webpack_require__(38);
 
-	String = __webpack_require__(35);
+	String = __webpack_require__(37);
 
-	Time = __webpack_require__(56);
+	Time = __webpack_require__(58);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
-	WebWorker = __webpack_require__(57);
+	WebWorker = __webpack_require__(59);
 
-	PFileReader = __webpack_require__(58);
+	PFileReader = __webpack_require__(60);
 
 	createAllClass = BaseObject.createAllClass;
 
@@ -503,17 +529,17 @@
 
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ArrayExtensions, arraySlice, bound, doFlattenInternal, flattenIfNeeded, intRand, isArguments, isArrayOrArguments, isNumber, keepAll, log, max, modulo, moveArrayElement1, moveArrayElement2, needsFlatteningOrCompacting, ref,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	ref = __webpack_require__(17), bound = ref.bound, max = ref.max, intRand = ref.intRand, modulo = ref.modulo;
+	ref = __webpack_require__(20), bound = ref.bound, max = ref.max, intRand = ref.intRand, modulo = ref.modulo;
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	isNumber = __webpack_require__(20).isNumber;
+	isNumber = __webpack_require__(23).isNumber;
 
 	arraySlice = Array.prototype.slice;
 
@@ -1071,14 +1097,14 @@
 
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation, Math, Regexp, abs, ceil, float32Precision, float64Precision, floor, inverseFloat64Precision, inverstFlaot32Precision, max, min, numberRegexp, pow, random, ref, round;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
-	Regexp = __webpack_require__(18);
+	Regexp = __webpack_require__(21);
 
 	numberRegexp = Regexp.numberRegexp;
 
@@ -1256,7 +1282,7 @@
 
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports) {
 
 	var Regexp;
@@ -1326,13 +1352,13 @@
 
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation, Log, log,
 	  slice = [].slice;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
 	module.exports = Log = (function() {
 	  function Log() {}
@@ -1430,7 +1456,7 @@
 
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports) {
 
 	
@@ -1742,31 +1768,31 @@
 
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Async;
 
-	module.exports = Async = __webpack_require__(22);
+	module.exports = Async = __webpack_require__(25);
 
-	Async.All = __webpack_require__(23);
+	Async.All = __webpack_require__(26);
 
-	Async.Basic = __webpack_require__(24);
+	Async.Basic = __webpack_require__(27);
 
-	Async.ProgressAdapter = __webpack_require__(38);
+	Async.ProgressAdapter = __webpack_require__(40);
 
 	Async.finishLoad(["All", "Basic", "ProgressAdapter"]);
 
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
 	module.exports = Foundation.Async || (Foundation.Async = (function(superClass) {
 	  extend(Async, superClass);
@@ -1787,29 +1813,29 @@
 
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Async, Basic, createAllClass;
 
-	Async = __webpack_require__(22);
+	Async = __webpack_require__(25);
 
-	Basic = __webpack_require__(24);
+	Basic = __webpack_require__(27);
 
-	createAllClass = __webpack_require__(31).createAllClass;
+	createAllClass = __webpack_require__(33).createAllClass;
 
 	createAllClass(Async, Basic);
 
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Basic, Promise, log;
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
 	module.exports = Basic = (function() {
 	  var timeout;
@@ -1858,12 +1884,12 @@
 
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ArtPromise, Promise;
 
-	Promise = self.Promise || __webpack_require__(26);
+	Promise = self.Promise || __webpack_require__(29);
 
 
 	/*
@@ -1916,10 +1942,10 @@
 
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license
@@ -2050,7 +2076,7 @@
 	    function lib$es6$promise$asap$$attemptVertx() {
 	      try {
 	        var r = require;
-	        var vertx = __webpack_require__(29);
+	        var vertx = __webpack_require__(31);
 	        lib$es6$promise$asap$$vertxNext = vertx.runOnLoop || vertx.runOnContext;
 	        return lib$es6$promise$asap$$useVertxTimer();
 	      } catch(e) {
@@ -2875,7 +2901,7 @@
 	    };
 
 	    /* global define:true module:true window: true */
-	    if ("function" === 'function' && __webpack_require__(30)['amd']) {
+	    if ("function" === 'function' && __webpack_require__(32)['amd']) {
 	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof module !== 'undefined' && module['exports']) {
 	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
@@ -2887,10 +2913,10 @@
 	}).call(this);
 
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27), (function() { return this; }()), __webpack_require__(28)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30), (function() { return this; }()), __webpack_require__(7)(module)))
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -2987,36 +3013,20 @@
 
 
 /***/ },
-/* 28 */
-/***/ function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, CallStack, Log, ShallowClone, String, Types, Unique, WebpackHotLoader, callStack, capitalize, decapitalize, extendClone, functionName, isFunction, isPlainObject, isString, log, nextUniqueObjectId, objectName,
@@ -3025,19 +3035,19 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	CallStack = __webpack_require__(32);
+	CallStack = __webpack_require__(34);
 
-	Log = __webpack_require__(19);
+	Log = __webpack_require__(22);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
-	Unique = __webpack_require__(34);
+	Unique = __webpack_require__(36);
 
-	String = __webpack_require__(35);
+	String = __webpack_require__(37);
 
-	ShallowClone = __webpack_require__(36);
+	ShallowClone = __webpack_require__(38);
 
-	WebpackHotLoader = __webpack_require__(37);
+	WebpackHotLoader = __webpack_require__(39);
 
 	capitalize = String.capitalize, decapitalize = String.decapitalize;
 
@@ -3584,12 +3594,12 @@
 
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CallStack, Parse, parseURL;
 
-	Parse = __webpack_require__(33);
+	Parse = __webpack_require__(35);
 
 	parseURL = Parse.url;
 
@@ -3739,7 +3749,7 @@
 
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports) {
 
 	var Parse;
@@ -3804,7 +3814,7 @@
 
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports) {
 
 	var Unique, nextId;
@@ -3866,16 +3876,16 @@
 
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var FoundationMath, String, Types, escapedNonQuoteRegex, escapedQuoteRegex, floor, intRand, isArray, isNumber, isPlainObject, isString, jString, wordsRegex;
 
-	FoundationMath = __webpack_require__(17);
+	FoundationMath = __webpack_require__(20);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
-	wordsRegex = __webpack_require__(18).wordsRegex;
+	wordsRegex = __webpack_require__(21).wordsRegex;
 
 	intRand = FoundationMath.intRand;
 
@@ -4238,7 +4248,7 @@
 
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports) {
 
 	
@@ -4289,7 +4299,7 @@
 
 
 /***/ },
-/* 37 */
+/* 39 */
 /***/ function(module, exports) {
 
 	var WebpackHotLoader;
@@ -4341,18 +4351,18 @@
 
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, ProgressAdapter, isArray, isFunction, isNumber, log, max, min, ref,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(20), isNumber = ref.isNumber, isFunction = ref.isFunction, isArray = ref.isArray;
+	ref = __webpack_require__(23), isNumber = ref.isNumber, isFunction = ref.isFunction, isArray = ref.isArray;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
 	max = Math.max, min = Math.min;
 
@@ -4536,7 +4546,7 @@
 
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -4553,13 +4563,13 @@
 	 */
 	var Clone, Foundation, Inspect, Map, Unique, byProperties, byStructure, clonedMap, inspect, topObject, uniquePropertyName;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
-	Map = __webpack_require__(40);
+	Map = __webpack_require__(42);
 
-	Unique = __webpack_require__(34);
+	Unique = __webpack_require__(36);
 
-	Inspect = __webpack_require__(41);
+	Inspect = __webpack_require__(43);
 
 	uniquePropertyName = Unique.PropertyName;
 
@@ -4657,7 +4667,7 @@
 
 
 /***/ },
-/* 40 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -4680,11 +4690,11 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
-	Unique = __webpack_require__(34);
+	Unique = __webpack_require__(36);
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
 	Node = (function() {
 	  function Node(key, value, prev, next) {
@@ -4946,33 +4956,33 @@
 
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Inspect;
 
-	module.exports = Inspect = __webpack_require__(42);
+	module.exports = Inspect = __webpack_require__(44);
 
-	Inspect.Inspector = __webpack_require__(43);
+	Inspect.Inspector = __webpack_require__(45);
 
-	Inspect.Inspector2 = __webpack_require__(44);
+	Inspect.Inspector2 = __webpack_require__(46);
 
-	Inspect.Main = __webpack_require__(51);
+	Inspect.Main = __webpack_require__(53);
 
-	Inspect.Inspected = __webpack_require__(45);
+	Inspect.Inspected = __webpack_require__(47);
 
 	Inspect.finishLoad(["Inspector", "Inspector2", "Main"]);
 
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
 	module.exports = Foundation.Inspect || (Foundation.Inspect = (function(superClass) {
 	  extend(Inspect, superClass);
@@ -4993,7 +5003,7 @@
 
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Inspect, Inspector, Map, StringExtensions, Types, escapeJavascriptString, isArray, isBrowserObject, isClass, isFunction, isObject, isString, objectName,
@@ -5001,15 +5011,15 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
-	StringExtensions = __webpack_require__(35);
+	StringExtensions = __webpack_require__(37);
 
-	Map = __webpack_require__(40);
+	Map = __webpack_require__(42);
 
-	Inspect = __webpack_require__(42);
+	Inspect = __webpack_require__(44);
 
 	escapeJavascriptString = StringExtensions.escapeJavascriptString;
 
@@ -5181,7 +5191,7 @@
 
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Inspected, Inspector2, Map, StringExtensions, Types, escapeJavascriptString, isArray, isBrowserObject, isClass, isDate, isFunction, isHTMLImageElement, isObject, isPlainObject, isRegExp, isString, objectName, parentString,
@@ -5189,15 +5199,15 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
-	StringExtensions = __webpack_require__(35);
+	StringExtensions = __webpack_require__(37);
 
-	Map = __webpack_require__(40);
+	Map = __webpack_require__(42);
 
-	Inspected = __webpack_require__(45);
+	Inspected = __webpack_require__(47);
 
 	escapeJavascriptString = StringExtensions.escapeJavascriptString;
 
@@ -5408,33 +5418,33 @@
 
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Inspected;
 
-	module.exports = Inspected = __webpack_require__(46);
+	module.exports = Inspected = __webpack_require__(48);
 
-	Inspected.Array = __webpack_require__(47);
+	Inspected.Array = __webpack_require__(49);
 
-	Inspected.Core = __webpack_require__(48);
+	Inspected.Core = __webpack_require__(50);
 
-	Inspected.Object = __webpack_require__(49);
+	Inspected.Object = __webpack_require__(51);
 
-	Inspected.String = __webpack_require__(50);
+	Inspected.String = __webpack_require__(52);
 
 	Inspected.finishLoad(["Array", "Core", "Object", "String"]);
 
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Inspect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Inspect = __webpack_require__(42);
+	Inspect = __webpack_require__(44);
 
 	module.exports = Inspect.Inspected || (Inspect.Inspected = (function(superClass) {
 	  extend(Inspected, superClass);
@@ -5455,14 +5465,14 @@
 
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Array, BaseObject,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
 	module.exports = Array = (function(superClass) {
 	  extend(Array, superClass);
@@ -5505,14 +5515,14 @@
 
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Core,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
 	module.exports = Core = (function(superClass) {
 	  extend(Core, superClass);
@@ -5541,14 +5551,14 @@
 
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Object,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
 	module.exports = Object = (function(superClass) {
 	  extend(Object, superClass);
@@ -5607,16 +5617,16 @@
 
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Foundation, String,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
 	module.exports = String = (function(superClass) {
 	  extend(String, superClass);
@@ -5636,18 +5646,18 @@
 
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation, Inspect, Inspector, Types, customInspectable, inspect, inspectLean, isArray, isFunction, isObject, isString;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
-	Inspect = __webpack_require__(42);
+	Inspect = __webpack_require__(44);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
-	Inspector = __webpack_require__(43);
+	Inspector = __webpack_require__(45);
 
 	isString = Types.isString, isArray = Types.isArray, isFunction = Types.isFunction, isObject = Types.isObject;
 
@@ -5718,19 +5728,19 @@
 
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Eq, inspect, isNumber, isString, min, objectKeyCount, ref, remove,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	inspect = __webpack_require__(41).inspect;
+	inspect = __webpack_require__(43).inspect;
 
-	remove = __webpack_require__(16).remove;
+	remove = __webpack_require__(19).remove;
 
-	objectKeyCount = __webpack_require__(53).objectKeyCount;
+	objectKeyCount = __webpack_require__(55).objectKeyCount;
 
-	ref = __webpack_require__(20), isString = ref.isString, isNumber = ref.isNumber;
+	ref = __webpack_require__(23), isString = ref.isString, isNumber = ref.isNumber;
 
 	min = Math.min;
 
@@ -6016,14 +6026,14 @@
 
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Hash, compactFlatten,
 	  slice = [].slice,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	compactFlatten = __webpack_require__(16).compactFlatten;
+	compactFlatten = __webpack_require__(19).compactFlatten;
 
 	module.exports = Hash = (function() {
 	  var defaultEq, mergeInto;
@@ -6235,7 +6245,7 @@
 
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports) {
 
 	var Function;
@@ -6302,7 +6312,7 @@
 
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports) {
 
 	var Ruby,
@@ -6363,14 +6373,14 @@
 
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Time, base, commaize, dateSecondMinusPerformanceSecond, initDateSecond, initPerformanceSecond, log;
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	commaize = __webpack_require__(17).commaize;
+	commaize = __webpack_require__(20).commaize;
 
 	self.performance || (self.performance = {});
 
@@ -6493,12 +6503,12 @@
 
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var WebWorker, log;
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
 
 	/*
@@ -6534,12 +6544,12 @@
 
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Promise, PromisedFileReader;
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
 	module.exports = PromisedFileReader = (function() {
 	  function PromisedFileReader() {}
@@ -6568,16 +6578,16 @@
 
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Analytics, BaseObject, inspectLean,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	inspectLean = __webpack_require__(41).inspectLean;
+	inspectLean = __webpack_require__(43).inspectLean;
 
 	Analytics = (function(superClass) {
 	  extend(Analytics, superClass);
@@ -6612,14 +6622,14 @@
 
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseModule, log, mergeInto;
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	mergeInto = __webpack_require__(53).mergeInto;
+	mergeInto = __webpack_require__(55).mergeInto;
 
 
 	/*
@@ -6675,20 +6685,20 @@
 
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, BatchLoader, inspect, log, nextTick, ref, timeout,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	inspect = __webpack_require__(41).inspect;
+	inspect = __webpack_require__(43).inspect;
 
-	ref = __webpack_require__(21), nextTick = ref.nextTick, timeout = ref.timeout;
+	ref = __webpack_require__(24), nextTick = ref.nextTick, timeout = ref.timeout;
 
 	module.exports = BatchLoader = (function(superClass) {
 	  extend(BatchLoader, superClass);
@@ -6794,7 +6804,7 @@
 
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Async, BaseObject, Epoch, Foundation, Inspect, Promise, evalAndThrowErrorsOutOfStack, inspect, requestAnimationFrame,
@@ -6802,15 +6812,15 @@
 	  hasProp = {}.hasOwnProperty,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Async = __webpack_require__(21);
+	Async = __webpack_require__(24);
 
-	Inspect = __webpack_require__(41);
+	Inspect = __webpack_require__(43);
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
 	requestAnimationFrame = Async.requestAnimationFrame, evalAndThrowErrorsOutOfStack = Async.evalAndThrowErrorsOutOfStack;
 
@@ -6960,14 +6970,14 @@
 
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, JsonStore,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
 	module.exports = JsonStore = (function(superClass) {
 	  extend(JsonStore, superClass);
@@ -7011,22 +7021,22 @@
 
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Promise, RestClient, log, merge, present,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	present = __webpack_require__(20).present;
+	present = __webpack_require__(23).present;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	merge = __webpack_require__(53).merge;
+	merge = __webpack_require__(55).merge;
 
 	module.exports = RestClient = (function(superClass) {
 	  extend(RestClient, superClass);
@@ -7220,7 +7230,7 @@
 
 
 /***/ },
-/* 65 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Map, SingleObjectTransaction, cloneByStructure, eq, inspect, removeFirstMatch, rubyTrue,
@@ -7228,19 +7238,19 @@
 	  hasProp = {}.hasOwnProperty,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Map = __webpack_require__(40);
+	Map = __webpack_require__(42);
 
-	removeFirstMatch = __webpack_require__(16).removeFirstMatch;
+	removeFirstMatch = __webpack_require__(19).removeFirstMatch;
 
-	rubyTrue = __webpack_require__(55).rubyTrue;
+	rubyTrue = __webpack_require__(57).rubyTrue;
 
-	eq = __webpack_require__(52).eq;
+	eq = __webpack_require__(54).eq;
 
-	inspect = __webpack_require__(41).inspect;
+	inspect = __webpack_require__(43).inspect;
 
-	cloneByStructure = __webpack_require__(39).cloneByStructure;
+	cloneByStructure = __webpack_require__(41).cloneByStructure;
 
 	module.exports = SingleObjectTransaction = (function(superClass) {
 	  var setValues;
@@ -7520,18 +7530,18 @@
 
 
 /***/ },
-/* 66 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Stat, inspect, max, min, ref, round,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(17), min = ref.min, max = ref.max, round = ref.round;
+	ref = __webpack_require__(20), min = ref.min, max = ref.max, round = ref.round;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	inspect = __webpack_require__(41).inspect;
+	inspect = __webpack_require__(43).inspect;
 
 	module.exports = Stat = (function(superClass) {
 	  extend(Stat, superClass);
@@ -7653,7 +7663,7 @@
 
 
 /***/ },
-/* 67 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -7719,19 +7729,19 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	SingleObjectTransaction = __webpack_require__(65);
+	SingleObjectTransaction = __webpack_require__(67);
 
-	Map = __webpack_require__(40);
+	Map = __webpack_require__(42);
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	rubyTrue = __webpack_require__(55).rubyTrue;
+	rubyTrue = __webpack_require__(57).rubyTrue;
 
-	eq = __webpack_require__(52).eq;
+	eq = __webpack_require__(54).eq;
 
-	inspect = __webpack_require__(41).inspect;
+	inspect = __webpack_require__(43).inspect;
 
-	cloneByStructure = __webpack_require__(39).cloneByStructure;
+	cloneByStructure = __webpack_require__(41).cloneByStructure;
 
 	module.exports = Transaction = (function(superClass) {
 	  extend(Transaction, superClass);
@@ -7941,7 +7951,7 @@
 
 
 /***/ },
-/* 68 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Promise, WorkerRpc, debugPrefix, isFunction, isPlainArray, isString, isWebWorker, log, mergeInto, ref,
@@ -7949,17 +7959,17 @@
 	  hasProp = {}.hasOwnProperty,
 	  slice = [].slice;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	ref = __webpack_require__(20), isPlainArray = ref.isPlainArray, isFunction = ref.isFunction, isString = ref.isString;
+	ref = __webpack_require__(23), isPlainArray = ref.isPlainArray, isFunction = ref.isFunction, isString = ref.isString;
 
-	mergeInto = __webpack_require__(53).mergeInto;
+	mergeInto = __webpack_require__(55).mergeInto;
 
-	isWebWorker = __webpack_require__(57).isWebWorker;
+	isWebWorker = __webpack_require__(59).isWebWorker;
 
 
 	/*
@@ -8349,35 +8359,35 @@
 
 
 /***/ },
-/* 69 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Binary;
 
-	module.exports = Binary = __webpack_require__(70);
+	module.exports = Binary = __webpack_require__(72);
 
-	Binary.BinaryString = __webpack_require__(71);
+	Binary.BinaryString = __webpack_require__(73);
 
-	Binary.EncodedImage = __webpack_require__(73);
+	Binary.EncodedImage = __webpack_require__(75);
 
-	Binary.File = __webpack_require__(77);
+	Binary.File = __webpack_require__(79);
 
-	Binary.Stream = __webpack_require__(78);
+	Binary.Stream = __webpack_require__(80);
 
-	Binary.Utf8 = __webpack_require__(72);
+	Binary.Utf8 = __webpack_require__(74);
 
 	Binary.finishLoad(["BinaryString", "EncodedImage", "File", "Stream", "Utf8"]);
 
 
 /***/ },
-/* 70 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
 	module.exports = Foundation.Binary || (Foundation.Binary = (function(superClass) {
 	  extend(Binary, superClass);
@@ -8398,20 +8408,20 @@
 
 
 /***/ },
-/* 71 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Binary, BinaryString, Types, Utf8, encodings, isFunction, isString, readFileAsDataUrl;
 
-	Binary = __webpack_require__(70);
+	Binary = __webpack_require__(72);
 
-	Utf8 = __webpack_require__(72);
+	Utf8 = __webpack_require__(74);
 
-	Types = __webpack_require__(20);
+	Types = __webpack_require__(23);
 
 	isString = Types.isString, isFunction = Types.isFunction;
 
-	readFileAsDataUrl = __webpack_require__(58).readFileAsDataUrl;
+	readFileAsDataUrl = __webpack_require__(60).readFileAsDataUrl;
 
 	encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
@@ -8552,7 +8562,7 @@
 
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports) {
 
 	var Utf8;
@@ -8618,20 +8628,20 @@
 
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var EncodedImage, File, Inspect, Log, Promise, binary, inspect, log;
 
-	Inspect = __webpack_require__(41);
+	Inspect = __webpack_require__(43);
 
-	Log = __webpack_require__(19);
+	Log = __webpack_require__(22);
 
-	binary = __webpack_require__(71).binary;
+	binary = __webpack_require__(73).binary;
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
-	File = __webpack_require__(74);
+	File = __webpack_require__(76);
 
 	inspect = Inspect.inspect;
 
@@ -8758,14 +8768,14 @@
 
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var File, Promise, createElementFromHtml;
 
-	createElementFromHtml = __webpack_require__(75).createElementFromHtml;
+	createElementFromHtml = __webpack_require__(77).createElementFromHtml;
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
 	module.exports = File = (function() {
 	  function File() {}
@@ -8832,13 +8842,13 @@
 
 
 /***/ },
-/* 75 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $$, Dom;
 
 	if (self.window) {
-	  $$ = __webpack_require__(76).$$;
+	  $$ = __webpack_require__(78).$$;
 	}
 
 	module.exports = Dom = (function() {
@@ -8900,7 +8910,7 @@
 
 
 /***/ },
-/* 76 */
+/* 78 */
 /***/ function(module, exports) {
 
 	// SOURCE: https://github.com/eorroe/NodeList.js
@@ -9110,12 +9120,12 @@
 
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var File, Promise;
 
-	Promise = __webpack_require__(25);
+	Promise = __webpack_require__(28);
 
 	module.exports = File = (function() {
 	  function File() {}
@@ -9144,14 +9154,14 @@
 
 
 /***/ },
-/* 78 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Binary, Stream, binary;
 
-	Binary = __webpack_require__(70);
+	Binary = __webpack_require__(72);
 
-	binary = __webpack_require__(71).binary;
+	binary = __webpack_require__(73).binary;
 
 	Binary.stream = function(arg) {
 	  if (arg instanceof Binary.Stream) {
@@ -9227,33 +9237,33 @@
 
 
 /***/ },
-/* 79 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Browser;
 
-	module.exports = Browser = __webpack_require__(80);
+	module.exports = Browser = __webpack_require__(82);
 
-	Browser.Cookie = __webpack_require__(81);
+	Browser.Cookie = __webpack_require__(83);
 
-	Browser.Dom = __webpack_require__(75);
+	Browser.Dom = __webpack_require__(77);
 
-	Browser.File = __webpack_require__(74);
+	Browser.File = __webpack_require__(76);
 
-	Browser.Parse = __webpack_require__(33);
+	Browser.Parse = __webpack_require__(35);
 
 	Browser.finishLoad(["Cookie", "Dom", "File", "Parse"]);
 
 
 /***/ },
-/* 80 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(13);
+	Foundation = __webpack_require__(16);
 
 	module.exports = Foundation.Browser || (Foundation.Browser = (function(superClass) {
 	  extend(Browser, superClass);
@@ -9274,20 +9284,20 @@
 
 
 /***/ },
-/* 81 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Browser, getCookie, isPlainArray, isPlainObject, isString, log, ref, setCookie,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Browser = __webpack_require__(80);
+	Browser = __webpack_require__(82);
 
-	log = __webpack_require__(19).log;
+	log = __webpack_require__(22).log;
 
-	BaseObject = __webpack_require__(31);
+	BaseObject = __webpack_require__(33);
 
-	ref = __webpack_require__(20), isString = ref.isString, isPlainArray = ref.isPlainArray, isPlainObject = ref.isPlainObject;
+	ref = __webpack_require__(23), isString = ref.isString, isPlainArray = ref.isPlainArray, isPlainObject = ref.isPlainObject;
 
 	setCookie = function(cookieName, cookieValue, arg) {
 	  var cookieString, d, expires, path;
@@ -9358,39 +9368,39 @@
 
 
 /***/ },
-/* 82 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Elements;
 
-	module.exports = Elements = __webpack_require__(83);
+	module.exports = Elements = __webpack_require__(85);
 
-	Elements.All = __webpack_require__(84);
+	Elements.All = __webpack_require__(86);
 
-	Elements.Base = __webpack_require__(173);
+	Elements.Base = __webpack_require__(175);
 
-	Elements.FillableBase = __webpack_require__(172);
+	Elements.FillableBase = __webpack_require__(174);
 
-	Elements.Filters = __webpack_require__(184);
+	Elements.Filters = __webpack_require__(186);
 
-	Elements.ShapeChildren = __webpack_require__(192);
+	Elements.ShapeChildren = __webpack_require__(194);
 
-	Elements.Shapes = __webpack_require__(169);
+	Elements.Shapes = __webpack_require__(171);
 
-	Elements.Widgets = __webpack_require__(189);
+	Elements.Widgets = __webpack_require__(191);
 
 	Elements.finishLoad(["All", "Base", "FillableBase"]);
 
 
 /***/ },
-/* 83 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.Elements || (Engine.Elements = (function(superClass) {
 	  extend(Elements, superClass);
@@ -9411,20 +9421,20 @@
 
 
 /***/ },
-/* 84 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Core, Elements, Filters, Foundation, ShapeChildren, Shapes, Widgets, createAllClass;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Core = __webpack_require__(85);
+	Core = __webpack_require__(87);
 
-	Elements = __webpack_require__(83);
+	Elements = __webpack_require__(85);
 
 	createAllClass = Foundation.createAllClass;
 
-	createAllClass(Elements, Shapes = __webpack_require__(169), Filters = __webpack_require__(184), Widgets = __webpack_require__(189), ShapeChildren = __webpack_require__(192), {
+	createAllClass(Elements, Shapes = __webpack_require__(171), Filters = __webpack_require__(186), Widgets = __webpack_require__(191), ShapeChildren = __webpack_require__(194), {
 	  Blur: Filters.BlurElement,
 	  Shadow: Filters.ShadowElement,
 	  Rectangle: Shapes.RectangleElement,
@@ -9437,51 +9447,51 @@
 
 
 /***/ },
-/* 85 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Core;
 
-	module.exports = Core = __webpack_require__(86);
+	module.exports = Core = __webpack_require__(88);
 
-	Core.CanvasElement = __webpack_require__(87);
+	Core.CanvasElement = __webpack_require__(89);
 
-	Core.DrawCacheManager = __webpack_require__(164);
+	Core.DrawCacheManager = __webpack_require__(166);
 
-	Core.DrawEpoch = __webpack_require__(163);
+	Core.DrawEpoch = __webpack_require__(165);
 
-	Core.Element = __webpack_require__(143);
+	Core.Element = __webpack_require__(145);
 
-	Core.ElementBase = __webpack_require__(154);
+	Core.ElementBase = __webpack_require__(156);
 
-	Core.ElementFactory = __webpack_require__(155);
+	Core.ElementFactory = __webpack_require__(157);
 
-	Core.EngineStat = __webpack_require__(167);
+	Core.EngineStat = __webpack_require__(169);
 
-	Core.EpochedObject = __webpack_require__(162);
+	Core.EpochedObject = __webpack_require__(164);
 
-	Core.EventedEpochedObject = __webpack_require__(156);
+	Core.EventedEpochedObject = __webpack_require__(158);
 
-	Core.GlobalEpochCycle = __webpack_require__(165);
+	Core.GlobalEpochCycle = __webpack_require__(167);
 
-	Core.IdleEpoch = __webpack_require__(166);
+	Core.IdleEpoch = __webpack_require__(168);
 
-	Core.StateEpoch = __webpack_require__(157);
+	Core.StateEpoch = __webpack_require__(159);
 
-	Core.Layout = __webpack_require__(168);
+	Core.Layout = __webpack_require__(170);
 
 	Core.finishLoad(["CanvasElement", "DrawCacheManager", "DrawEpoch", "Element", "ElementBase", "ElementFactory", "EngineStat", "EpochedObject", "EventedEpochedObject", "GlobalEpochCycle", "IdleEpoch", "StateEpoch"]);
 
 
 /***/ },
-/* 86 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.Core || (Engine.Core = (function(superClass) {
 	  extend(Core, superClass);
@@ -9502,13 +9512,13 @@
 
 
 /***/ },
-/* 87 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(99), __webpack_require__(124), __webpack_require__(125), __webpack_require__(143), __webpack_require__(165), __webpack_require__(163), __webpack_require__(167)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl, Canvas, ArtEngineEvents, Element, GlobalEpochCycle, DrawEpoch, EngineStat) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(101), __webpack_require__(126), __webpack_require__(127), __webpack_require__(145), __webpack_require__(167), __webpack_require__(165), __webpack_require__(169)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl, Canvas, ArtEngineEvents, Element, GlobalEpochCycle, DrawEpoch, EngineStat) {
 	  var Browser, CanvasElement, KeyEvent, Matrix, Point, PointerEvent, PointerEventManager, Rectangle, createWithPostCreate, currentSecond, domElementOffset, drawEpoch, durationString, first, getDevicePixelRatio, globalEpochCycle, inspect, log, matrix, nextTick, point, rect, ref, timeStampToPerformanceSecond, timeout;
 	  point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  log = Foundation.log, inspect = Foundation.inspect, nextTick = Foundation.nextTick, currentSecond = Foundation.currentSecond, timeout = Foundation.timeout, durationString = Foundation.durationString, timeStampToPerformanceSecond = Foundation.timeStampToPerformanceSecond, first = Foundation.first, Browser = Foundation.Browser, createWithPostCreate = Foundation.createWithPostCreate;
@@ -10024,46 +10034,46 @@
 
 
 /***/ },
-/* 88 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(89);
+	module.exports = __webpack_require__(91);
 
 
 /***/ },
-/* 89 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic;
 
-	module.exports = Atomic = __webpack_require__(90);
+	module.exports = Atomic = __webpack_require__(92);
 
-	Atomic.All = __webpack_require__(92);
+	Atomic.All = __webpack_require__(94);
 
-	Atomic.Base = __webpack_require__(94);
+	Atomic.Base = __webpack_require__(96);
 
-	Atomic.Color = __webpack_require__(93);
+	Atomic.Color = __webpack_require__(95);
 
-	Atomic.Matrix = __webpack_require__(95);
+	Atomic.Matrix = __webpack_require__(97);
 
-	Atomic.Perimeter = __webpack_require__(98);
+	Atomic.Perimeter = __webpack_require__(100);
 
-	Atomic.Point = __webpack_require__(96);
+	Atomic.Point = __webpack_require__(98);
 
-	Atomic.Rectangle = __webpack_require__(97);
+	Atomic.Rectangle = __webpack_require__(99);
 
 	Atomic.finishLoad(["All", "Base", "Color", "Matrix", "Perimeter", "Point", "Rectangle"]);
 
 
 /***/ },
-/* 90 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(91);
+	Art = __webpack_require__(93);
 
 	module.exports = Art.Atomic || (Art.Atomic = (function(superClass) {
 	  extend(Atomic, superClass);
@@ -10084,13 +10094,13 @@
 
 
 /***/ },
-/* 91 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -10111,24 +10121,24 @@
 
 
 /***/ },
-/* 92 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Color, Foundation, Matrix, Perimeter, Point, Rectangle, createAllClass, select;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(90);
+	Atomic = __webpack_require__(92);
 
-	Color = __webpack_require__(93);
+	Color = __webpack_require__(95);
 
-	Matrix = __webpack_require__(95);
+	Matrix = __webpack_require__(97);
 
-	Point = __webpack_require__(96);
+	Point = __webpack_require__(98);
 
-	Rectangle = __webpack_require__(97);
+	Rectangle = __webpack_require__(99);
 
-	Perimeter = __webpack_require__(98);
+	Perimeter = __webpack_require__(100);
 
 	createAllClass = Foundation.createAllClass, select = Foundation.select;
 
@@ -10136,16 +10146,16 @@
 
 
 /***/ },
-/* 93 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var AtomicBase, Color, Foundation, abs, bound, colorFloatEq, float32Eq, hex16ColorRegex, hex256ColorRegex, inspect, isString, log, max, min, modulo, pad, parseRGBColorComponent, rgbColorRegex, rgbaColorRegex,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	AtomicBase = __webpack_require__(94);
+	AtomicBase = __webpack_require__(96);
 
 	inspect = Foundation.inspect, bound = Foundation.bound, modulo = Foundation.modulo, pad = Foundation.pad, min = Foundation.min, max = Foundation.max, abs = Foundation.abs, float32Eq = Foundation.float32Eq, isString = Foundation.isString, log = Foundation.log, hex16ColorRegex = Foundation.hex16ColorRegex, hex256ColorRegex = Foundation.hex256ColorRegex, rgbColorRegex = Foundation.rgbColorRegex, rgbaColorRegex = Foundation.rgbaColorRegex;
 
@@ -10817,14 +10827,14 @@
 
 
 /***/ },
-/* 94 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Base, BaseObject, inspect, isFunction, isNumber, isPlainArray, isPlainObject, isString, log, ref, stringToNumberArray,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), inspect = ref.inspect, log = ref.log, isNumber = ref.isNumber, isPlainObject = ref.isPlainObject, isPlainArray = ref.isPlainArray, isString = ref.isString, isFunction = ref.isFunction, stringToNumberArray = ref.stringToNumberArray, BaseObject = ref.BaseObject;
+	ref = __webpack_require__(14), inspect = ref.inspect, log = ref.log, isNumber = ref.isNumber, isPlainObject = ref.isPlainObject, isPlainArray = ref.isPlainArray, isString = ref.isString, isFunction = ref.isFunction, stringToNumberArray = ref.stringToNumberArray, BaseObject = ref.BaseObject;
 
 	module.exports = Base = (function(superClass) {
 	  extend(Base, superClass);
@@ -10875,7 +10885,7 @@
 
 
 /***/ },
-/* 95 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -10934,13 +10944,13 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	AtomicBase = __webpack_require__(94);
+	AtomicBase = __webpack_require__(96);
 
-	Point = __webpack_require__(96);
+	Point = __webpack_require__(98);
 
-	Rectangle = __webpack_require__(97);
+	Rectangle = __webpack_require__(99);
 
 	point = Point.point;
 
@@ -11506,16 +11516,16 @@
 
 
 /***/ },
-/* 96 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var AtomicBase, Foundation, PI, Point, abs, atan, bound, ceil, floatEq, floor, inspect, isArray, isFunction, isNumber, isString, log, max, min, nearInfinity, round, sqrt, stringToNumberArray,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	AtomicBase = __webpack_require__(94);
+	AtomicBase = __webpack_require__(96);
 
 	inspect = Foundation.inspect, bound = Foundation.bound, floatEq = Foundation.floatEq, log = Foundation.log, isNumber = Foundation.isNumber, isArray = Foundation.isArray, isString = Foundation.isString, isFunction = Foundation.isFunction, stringToNumberArray = Foundation.stringToNumberArray, nearInfinity = Foundation.nearInfinity;
 
@@ -12073,20 +12083,20 @@
 
 
 /***/ },
-/* 97 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, AtomicBase, Foundation, Point, Rectangle, bound, ceil, floatEq, floor, isArray, isFunction, isNumber, isString, log, max, min, point, round, stringToNumberArray,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(90);
+	Atomic = __webpack_require__(92);
 
-	AtomicBase = __webpack_require__(94);
+	AtomicBase = __webpack_require__(96);
 
-	Point = __webpack_require__(96);
+	Point = __webpack_require__(98);
 
 	max = Foundation.max, min = Foundation.min, bound = Foundation.bound, round = Foundation.round, floatEq = Foundation.floatEq, floor = Foundation.floor, ceil = Foundation.ceil, round = Foundation.round, log = Foundation.log, isNumber = Foundation.isNumber, isArray = Foundation.isArray, isString = Foundation.isString, isFunction = Foundation.isFunction, stringToNumberArray = Foundation.stringToNumberArray;
 
@@ -12634,18 +12644,18 @@
 
 
 /***/ },
-/* 98 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var AtomicBase, Foundation, Perimeter, Point, floatEq, inspect, isPlainObject, isString, log, point,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	AtomicBase = __webpack_require__(94);
+	AtomicBase = __webpack_require__(96);
 
-	Point = __webpack_require__(96);
+	Point = __webpack_require__(98);
 
 	log = Foundation.log, inspect = Foundation.inspect, floatEq = Foundation.floatEq, isPlainObject = Foundation.isPlainObject, isString = Foundation.isString;
 
@@ -12786,52 +12796,52 @@
 
 
 /***/ },
-/* 99 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(100);
+	module.exports = __webpack_require__(102);
 
 
 /***/ },
-/* 100 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Webgl;
 
-	module.exports = Webgl = __webpack_require__(101);
+	module.exports = Webgl = __webpack_require__(103);
 
-	Webgl.Bitmap = __webpack_require__(103);
+	Webgl.Bitmap = __webpack_require__(105);
 
-	Webgl.ContextManager = __webpack_require__(115);
+	Webgl.ContextManager = __webpack_require__(117);
 
-	Webgl.Detector = __webpack_require__(123);
+	Webgl.Detector = __webpack_require__(125);
 
-	Webgl.OffscreenRenderTarget = __webpack_require__(117);
+	Webgl.OffscreenRenderTarget = __webpack_require__(119);
 
-	Webgl.Shader = __webpack_require__(116);
+	Webgl.Shader = __webpack_require__(118);
 
-	Webgl.ShaderProgram = __webpack_require__(118);
+	Webgl.ShaderProgram = __webpack_require__(120);
 
-	Webgl.ShaderPrograms = __webpack_require__(119);
+	Webgl.ShaderPrograms = __webpack_require__(121);
 
-	Webgl.ShaderRenderer = __webpack_require__(121);
+	Webgl.ShaderRenderer = __webpack_require__(123);
 
-	Webgl.ShaderRendererColored = __webpack_require__(120);
+	Webgl.ShaderRendererColored = __webpack_require__(122);
 
-	Webgl.ShaderRendererTextured = __webpack_require__(122);
+	Webgl.ShaderRendererTextured = __webpack_require__(124);
 
 	Webgl.finishLoad(["Bitmap", "ContextManager", "Detector", "OffscreenRenderTarget", "Shader", "ShaderProgram", "ShaderPrograms", "ShaderRenderer", "ShaderRendererColored", "ShaderRendererTextured"]);
 
 
 /***/ },
-/* 101 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(102);
+	Art = __webpack_require__(104);
 
 	module.exports = Art.Webgl || (Art.Webgl = (function(superClass) {
 	  extend(Webgl, superClass);
@@ -12852,13 +12862,13 @@
 
 
 /***/ },
-/* 102 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -12879,13 +12889,13 @@
 
 
 /***/ },
-/* 103 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(104), __webpack_require__(101), __webpack_require__(115)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ContextManager) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(106), __webpack_require__(103), __webpack_require__(117)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ContextManager) {
 	  var Color, Matrix, Point, Rectangle, color, eq, inspect, matrix, point, rect, superSuperConstructor, white;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  inspect = Foundation.Inspect.inspect;
@@ -13233,39 +13243,39 @@
 
 
 /***/ },
-/* 104 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Canvas;
 
-	module.exports = Canvas = __webpack_require__(105);
+	module.exports = Canvas = __webpack_require__(107);
 
-	Canvas.Bitmap = __webpack_require__(106);
+	Canvas.Bitmap = __webpack_require__(108);
 
-	Canvas.BitmapBase = __webpack_require__(108);
+	Canvas.BitmapBase = __webpack_require__(110);
 
-	Canvas.GoogleFontLoader = __webpack_require__(111);
+	Canvas.GoogleFontLoader = __webpack_require__(113);
 
-	Canvas.GradientFillStyle = __webpack_require__(107);
+	Canvas.GradientFillStyle = __webpack_require__(109);
 
-	Canvas.Paths = __webpack_require__(109);
+	Canvas.Paths = __webpack_require__(111);
 
-	Canvas.StackBlur = __webpack_require__(110);
+	Canvas.StackBlur = __webpack_require__(112);
 
-	Canvas.StackBlurOriginal = __webpack_require__(113);
+	Canvas.StackBlurOriginal = __webpack_require__(115);
 
 	Canvas.finishLoad(["Bitmap", "BitmapBase", "GoogleFontLoader", "GradientFillStyle", "Paths", "StackBlur", "StackBlurOriginal"]);
 
 
 /***/ },
-/* 105 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(102);
+	Art = __webpack_require__(104);
 
 	module.exports = Art.Canvas || (Art.Canvas = (function(superClass) {
 	  extend(Canvas, superClass);
@@ -13286,24 +13296,24 @@
 
 
 /***/ },
-/* 106 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Binary, Bitmap, BitmapBase, Color, EncodedImage, Foundation, GradientFillStyle, IdentityMatrix, Matrix, Paths, Point, Promise, Rectangle, StackBlur, canvasBlenders, color, currentSecond, emptyOptions, eq, floatEq0, inspect, isFunction, isNumber, isPlainObject, log, matrix, max, min, point, rect, round,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	GradientFillStyle = __webpack_require__(107);
+	GradientFillStyle = __webpack_require__(109);
 
-	BitmapBase = __webpack_require__(108);
+	BitmapBase = __webpack_require__(110);
 
-	Paths = __webpack_require__(109);
+	Paths = __webpack_require__(111);
 
-	StackBlur = __webpack_require__(110);
+	StackBlur = __webpack_require__(112);
 
 	point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix, color = Atomic.color, Color = Atomic.Color, IdentityMatrix = Atomic.IdentityMatrix;
 
@@ -13793,13 +13803,13 @@
 
 
 /***/ },
-/* 107 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation) {
 	  var GradientFillStyle, color, flatten, inspect, isNumber, isPlainArray, isPlainObject, isString, log, point, point1, shallowClone;
 	  point = Atomic.point, color = Atomic.color, point1 = Atomic.point1;
 	  inspect = Foundation.inspect, shallowClone = Foundation.shallowClone, flatten = Foundation.flatten, isPlainObject = Foundation.isPlainObject, log = Foundation.log, isNumber = Foundation.isNumber, isString = Foundation.isString, isPlainArray = Foundation.isPlainArray;
@@ -14016,13 +14026,13 @@
 
 
 /***/ },
-/* 108 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic) {
 	  var BaseObject, Binary, BinaryString, BitmapBase, Color, Matrix, Point, Rectangle, color, floor, inspect, isNumber, isString, log, matrix, nextTick, point, pureMerge, rect, round, toChannelNumberMap;
 	  point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix, color = Atomic.color, Color = Atomic.Color;
 	  inspect = Foundation.inspect, nextTick = Foundation.nextTick, BaseObject = Foundation.BaseObject, Binary = Foundation.Binary, pureMerge = Foundation.pureMerge, isString = Foundation.isString, isNumber = Foundation.isNumber, log = Foundation.log;
@@ -14529,10 +14539,10 @@
 
 
 /***/ },
-/* 109 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
 	  var Paths, floatEq, log, min;
 	  log = Foundation.log, floatEq = Foundation.floatEq, min = Foundation.min;
 	  return Paths = (function() {
@@ -14592,7 +14602,7 @@
 
 
 /***/ },
-/* 110 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -14667,7 +14677,7 @@
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(105), __webpack_require__(88), __webpack_require__(11), __webpack_require__(108)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Canvas, Atomic, Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(107), __webpack_require__(90), __webpack_require__(14), __webpack_require__(110)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Canvas, Atomic, Foundation) {
 	  var BlurStack, color, inspect, matrix, nextTick, point, rect;
 	  point = Atomic.point, matrix = Atomic.matrix, rect = Atomic.rect, color = Atomic.color;
 	  inspect = Foundation.Inspect.inspect;
@@ -15112,13 +15122,13 @@
 
 
 /***/ },
-/* 111 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(112)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(114)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
 	  var BatchLoader, GoogleFontLoader, inspect, log;
 	  inspect = Foundation.inspect, log = Foundation.log, BatchLoader = Foundation.BatchLoader;
 	  return GoogleFontLoader = (function(superClass) {
@@ -15202,7 +15212,7 @@
 
 
 /***/ },
-/* 112 */
+/* 114 */
 /***/ function(module, exports) {
 
 	;(function(window,document,undefined){
@@ -15240,7 +15250,7 @@
 
 
 /***/ },
-/* 113 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -15287,7 +15297,7 @@
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(105), __webpack_require__(114), __webpack_require__(108)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, OrigStackBlur) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(107), __webpack_require__(116), __webpack_require__(110)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, OrigStackBlur) {
 	  var BlurStack, color, inspect, matrix, mulTable, nextTick, point, rect, shgTable;
 	  point = Atomic.point, matrix = Atomic.matrix, rect = Atomic.rect, color = Atomic.color;
 	  inspect = Foundation.Inspect.inspect;
@@ -15514,7 +15524,7 @@
 
 
 /***/ },
-/* 114 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -16135,13 +16145,13 @@
 
 
 /***/ },
-/* 115 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(104), __webpack_require__(101), __webpack_require__(116), __webpack_require__(117), __webpack_require__(118), __webpack_require__(119), __webpack_require__(121)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(106), __webpack_require__(103), __webpack_require__(118), __webpack_require__(119), __webpack_require__(120), __webpack_require__(121), __webpack_require__(123)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl) {
 	  var Color, Matrix, Point, Rectangle, blendModeSetters, color, inspect, matrix, point, rect;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  inspect = Foundation.Inspect.inspect;
@@ -16367,13 +16377,13 @@
 
 
 /***/ },
-/* 116 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(101)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl) {
 	  var rawErrorLog;
 	  rawErrorLog = Foundation.Log.rawErrorLog;
 	  return Webgl.Shader = (function(superClass) {
@@ -16411,13 +16421,13 @@
 
 
 /***/ },
-/* 117 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(101)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Webgl) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Webgl) {
 	  return Webgl.OffscreenRenderTarget = (function(superClass) {
 	    extend(OffscreenRenderTarget, superClass);
 
@@ -16446,13 +16456,13 @@
 
 
 /***/ },
-/* 118 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(101)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl) {
 	  var rawErrorLog;
 	  rawErrorLog = Foundation.Log.rawErrorLog;
 	  return Webgl.ShaderProgram = (function(superClass) {
@@ -16505,10 +16515,10 @@
 
 
 /***/ },
-/* 119 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(101), __webpack_require__(120), __webpack_require__(122)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(103), __webpack_require__(122), __webpack_require__(124)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Webgl) {
 	  var vertexShaderCommonCode, vertexShaderCommonDeclarations;
 	  vertexShaderCommonDeclarations = "attribute vec2 vertexLoc; uniform mat3 vertexMatrix;";
 	  vertexShaderCommonCode = "vec3 l = vec3(vertexLoc, 1) * vertexMatrix; gl_Position = vec4(l, 1);";
@@ -16539,13 +16549,13 @@
 
 
 /***/ },
-/* 120 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(104), __webpack_require__(101), __webpack_require__(121)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ShaderRenderer) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(106), __webpack_require__(103), __webpack_require__(123)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ShaderRenderer) {
 	  var Color, Matrix, Point, Rectangle, color, matrix, point, rect;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  return Webgl.ShaderRendererColored = (function(superClass) {
@@ -16588,13 +16598,13 @@
 
 
 /***/ },
-/* 121 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(104), __webpack_require__(101), __webpack_require__(115)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ContextManager) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(106), __webpack_require__(103), __webpack_require__(117)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ContextManager) {
 	  var Color, Matrix, Point, Rectangle, color, matrix, point, rect;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  return Webgl.ShaderRenderer = (function(superClass) {
@@ -16768,13 +16778,13 @@
 
 
 /***/ },
-/* 122 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(104), __webpack_require__(101), __webpack_require__(115)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ContextManager) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(106), __webpack_require__(103), __webpack_require__(117)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, Webgl, ContextManager) {
 	  var Color, Matrix, Point, Rectangle, color, matrix, point, rect;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  return Webgl.ShaderRendererTextured = (function(superClass) {
@@ -16831,13 +16841,13 @@
 
 
 /***/ },
-/* 123 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(101), __webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Webgl, Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(103), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Webgl, Foundation) {
 	  var helpMessage;
 	  helpMessage = "This web browser does not support Webgl, or it is disabled. We recommend using Chrome (http://www.google.com/chrome) or Firefox (http://www.mozilla.org/firefox). You might also try updating your video driver.";
 	  return Webgl.Detector = (function(superClass) {
@@ -16878,42 +16888,42 @@
 
 
 /***/ },
-/* 124 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(104);
+	module.exports = __webpack_require__(106);
 
 
 /***/ },
-/* 125 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Events;
 
-	module.exports = Events = __webpack_require__(126);
+	module.exports = Events = __webpack_require__(128);
 
-	Events.GestureRecognizer = __webpack_require__(127);
+	Events.GestureRecognizer = __webpack_require__(129);
 
-	Events.KeyEvent = __webpack_require__(129);
+	Events.KeyEvent = __webpack_require__(131);
 
-	Events.Pointer = __webpack_require__(128);
+	Events.Pointer = __webpack_require__(130);
 
-	Events.PointerEvent = __webpack_require__(141);
+	Events.PointerEvent = __webpack_require__(143);
 
-	Events.PointerEventManager = __webpack_require__(142);
+	Events.PointerEventManager = __webpack_require__(144);
 
 	Events.finishLoad(["GestureRecognizer", "KeyEvent", "Pointer", "PointerEvent", "PointerEventManager"]);
 
 
 /***/ },
-/* 126 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.Events || (Engine.Events = (function(superClass) {
 	  extend(Events, superClass);
@@ -16934,13 +16944,13 @@
 
 
 /***/ },
-/* 127 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(128)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Pointer) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(130)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Pointer) {
 	  var BaseObject, GestureRecognizer, abs, clone, first, inspect, isFunction, isPlainObject, matrix, objectWithout, peek, point, pointerDeadZone, pointerDeadZoneSquared, rect, select;
 	  inspect = Foundation.inspect, clone = Foundation.clone, peek = Foundation.peek, first = Foundation.first, BaseObject = Foundation.BaseObject, isPlainObject = Foundation.isPlainObject, clone = Foundation.clone, abs = Foundation.abs, isFunction = Foundation.isFunction, select = Foundation.select, objectWithout = Foundation.objectWithout;
 	  point = Atomic.point, rect = Atomic.rect, matrix = Atomic.matrix;
@@ -17108,13 +17118,13 @@
 
 
 /***/ },
-/* 128 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic) {
 	  var BaseObject, Pointer, clone, first, inspect, matrix, peek, point, rect;
 	  inspect = Foundation.inspect, clone = Foundation.clone, peek = Foundation.peek, first = Foundation.first, BaseObject = Foundation.BaseObject;
 	  point = Atomic.point, rect = Atomic.rect, matrix = Atomic.matrix;
@@ -17200,13 +17210,13 @@
 
 
 /***/ },
-/* 129 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(130)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Events) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(132)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Events) {
 	  var Color, KeyEvent, Matrix, Point, Rectangle, clone, color, inspect, k, keyCodesToKeys, keysToKeyCodes, matrix, point, rect, v;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  inspect = Foundation.Inspect.inspect;
@@ -17359,46 +17369,46 @@
 
 
 /***/ },
-/* 130 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(131);
+	module.exports = __webpack_require__(133);
 
 
 /***/ },
-/* 131 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Events;
 
-	module.exports = Events = __webpack_require__(132);
+	module.exports = Events = __webpack_require__(134);
 
-	Events.EventEpoch = __webpack_require__(134);
+	Events.EventEpoch = __webpack_require__(136);
 
-	Events.EventManager = __webpack_require__(135);
+	Events.EventManager = __webpack_require__(137);
 
-	Events.EventQueue = __webpack_require__(137);
+	Events.EventQueue = __webpack_require__(139);
 
-	Events.Event = __webpack_require__(136);
+	Events.Event = __webpack_require__(138);
 
-	Events.EventedObjectBase = __webpack_require__(138);
+	Events.EventedObjectBase = __webpack_require__(140);
 
-	Events.EventedObject = __webpack_require__(139);
+	Events.EventedObject = __webpack_require__(141);
 
-	Events.EventedVariable = __webpack_require__(140);
+	Events.EventedVariable = __webpack_require__(142);
 
 	Events.finishLoad(["EventEpoch", "EventManager", "EventQueue", "Event", "EventedObjectBase", "EventedObject", "EventedVariable"]);
 
 
 /***/ },
-/* 132 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(133);
+	Art = __webpack_require__(135);
 
 	module.exports = Art.Events || (Art.Events = (function(superClass) {
 	  extend(Events, superClass);
@@ -17419,13 +17429,13 @@
 
 
 /***/ },
-/* 133 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -17446,13 +17456,13 @@
 
 
 /***/ },
-/* 134 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
 	  var Epoch, EventEpoch, log;
 	  log = Foundation.log, Epoch = Foundation.Epoch;
 	  return EventEpoch = (function(superClass) {
@@ -17477,7 +17487,7 @@
 
 
 /***/ },
-/* 135 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -17492,7 +17502,7 @@
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(132), __webpack_require__(11), __webpack_require__(136)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Events, Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(134), __webpack_require__(14), __webpack_require__(138)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Events, Foundation) {
 	  var clone, inspect, isFunction, nextTick, rawErrorLog;
 	  nextTick = Foundation.nextTick, isFunction = Foundation.isFunction, inspect = Foundation.inspect, clone = Foundation.clone;
 	  rawErrorLog = Foundation.Log.rawErrorLog;
@@ -17665,14 +17675,14 @@
 
 
 /***/ },
-/* 136 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Event, Foundation, currentSecond, emptyProps,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
 	currentSecond = Foundation.currentSecond, BaseObject = Foundation.BaseObject;
 
@@ -17693,13 +17703,13 @@
 
 
 /***/ },
-/* 137 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(132), __webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Events, Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(134), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Events, Foundation) {
 	  return Events.EventQueue = (function(superClass) {
 	    extend(EventQueue, superClass);
 
@@ -17757,10 +17767,10 @@
 
 
 /***/ },
-/* 138 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(134), __webpack_require__(136)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, EventEpoch, Event) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(136), __webpack_require__(138)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, EventEpoch, Event) {
 	  var EventedObjectBase, eventEpoch, inspect, isFunction, isPlainObject, log;
 	  isFunction = Foundation.isFunction, log = Foundation.log, isPlainObject = Foundation.isPlainObject, inspect = Foundation.inspect;
 	  eventEpoch = EventEpoch.eventEpoch;
@@ -17893,13 +17903,13 @@
 
 
 /***/ },
-/* 139 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(135), __webpack_require__(134), __webpack_require__(136), __webpack_require__(138)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, EventManager, EventEpoch, Event, EventedObjectBase) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(137), __webpack_require__(136), __webpack_require__(138), __webpack_require__(140)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, EventManager, EventEpoch, Event, EventedObjectBase) {
 	  var EventedObject, eventEpoch, isFunction, isPlainObject, log;
 	  isFunction = Foundation.isFunction, log = Foundation.log, isPlainObject = Foundation.isPlainObject;
 	  eventEpoch = EventEpoch.eventEpoch;
@@ -17959,13 +17969,13 @@
 
 
 /***/ },
-/* 140 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(132), __webpack_require__(11), __webpack_require__(139)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Events, Foundation, EventedObject) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(134), __webpack_require__(14), __webpack_require__(141)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Events, Foundation, EventedObject) {
 	  var eq;
 	  eq = Foundation.Eq.eq;
 	  return Events.EventedVariable = (function(superClass) {
@@ -18037,13 +18047,13 @@
 
 
 /***/ },
-/* 141 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11), __webpack_require__(130)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, Events) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14), __webpack_require__(132)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, Events) {
 	  var PointerEvent, arrayize, clone, first, inspect, matrix, merge, peek, point, rect, transformedArray;
 	  point = Atomic.point, rect = Atomic.rect, matrix = Atomic.matrix;
 	  inspect = Foundation.inspect, clone = Foundation.clone, peek = Foundation.peek, first = Foundation.first, merge = Foundation.merge;
@@ -18171,7 +18181,7 @@
 
 
 /***/ },
-/* 142 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -18276,7 +18286,7 @@
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11), __webpack_require__(130), __webpack_require__(128), __webpack_require__(141)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, Events, Pointer, PointerEvent) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14), __webpack_require__(132), __webpack_require__(130), __webpack_require__(143)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, Events, Pointer, PointerEvent) {
 	  var EventEpoch, PointerEventManager, arrayWithoutValue, clone, eventEpoch, first, inspect, log, matrix, max, min, peek, point, rect, shallowClone, stableSort;
 	  EventEpoch = Events.EventEpoch;
 	  eventEpoch = EventEpoch.eventEpoch;
@@ -18645,7 +18655,7 @@
 
 
 /***/ },
-/* 143 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Animator, Atomic, Canvas, DrawCacheManager, DrawEpoch, Element, ElementBase, Foundation, GlobalEpochCycle, Join, Layout, Map, Matrix, Point, PointLayout, PointLayoutBase, Promise, Rectangle, StateEpoch, Unique, arrayWithoutValue, cacheAggressively, clone, compact, compactFlatten, createWithPostCreate, currentSecond, defaultSize, drawCacheManager, drawEpoch, floatEq, floatEq0, floor, globalEpochCycle, identityMatrix, insert, inspect, isFunction, isNumber, isPlainArray, isPlainObject, isPoint, isString, keepIfRubyTrue, log, matrix, max, merge, mergeInto, min, minimumOrderedOverlappingMerge, modulo, nonStatePropertyKeyTest, perimeter0, plainObjectsDeepEq, point, point0, point1, present, rect, remove, repeat, rubyTrue, shallowEq, stateEpoch, stats, time, truncateLayoutCoordinate, zeroedStats,
@@ -18653,25 +18663,25 @@
 	  hasProp = {}.hasOwnProperty,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Canvas = __webpack_require__(124);
+	Canvas = __webpack_require__(126);
 
-	Animator = __webpack_require__(144);
+	Animator = __webpack_require__(146);
 
-	Layout = __webpack_require__(146);
+	Layout = __webpack_require__(148);
 
-	ElementBase = __webpack_require__(154);
+	ElementBase = __webpack_require__(156);
 
-	StateEpoch = __webpack_require__(157);
+	StateEpoch = __webpack_require__(159);
 
-	DrawEpoch = __webpack_require__(163);
+	DrawEpoch = __webpack_require__(165);
 
-	GlobalEpochCycle = __webpack_require__(165);
+	GlobalEpochCycle = __webpack_require__(167);
 
-	DrawCacheManager = __webpack_require__(164);
+	DrawCacheManager = __webpack_require__(166);
 
 	point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, Matrix = Atomic.Matrix, matrix = Atomic.matrix, identityMatrix = Atomic.identityMatrix, point0 = Atomic.point0, point1 = Atomic.point1, perimeter0 = Atomic.perimeter0, isPoint = Atomic.isPoint;
 
@@ -20979,7 +20989,7 @@
 
 
 /***/ },
-/* 144 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -20999,13 +21009,13 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), currentSecond = ref.currentSecond, min = ref.min, max = ref.max, Transaction = ref.Transaction, inspect = ref.inspect, inspectLean = ref.inspectLean, log = ref.log, BaseObject = ref.BaseObject;
+	ref = __webpack_require__(14), currentSecond = ref.currentSecond, min = ref.min, max = ref.max, Transaction = ref.Transaction, inspect = ref.inspect, inspectLean = ref.inspectLean, log = ref.log, BaseObject = ref.BaseObject;
 
-	ref1 = __webpack_require__(88), color = ref1.color, Color = ref1.Color, point = ref1.point, Point = ref1.Point, rect = ref1.rect, Rectangle = ref1.Rectangle, matrix = ref1.matrix, Matrix = ref1.Matrix;
+	ref1 = __webpack_require__(90), color = ref1.color, Color = ref1.Color, point = ref1.point, Point = ref1.Point, rect = ref1.rect, Rectangle = ref1.Rectangle, matrix = ref1.matrix, Matrix = ref1.Matrix;
 
-	ref2 = __webpack_require__(130), Event = ref2.Event, EventEpoch = ref2.EventEpoch, EventedObject = ref2.EventedObject;
+	ref2 = __webpack_require__(132), Event = ref2.Event, EventEpoch = ref2.EventEpoch, EventedObject = ref2.EventedObject;
 
-	EasingFunctions = __webpack_require__(145);
+	EasingFunctions = __webpack_require__(147);
 
 	eventEpoch = EventEpoch.eventEpoch;
 
@@ -21202,7 +21212,7 @@
 
 
 /***/ },
-/* 145 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = ((function(_this) {
@@ -21420,37 +21430,37 @@
 
 
 /***/ },
-/* 146 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Layout;
 
-	module.exports = Layout = __webpack_require__(147);
+	module.exports = Layout = __webpack_require__(149);
 
-	Layout.InterpolatedLayout = __webpack_require__(148);
+	Layout.InterpolatedLayout = __webpack_require__(150);
 
-	Layout.InterpolatedPointLayout = __webpack_require__(150);
+	Layout.InterpolatedPointLayout = __webpack_require__(152);
 
-	Layout.LayoutBase = __webpack_require__(149);
+	Layout.LayoutBase = __webpack_require__(151);
 
-	Layout.LinearLayout = __webpack_require__(152);
+	Layout.LinearLayout = __webpack_require__(154);
 
-	Layout.PointLayout = __webpack_require__(153);
+	Layout.PointLayout = __webpack_require__(155);
 
-	Layout.PointLayoutBase = __webpack_require__(151);
+	Layout.PointLayoutBase = __webpack_require__(153);
 
 	Layout.finishLoad(["InterpolatedLayout", "InterpolatedPointLayout", "LayoutBase", "LinearLayout", "PointLayout", "PointLayoutBase"]);
 
 
 /***/ },
-/* 147 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.Layout || (Engine.Layout = (function(superClass) {
 	  extend(Layout, superClass);
@@ -21471,13 +21481,13 @@
 
 
 /***/ },
-/* 148 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(149)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, LayoutBase) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(151)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, LayoutBase) {
 	  var Matrix, Point, Rectangle, clone, compact, flatten, inspect, inspectLean, isPlainObject, log, matrix, max, min, point, point0, rect, rubyOr, time;
 	  rubyOr = Foundation.Ruby.or;
 	  point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
@@ -21619,13 +21629,13 @@
 
 
 /***/ },
-/* 149 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic) {
 	  var BaseObject, LayoutBase, isFunction, isPlainObject, log, nearInfinity, nearInfinityResult, point;
 	  BaseObject = Foundation.BaseObject, isPlainObject = Foundation.isPlainObject, log = Foundation.log, isFunction = Foundation.isFunction, nearInfinity = Foundation.nearInfinity, nearInfinityResult = Foundation.nearInfinityResult;
 	  point = Atomic.point;
@@ -21740,13 +21750,13 @@
 
 
 /***/ },
-/* 150 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(151)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, PointLayoutBase) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(153)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, PointLayoutBase) {
 	  var InterpolatedPointLayout, log;
 	  log = Foundation.log;
 	  return InterpolatedPointLayout = (function(superClass) {
@@ -21802,13 +21812,13 @@
 
 
 /***/ },
-/* 151 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation) {
 	  var BaseObject, Point, PointLayoutBase, inspect, isFunction, isNumber, isPlainObject, log, nearInfinity, nearInfinityResult, point, point0;
 	  point = Atomic.point, Point = Atomic.Point;
 	  point0 = Point.point0;
@@ -21976,13 +21986,13 @@
 
 
 /***/ },
-/* 152 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11), __webpack_require__(149)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, LayoutBase) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14), __webpack_require__(151)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, LayoutBase) {
 	  var Point, Rectangle, clone, compact, copyProps, expandPairOptions, flatten, hasOneOrMoreProps, inspect, inspectLean, isPlainObject, log, max, min, nearInfinity, needsMerging, pairSets, pairsExpansionMap, point, point0, propSets, propsAffecting, rect, rubyOr, time;
 	  rubyOr = Foundation.Ruby.or;
 	  point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle;
@@ -22428,13 +22438,13 @@
 
 
 /***/ },
-/* 153 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11), __webpack_require__(151)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, PointLayoutBase) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14), __webpack_require__(153)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation, PointLayoutBase) {
 	  var BaseObject, Components, Point, PointLayout, inspect, inspectLean, isFunction, isNumber, isPlainObject, log, max, min, point, point0;
 	  point = Atomic.point, Point = Atomic.Point;
 	  point0 = Point.point0;
@@ -22797,7 +22807,7 @@
 
 
 /***/ },
-/* 154 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, ElementBase, EventedEpochedObject, Foundation, elementFactory, inspect, isFunction, log, merge, peek, present,
@@ -22805,13 +22815,13 @@
 	  hasProp = {}.hasOwnProperty,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	elementFactory = __webpack_require__(155).elementFactory;
+	elementFactory = __webpack_require__(157).elementFactory;
 
-	EventedEpochedObject = __webpack_require__(156);
+	EventedEpochedObject = __webpack_require__(158);
 
 	log = Foundation.log, inspect = Foundation.inspect, merge = Foundation.merge, peek = Foundation.peek, present = Foundation.present, isFunction = Foundation.isFunction;
 
@@ -23000,13 +23010,13 @@
 
 
 /***/ },
-/* 155 */
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
 	  var BaseObject, ElementFactory, inspect, timeout;
 	  BaseObject = Foundation.BaseObject, timeout = Foundation.timeout, inspect = Foundation.inspect;
 	  return ElementFactory = (function(superClass) {
@@ -23051,20 +23061,20 @@
 
 
 /***/ },
-/* 156 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var EpochedObject, EventedEpochedObject, EventedObjectBase, Events, Foundation, StateEpoch, blankOptions, isPlainObject, log,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Events = __webpack_require__(130);
+	Events = __webpack_require__(132);
 
-	StateEpoch = __webpack_require__(157);
+	StateEpoch = __webpack_require__(159);
 
-	EpochedObject = __webpack_require__(162);
+	EpochedObject = __webpack_require__(164);
 
 	EventedObjectBase = Events.EventedObjectBase;
 
@@ -23183,14 +23193,14 @@
 
 
 /***/ },
-/* 157 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(158)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, StateEpochLayout) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(160)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, StateEpochLayout) {
 	  var Epoch, Point, StateEpoch, childrenDrawChanged, childrenDrawUnchanged, globalCount, inspect, log, longestCommonSubsequence, point, requestAnimationFrame, select;
 	  point = Atomic.point, Point = Atomic.Point;
 	  log = Foundation.log, requestAnimationFrame = Foundation.requestAnimationFrame, longestCommonSubsequence = Foundation.longestCommonSubsequence, select = Foundation.select, inspect = Foundation.inspect, Epoch = Foundation.Epoch, globalCount = Foundation.globalCount;
@@ -23521,24 +23531,24 @@
 
 
 /***/ },
-/* 158 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ArtEngineCore, Atomic, BaseObject, Basics, CoreLayout, FlexLayout, Foundation, Point, StateEpochLayout, Unique, abs, deinfinitize, eachRunAsCharCodes, floatEq, getGlobalEpochCycle, inspect, isFunction, isInfiniteResult, isNumber, layoutChildrenFlex, layoutMargin, layoutPadding, log, longestCommonSubsequence, max, nearInfiniteSize, nearInfinity, nearInfinityResult, partition, peek, perimeter, point, point0, select, shallowEq, sizeWithPadding,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	ArtEngineCore = __webpack_require__(86);
+	ArtEngineCore = __webpack_require__(88);
 
-	CoreLayout = __webpack_require__(159);
+	CoreLayout = __webpack_require__(161);
 
-	FlexLayout = __webpack_require__(160);
+	FlexLayout = __webpack_require__(162);
 
-	Basics = __webpack_require__(161);
+	Basics = __webpack_require__(163);
 
 	layoutChildrenFlex = FlexLayout.layoutChildrenFlex;
 
@@ -23957,14 +23967,14 @@
 
 
 /***/ },
-/* 159 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Core,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Core = __webpack_require__(86);
+	Core = __webpack_require__(88);
 
 	module.exports = Core.Layout || (Core.Layout = (function(superClass) {
 	  extend(Layout, superClass);
@@ -23985,20 +23995,20 @@
 
 
 /***/ },
-/* 160 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BaseObject, Basics, CoreLayout, FlexLayout, Foundation, Point, abs, floatEq, inspect, layoutMargin, log, max, peek, perimeter, point, point0, select, shallowEq, sizeWithPadding,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	CoreLayout = __webpack_require__(159);
+	CoreLayout = __webpack_require__(161);
 
-	Basics = __webpack_require__(161);
+	Basics = __webpack_require__(163);
 
 	point = Atomic.point, Point = Atomic.Point, perimeter = Atomic.perimeter;
 
@@ -24194,18 +24204,18 @@
 
 
 /***/ },
-/* 161 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BaseObject, Basics, Foundation, LayoutBase, Point, abs, isFunction, nearInfiniteSize, nearInfinity, nearInfinityResult, perimeter, point,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	LayoutBase = __webpack_require__(149);
+	LayoutBase = __webpack_require__(151);
 
 	point = Atomic.point, Point = Atomic.Point, perimeter = Atomic.perimeter;
 
@@ -24262,18 +24272,18 @@
 
 
 /***/ },
-/* 162 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, EpochedObject, Events, Foundation, StateEpoch, blankOptions, capitalize, compactFlatten, isFunction, isNumber, log, mergeInto, plainObjectsDeepEq, propInternalName, shallowEq, stateEpoch,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Events = __webpack_require__(130);
+	Events = __webpack_require__(132);
 
-	StateEpoch = __webpack_require__(157);
+	StateEpoch = __webpack_require__(159);
 
 	log = Foundation.log, mergeInto = Foundation.mergeInto, BaseObject = Foundation.BaseObject, capitalize = Foundation.capitalize, compactFlatten = Foundation.compactFlatten, isNumber = Foundation.isNumber, isFunction = Foundation.isFunction, shallowEq = Foundation.shallowEq, plainObjectsDeepEq = Foundation.plainObjectsDeepEq;
 
@@ -24895,13 +24905,13 @@
 
 
 /***/ },
-/* 163 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(164)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, DrawCacheManager) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(166)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, DrawCacheManager) {
 	  var DrawEpoch, Epoch, Point, drawCacheManager, globalCount, inspect, log, longestCommonSubsequence, point, requestAnimationFrame, select;
 	  point = Atomic.point, Point = Atomic.Point;
 	  log = Foundation.log, requestAnimationFrame = Foundation.requestAnimationFrame, longestCommonSubsequence = Foundation.longestCommonSubsequence, select = Foundation.select, inspect = Foundation.inspect, Epoch = Foundation.Epoch, globalCount = Foundation.globalCount;
@@ -24927,13 +24937,13 @@
 
 
 /***/ },
-/* 164 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(86), __webpack_require__(11), __webpack_require__(88), __webpack_require__(124)], __WEBPACK_AMD_DEFINE_RESULT__ = function(ArtEngineCore, Foundation, Atomic, Canvas) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(14), __webpack_require__(90), __webpack_require__(126)], __WEBPACK_AMD_DEFINE_RESULT__ = function(ArtEngineCore, Foundation, Atomic, Canvas) {
 	  var BaseObject, Bitmap, CacheBitmap, DrawCacheManager, Map, Matrix, Point, Rectangle, getGlobalEpochCycle, inspect, log, matrix, point, rect, remove, timeout;
 	  point = Atomic.point, Point = Atomic.Point, rect = Atomic.rect, Rectangle = Atomic.Rectangle, matrix = Atomic.matrix, Matrix = Atomic.Matrix;
 	  inspect = Foundation.inspect, BaseObject = Foundation.BaseObject, Map = Foundation.Map, timeout = Foundation.timeout, remove = Foundation.remove, log = Foundation.log;
@@ -25165,24 +25175,24 @@
 
 
 /***/ },
-/* 165 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var DrawCacheManager, DrawEpoch, DummyEpoch, Epoch, EventEpoch, Foundation, GlobalEpochCycle, IdleEpoch, Map, StateEpoch, arrayWithout, currentSecond, drawCacheManager, drawEpoch, dummyEpoch, durationString, eventEpoch, fastBind, fluxEpoch, globalCount, idleEpoch, isPlainObject, log, miniInspect, reactEpoch, requestAnimationFrame, stateEpoch, time, toMs,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	EventEpoch = __webpack_require__(130).EventEpoch;
+	EventEpoch = __webpack_require__(132).EventEpoch;
 
-	StateEpoch = __webpack_require__(157);
+	StateEpoch = __webpack_require__(159);
 
-	DrawEpoch = __webpack_require__(163);
+	DrawEpoch = __webpack_require__(165);
 
-	IdleEpoch = __webpack_require__(166);
+	IdleEpoch = __webpack_require__(168);
 
-	DrawCacheManager = __webpack_require__(164);
+	DrawCacheManager = __webpack_require__(166);
 
 	log = Foundation.log, requestAnimationFrame = Foundation.requestAnimationFrame, Map = Foundation.Map, miniInspect = Foundation.miniInspect, time = Foundation.time, arrayWithout = Foundation.arrayWithout, currentSecond = Foundation.currentSecond, Epoch = Foundation.Epoch, globalCount = Foundation.globalCount, isPlainObject = Foundation.isPlainObject, durationString = Foundation.durationString, fastBind = Foundation.fastBind;
 
@@ -25485,13 +25495,13 @@
 
 
 /***/ },
-/* 166 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
 	  var Epoch, IdleEpoch, log;
 	  log = Foundation.log, Epoch = Foundation.Epoch;
 	  return IdleEpoch = (function(superClass) {
@@ -25514,13 +25524,13 @@
 
 
 /***/ },
-/* 167 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation) {
 	  var BaseObject, EngineStat, Map, Stat, arrayWithout, currentSecond, log, miniInspect;
 	  log = Foundation.log, Map = Foundation.Map, miniInspect = Foundation.miniInspect, currentSecond = Foundation.currentSecond, arrayWithout = Foundation.arrayWithout, BaseObject = Foundation.BaseObject, Stat = Foundation.Stat;
 	  return EngineStat = (function(superClass) {
@@ -25574,50 +25584,50 @@
 
 
 /***/ },
-/* 168 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Layout;
 
-	module.exports = Layout = __webpack_require__(159);
+	module.exports = Layout = __webpack_require__(161);
 
-	Layout.Basics = __webpack_require__(161);
+	Layout.Basics = __webpack_require__(163);
 
-	Layout.FlexLayout = __webpack_require__(160);
+	Layout.FlexLayout = __webpack_require__(162);
 
-	Layout.StateEpochLayout = __webpack_require__(158);
+	Layout.StateEpochLayout = __webpack_require__(160);
 
 	Layout.finishLoad(["Basics", "FlexLayout", "StateEpochLayout"]);
 
 
 /***/ },
-/* 169 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Shapes;
 
-	module.exports = Shapes = __webpack_require__(170);
+	module.exports = Shapes = __webpack_require__(172);
 
-	Shapes.BitmapElement = __webpack_require__(171);
+	Shapes.BitmapElement = __webpack_require__(173);
 
-	Shapes.CustomShapeElement = __webpack_require__(174);
+	Shapes.CustomShapeElement = __webpack_require__(176);
 
-	Shapes.RectangleElement = __webpack_require__(182);
+	Shapes.RectangleElement = __webpack_require__(184);
 
-	Shapes.TextElement = __webpack_require__(183);
+	Shapes.TextElement = __webpack_require__(185);
 
 	Shapes.finishLoad(["BitmapElement", "CustomShapeElement", "RectangleElement", "TextElement"]);
 
 
 /***/ },
-/* 170 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Elements,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Elements = __webpack_require__(83);
+	Elements = __webpack_require__(85);
 
 	module.exports = Elements.Shapes || (Elements.Shapes = (function(superClass) {
 	  extend(Shapes, superClass);
@@ -25638,20 +25648,20 @@
 
 
 /***/ },
-/* 171 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BaseObject, BitmapElement, Canvas, Color, FillableBase, Foundation, Matrix, Point, Rectangle, bound, ceil, color, createWithPostCreate, inspect, isNumber, isString, log, matrix, max, min, point, point0, point1, rect, round,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Canvas = __webpack_require__(124);
+	Canvas = __webpack_require__(126);
 
-	FillableBase = __webpack_require__(172);
+	FillableBase = __webpack_require__(174);
 
 	ceil = Math.ceil, round = Math.round;
 
@@ -25892,20 +25902,20 @@
 
 
 /***/ },
-/* 172 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Base, Canvas, Color, FillableBase, Foundation, GradientFillStyle, Matrix, Point, Rectangle, color, createWithPostCreate, isPlainObject, log, matrix, max, min, point, point0, point1, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Canvas = __webpack_require__(124);
+	Canvas = __webpack_require__(126);
 
-	Base = __webpack_require__(173);
+	Base = __webpack_require__(175);
 
 	log = Foundation.log, isPlainObject = Foundation.isPlainObject, min = Foundation.min, max = Foundation.max, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -26012,18 +26022,18 @@
 
 
 /***/ },
-/* 173 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Base, Element, Foundation, color, createWithPostCreate, inspect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Element = __webpack_require__(143);
+	Element = __webpack_require__(145);
 
 	inspect = Foundation.inspect, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -26105,20 +26115,20 @@
 
 
 /***/ },
-/* 174 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, CustomShapeElement, FillableBase, Foundation, Text, createWithPostCreate, isFunction, pureMerge,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Text = __webpack_require__(175);
+	Text = __webpack_require__(177);
 
-	FillableBase = __webpack_require__(172);
+	FillableBase = __webpack_require__(174);
 
 	pureMerge = Foundation.pureMerge, isFunction = Foundation.isFunction, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -26195,38 +26205,38 @@
 
 
 /***/ },
-/* 175 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(176);
+	module.exports = __webpack_require__(178);
 
 
 /***/ },
-/* 176 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Text;
 
-	module.exports = Text = __webpack_require__(177);
+	module.exports = Text = __webpack_require__(179);
 
-	Text.Layout = __webpack_require__(179);
+	Text.Layout = __webpack_require__(181);
 
-	Text.Metrics = __webpack_require__(180);
+	Text.Metrics = __webpack_require__(182);
 
-	Text.TextLayoutFragment = __webpack_require__(181);
+	Text.TextLayoutFragment = __webpack_require__(183);
 
 	Text.finishLoad(["Layout", "Metrics", "TextLayoutFragment"]);
 
 
 /***/ },
-/* 177 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(178);
+	Art = __webpack_require__(180);
 
 	module.exports = Art.Text || (Art.Text = (function(superClass) {
 	  extend(Text, superClass);
@@ -26247,13 +26257,13 @@
 
 
 /***/ },
-/* 178 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -26274,20 +26284,20 @@
 
 
 /***/ },
-/* 179 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BaseObject, Bitmap, Foundation, Layout, Matrix, Metrics, Rectangle, ceil, emptyOptions, flatten, float32Eq, float32Eq0, floor, inspect, isNumber, log, matrix, max, merge, min, nearInfinity, nearInfinityResult, peek, point, pureMerge, rect, time, toFontCss,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Bitmap = __webpack_require__(124).Bitmap;
+	Bitmap = __webpack_require__(126).Bitmap;
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Metrics = __webpack_require__(180);
+	Metrics = __webpack_require__(182);
 
 	rect = Atomic.rect, matrix = Atomic.matrix, Matrix = Atomic.Matrix, Rectangle = Atomic.Rectangle, point = Atomic.point;
 
@@ -26702,7 +26712,7 @@
 
 
 /***/ },
-/* 180 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -26719,7 +26729,7 @@
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(124), __webpack_require__(181)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, TextLayoutFragment) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(126), __webpack_require__(183)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, TextLayoutFragment) {
 	  var Rectangle, allIndexes, ceil, clone, eachMatch, floor, inspect, isObject, isString, log, logL, max, min, pixelChannel, pixelStep, point, point0, rect, tightThreshold;
 	  point = Atomic.point, rect = Atomic.rect, point0 = Atomic.point0, Rectangle = Atomic.Rectangle;
 	  log = Foundation.log, logL = Foundation.logL, inspect = Foundation.inspect, max = Foundation.max, min = Foundation.min, isObject = Foundation.isObject, isString = Foundation.isString, allIndexes = Foundation.allIndexes, eachMatch = Foundation.eachMatch, clone = Foundation.clone;
@@ -27089,7 +27099,7 @@
 
 
 /***/ },
-/* 181 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -27106,7 +27116,7 @@
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(124)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(126)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas) {
 	  var BaseObject, TextLayoutFragment, inspect, log, point, point0, rect;
 	  point = Atomic.point, rect = Atomic.rect, point0 = Atomic.point0;
 	  log = Foundation.log, BaseObject = Foundation.BaseObject, inspect = Foundation.inspect;
@@ -27245,22 +27255,22 @@
 
 
 /***/ },
-/* 182 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Color, FillableBase, Foundation, Matrix, Paths, Point, RectangleElement, Text, base, color, createWithPostCreate, curriedRoundedRectangle, floatEq, matrix, point, pureMerge, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Text = __webpack_require__(175);
+	Text = __webpack_require__(177);
 
-	FillableBase = __webpack_require__(172);
+	FillableBase = __webpack_require__(174);
 
-	Paths = __webpack_require__(124).Paths;
+	Paths = __webpack_require__(126).Paths;
 
 	pureMerge = Foundation.pureMerge, floatEq = Foundation.floatEq, base = Foundation.base, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -27323,22 +27333,22 @@
 
 
 /***/ },
-/* 183 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BaseObject, Color, FillableBase, Foundation, GlobalEpochCycle, Matrix, Point, Rectangle, Text, TextElement, color, createWithPostCreate, globalEpochCycle, log, matrix, merge, normalizeFontOptions, point, propInternalName, propSetterName, pureMerge, rect, shallowClone,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Text = __webpack_require__(175);
+	Text = __webpack_require__(177);
 
-	FillableBase = __webpack_require__(172);
+	FillableBase = __webpack_require__(174);
 
-	GlobalEpochCycle = __webpack_require__(165);
+	GlobalEpochCycle = __webpack_require__(167);
 
 	log = Foundation.log, BaseObject = Foundation.BaseObject, shallowClone = Foundation.shallowClone, pureMerge = Foundation.pureMerge, merge = Foundation.merge, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -27505,31 +27515,31 @@
 
 
 /***/ },
-/* 184 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Filters;
 
-	module.exports = Filters = __webpack_require__(185);
+	module.exports = Filters = __webpack_require__(187);
 
-	Filters.BlurElement = __webpack_require__(186);
+	Filters.BlurElement = __webpack_require__(188);
 
-	Filters.FilterElement = __webpack_require__(187);
+	Filters.FilterElement = __webpack_require__(189);
 
-	Filters.ShadowElement = __webpack_require__(188);
+	Filters.ShadowElement = __webpack_require__(190);
 
 	Filters.finishLoad(["BlurElement", "FilterElement", "ShadowElement"]);
 
 
 /***/ },
-/* 185 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Elements,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Elements = __webpack_require__(83);
+	Elements = __webpack_require__(85);
 
 	module.exports = Elements.Filters || (Elements.Filters = (function(superClass) {
 	  extend(Filters, superClass);
@@ -27550,18 +27560,18 @@
 
 
 /***/ },
-/* 186 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BlurElement, Color, FilterElement, Foundation, Matrix, Point, Rectangle, color, createWithPostCreate, matrix, point, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	FilterElement = __webpack_require__(187);
+	FilterElement = __webpack_require__(189);
 
 	createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -27588,18 +27598,18 @@
 
 
 /***/ },
-/* 187 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Color, CoreElementsBase, FilterElement, Foundation, Matrix, Point, Rectangle, color, createWithPostCreate, isString, log, matrix, point, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	CoreElementsBase = __webpack_require__(173);
+	CoreElementsBase = __webpack_require__(175);
 
 	log = Foundation.log, isString = Foundation.isString, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -27839,18 +27849,18 @@
 
 
 /***/ },
-/* 188 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Color, FilterElement, Foundation, Matrix, Point, Rectangle, ShadowElement, color, createWithPostCreate, log, matrix, point, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	FilterElement = __webpack_require__(187);
+	FilterElement = __webpack_require__(189);
 
 	createWithPostCreate = Foundation.createWithPostCreate, log = Foundation.log;
 
@@ -27900,27 +27910,27 @@
 
 
 /***/ },
-/* 189 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Widgets;
 
-	module.exports = Widgets = __webpack_require__(190);
+	module.exports = Widgets = __webpack_require__(192);
 
-	Widgets.PagingScrollElement = __webpack_require__(191);
+	Widgets.PagingScrollElement = __webpack_require__(193);
 
 	Widgets.finishLoad(["PagingScrollElement"]);
 
 
 /***/ },
-/* 190 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Elements,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Elements = __webpack_require__(83);
+	Elements = __webpack_require__(85);
 
 	module.exports = Elements.Widgets || (Elements.Widgets = (function(superClass) {
 	  extend(Widgets, superClass);
@@ -27941,22 +27951,22 @@
 
 
 /***/ },
-/* 191 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var AnimatorSupport, Atomic, BaseModule, BaseObject, Element, EventEpoch, Foundation, GestureRecognizer, Matrix, PagingScrollElement, Point, Rectangle, ScrollAnimator, abs, absGt, absGte, absLt, absLte, animatorSpringConstant, animatorSpringFriction, bound, brakingFactor, ceil, createGestureRecognizer, createWithPostCreate, crossScrollProperties, currentSecond, eventEpoch, first, flickSpeedMultiplier, inspect, isPlainArray, isPoint, last, log, matrix, max, maxChange, maxMagnitude, merge, min, minMagnitude, minimumFlickVelocity, peek, point, point0, pointNearInfinity, rect, requestAnimationFrame, round, scrollProperties, timeout,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	EventEpoch = __webpack_require__(130).EventEpoch;
+	EventEpoch = __webpack_require__(132).EventEpoch;
 
-	Element = __webpack_require__(143);
+	Element = __webpack_require__(145);
 
-	GestureRecognizer = __webpack_require__(127);
+	GestureRecognizer = __webpack_require__(129);
 
 	log = Foundation.log, inspect = Foundation.inspect, currentSecond = Foundation.currentSecond, bound = Foundation.bound, round = Foundation.round, first = Foundation.first, last = Foundation.last, peek = Foundation.peek, min = Foundation.min, max = Foundation.max, abs = Foundation.abs, merge = Foundation.merge, createWithPostCreate = Foundation.createWithPostCreate, BaseObject = Foundation.BaseObject, timeout = Foundation.timeout, ceil = Foundation.ceil, round = Foundation.round, isPlainArray = Foundation.isPlainArray, BaseModule = Foundation.BaseModule, absLt = Foundation.absLt, absLte = Foundation.absLte, absGt = Foundation.absGt, absGte = Foundation.absGte, minMagnitude = Foundation.minMagnitude, maxMagnitude = Foundation.maxMagnitude, maxChange = Foundation.maxChange, absLt = Foundation.absLt, requestAnimationFrame = Foundation.requestAnimationFrame;
 
@@ -29023,29 +29033,29 @@
 
 
 /***/ },
-/* 192 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ShapeChildren;
 
-	module.exports = ShapeChildren = __webpack_require__(193);
+	module.exports = ShapeChildren = __webpack_require__(195);
 
-	ShapeChildren.FillElement = __webpack_require__(194);
+	ShapeChildren.FillElement = __webpack_require__(196);
 
-	ShapeChildren.OutlineElement = __webpack_require__(195);
+	ShapeChildren.OutlineElement = __webpack_require__(197);
 
 	ShapeChildren.finishLoad(["FillElement", "OutlineElement"]);
 
 
 /***/ },
-/* 193 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Elements,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Elements = __webpack_require__(83);
+	Elements = __webpack_require__(85);
 
 	module.exports = Elements.ShapeChildren || (Elements.ShapeChildren = (function(superClass) {
 	  extend(ShapeChildren, superClass);
@@ -29066,20 +29076,20 @@
 
 
 /***/ },
-/* 194 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Canvas, Color, FillElement, FillableBase, Foundation, GradientFillStyle, Matrix, Point, Rectangle, color, createWithPostCreate, log, matrix, point, point0, point1, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Canvas = __webpack_require__(124);
+	Canvas = __webpack_require__(126);
 
-	FillableBase = __webpack_require__(172);
+	FillableBase = __webpack_require__(174);
 
 	log = Foundation.log, createWithPostCreate = Foundation.createWithPostCreate;
 
@@ -29135,7 +29145,7 @@
 
 
 /***/ },
-/* 195 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Color, FillableBase, Foundation, Matrix, OutlineElement, Point, Rectangle, color, createWithPostCreate, log, matrix, merge, point, rect,
@@ -29143,11 +29153,11 @@
 	  hasProp = {}.hasOwnProperty,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	FillableBase = __webpack_require__(172);
+	FillableBase = __webpack_require__(174);
 
 	merge = Foundation.merge, createWithPostCreate = Foundation.createWithPostCreate, log = Foundation.log;
 
@@ -29243,31 +29253,31 @@
 
 
 /***/ },
-/* 196 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Animation;
 
-	module.exports = Animation = __webpack_require__(197);
+	module.exports = Animation = __webpack_require__(199);
 
-	Animation.Animator = __webpack_require__(144);
+	Animation.Animator = __webpack_require__(146);
 
-	Animation.Animator2 = __webpack_require__(198);
+	Animation.Animator2 = __webpack_require__(200);
 
-	Animation.EasingFunctions = __webpack_require__(145);
+	Animation.EasingFunctions = __webpack_require__(147);
 
 	Animation.finishLoad(["Animator", "Animator2", "EasingFunctions"]);
 
 
 /***/ },
-/* 197 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.Animation || (Engine.Animation = (function(superClass) {
 	  extend(Animation, superClass);
@@ -29288,7 +29298,7 @@
 
 
 /***/ },
-/* 198 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -29403,13 +29413,13 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), currentSecond = ref.currentSecond, min = ref.min, max = ref.max, Transaction = ref.Transaction, inspect = ref.inspect, inspectLean = ref.inspectLean, log = ref.log, BaseObject = ref.BaseObject;
+	ref = __webpack_require__(14), currentSecond = ref.currentSecond, min = ref.min, max = ref.max, Transaction = ref.Transaction, inspect = ref.inspect, inspectLean = ref.inspectLean, log = ref.log, BaseObject = ref.BaseObject;
 
-	ref1 = __webpack_require__(88), color = ref1.color, Color = ref1.Color, point = ref1.point, Point = ref1.Point, rect = ref1.rect, Rectangle = ref1.Rectangle, matrix = ref1.matrix, Matrix = ref1.Matrix;
+	ref1 = __webpack_require__(90), color = ref1.color, Color = ref1.Color, point = ref1.point, Point = ref1.Point, rect = ref1.rect, Rectangle = ref1.Rectangle, matrix = ref1.matrix, Matrix = ref1.Matrix;
 
-	ref2 = __webpack_require__(130), Event = ref2.Event, EventEpoch = ref2.EventEpoch, EventedObject = ref2.EventedObject;
+	ref2 = __webpack_require__(132), Event = ref2.Event, EventEpoch = ref2.EventEpoch, EventedObject = ref2.EventedObject;
 
-	EasingFunctions = __webpack_require__(145);
+	EasingFunctions = __webpack_require__(147);
 
 	eventEpoch = EventEpoch.eventEpoch;
 
@@ -29533,29 +29543,29 @@
 
 
 /***/ },
-/* 199 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Forms;
 
-	module.exports = Forms = __webpack_require__(200);
+	module.exports = Forms = __webpack_require__(202);
 
-	Forms.SynchronizedDomOverlay = __webpack_require__(201);
+	Forms.SynchronizedDomOverlay = __webpack_require__(203);
 
-	Forms.TextInput = __webpack_require__(202);
+	Forms.TextInput = __webpack_require__(204);
 
 	Forms.finishLoad(["SynchronizedDomOverlay", "TextInput"]);
 
 
 /***/ },
-/* 200 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.Forms || (Engine.Forms = (function(superClass) {
 	  extend(Forms, superClass);
@@ -29576,18 +29586,18 @@
 
 
 /***/ },
-/* 201 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Element, Foundation, SynchronizedDomOverlay, float32Eq, inspect, log, merge, point, point1, rect,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Element = __webpack_require__(143);
+	Element = __webpack_require__(145);
 
 	log = Foundation.log, merge = Foundation.merge, inspect = Foundation.inspect, float32Eq = Foundation.float32Eq;
 
@@ -29717,18 +29727,18 @@
 
 
 /***/ },
-/* 202 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, Foundation, SynchronizedDomOverlay, TextInput, color, createElementFromHtml, createWithPostCreate, inspect, log, merge, select,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	SynchronizedDomOverlay = __webpack_require__(201);
+	SynchronizedDomOverlay = __webpack_require__(203);
 
 	color = Atomic.color;
 
@@ -29875,19 +29885,19 @@
 
 
 /***/ },
-/* 203 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Foundation, FullScreenApp, Promise;
 
-	Promise = (Foundation = __webpack_require__(11)).Promise;
+	Promise = (Foundation = __webpack_require__(14)).Promise;
 
 	module.exports = FullScreenApp = (function() {
 	  function FullScreenApp() {}
 
 	  FullScreenApp._domReady = function() {
 	    var DomConsole, Engine, query;
-	    Engine = __webpack_require__(6);
+	    Engine = __webpack_require__(9);
 	    query = Foundation.Browser.Parse.query();
 	    console.log("Art.Engine.FullScreenApp options:\n  ?dev=true\n    show DomConsole\n  ?perfGraphs=true\n    show performance graphs");
 	    if (query.dev === "true" || query.perfGraphs === "true") {
@@ -29899,7 +29909,7 @@
 	      2) I'd like a way to easily build production vs dev code.
 	      3) DomConsole should only be included in dev code.
 	       */
-	      DomConsole = __webpack_require__(204);
+	      DomConsole = __webpack_require__(206);
 	      DomConsole.enable();
 	      Engine.Core.CanvasElement.prototype.defaultSize = {
 	        hh: 1,
@@ -29987,36 +29997,36 @@
 
 
 /***/ },
-/* 204 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(205);
+	module.exports = __webpack_require__(207);
 
 
 /***/ },
-/* 205 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var DomConsole;
 
-	module.exports = DomConsole = __webpack_require__(206);
+	module.exports = DomConsole = __webpack_require__(208);
 
-	DomConsole.Chart = __webpack_require__(208);
+	DomConsole.Chart = __webpack_require__(210);
 
-	DomConsole.Main = __webpack_require__(209);
+	DomConsole.Main = __webpack_require__(211);
 
 	DomConsole.finishLoad(["Chart", "Main"]);
 
 
 /***/ },
-/* 206 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var DevTools,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	DevTools = __webpack_require__(207);
+	DevTools = __webpack_require__(209);
 
 	module.exports = DevTools.DomConsole || (DevTools.DomConsole = (function(superClass) {
 	  extend(DomConsole, superClass);
@@ -30037,14 +30047,14 @@
 
 
 /***/ },
-/* 207 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(14);
+	Art = __webpack_require__(17);
 
 	module.exports = Art.DevTools || (Art.DevTools = (function(superClass) {
 	  extend(DevTools, superClass);
@@ -30065,10 +30075,10 @@
 
 
 /***/ },
-/* 208 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(88), __webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(90), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Atomic, Foundation) {
 	  var Chart, Matrix, color, inspect, log, point, rect;
 	  point = Atomic.point, color = Atomic.color, rect = Atomic.rect, Matrix = Atomic.Matrix;
 	  inspect = Foundation.inspect, log = Foundation.log;
@@ -30144,7 +30154,7 @@
 
 
 /***/ },
-/* 209 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -30156,9 +30166,9 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(210);
+	__webpack_require__(212);
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(214), __webpack_require__(11), __webpack_require__(88), __webpack_require__(206)], __WEBPACK_AMD_DEFINE_RESULT__ = function($, Foundation, Atomic, DomConsole) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(216), __webpack_require__(14), __webpack_require__(90), __webpack_require__(208)], __WEBPACK_AMD_DEFINE_RESULT__ = function($, Foundation, Atomic, DomConsole) {
 	  var BaseObject, Color, Map, Matrix, Point, Rectangle, clone, color, colorRegex, createWithPostCreate, domConsoleId, flatten, htmlEscape, insertBetweenEveryElement, inspect, isArray, isFunction, isImage, isNumber, isString, matrix, merge, nextTick, packageLogArgs, point, rect, timeout, wrapDomElement;
 	  color = Atomic.color, Color = Atomic.Color, point = Atomic.point, Point = Atomic.Point, matrix = Atomic.matrix, Matrix = Atomic.Matrix, rect = Atomic.rect, Rectangle = Atomic.Rectangle;
 	  BaseObject = Foundation.BaseObject, inspect = Foundation.inspect, clone = Foundation.clone, merge = Foundation.merge, Map = Foundation.Map, nextTick = Foundation.nextTick, timeout = Foundation.timeout, flatten = Foundation.flatten, isArray = Foundation.isArray, isString = Foundation.isString, isFunction = Foundation.isFunction, isNumber = Foundation.isNumber, createWithPostCreate = Foundation.createWithPostCreate, colorRegex = Foundation.colorRegex;
@@ -30600,16 +30610,16 @@
 
 
 /***/ },
-/* 210 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(211);
+	var content = __webpack_require__(213);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(213)(content, {});
+	var update = __webpack_require__(215)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -30626,10 +30636,10 @@
 	}
 
 /***/ },
-/* 211 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(212)();
+	exports = module.exports = __webpack_require__(214)();
 	// imports
 
 
@@ -30640,7 +30650,7 @@
 
 
 /***/ },
-/* 212 */
+/* 214 */
 /***/ function(module, exports) {
 
 	/*
@@ -30696,7 +30706,7 @@
 
 
 /***/ },
-/* 213 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -30950,7 +30960,7 @@
 
 
 /***/ },
-/* 214 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -40787,27 +40797,27 @@
 
 
 /***/ },
-/* 215 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var DevTools;
 
-	module.exports = DevTools = __webpack_require__(216);
+	module.exports = DevTools = __webpack_require__(218);
 
-	DevTools.GlobalEpochStats = __webpack_require__(217);
+	DevTools.GlobalEpochStats = __webpack_require__(219);
 
 	DevTools.finishLoad(["GlobalEpochStats"]);
 
 
 /***/ },
-/* 216 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.DevTools || (Engine.DevTools = (function(superClass) {
 	  extend(DevTools, superClass);
@@ -40828,13 +40838,13 @@
 
 
 /***/ },
-/* 217 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(88), __webpack_require__(124), __webpack_require__(85)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, EngineCore) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(90), __webpack_require__(126), __webpack_require__(87)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, Atomic, Canvas, EngineCore) {
 	  var GlobalEpochCycle, GlobalEpochStat, GlobalEpochStats, Map, Matrix, aimColor, color, currentSecond, floor, globalEpochCycle, log, max, min, miniInspect, peek, point, reactColor, rect, timeout;
 	  log = Foundation.log, Map = Foundation.Map, miniInspect = Foundation.miniInspect, currentSecond = Foundation.currentSecond, max = Foundation.max, min = Foundation.min, timeout = Foundation.timeout, peek = Foundation.peek;
 	  point = Atomic.point, rect = Atomic.rect, Matrix = Atomic.Matrix, color = Atomic.color;
@@ -41143,29 +41153,29 @@
 
 
 /***/ },
-/* 218 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var File;
 
-	module.exports = File = __webpack_require__(219);
+	module.exports = File = __webpack_require__(221);
 
-	File.Model = __webpack_require__(220);
+	File.Model = __webpack_require__(222);
 
-	File.V1Loader = __webpack_require__(221);
+	File.V1Loader = __webpack_require__(223);
 
 	File.finishLoad(["Model", "V1Loader"]);
 
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Engine,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Engine = __webpack_require__(8);
+	Engine = __webpack_require__(11);
 
 	module.exports = Engine.File || (Engine.File = (function(superClass) {
 	  extend(File, superClass);
@@ -41186,7 +41196,7 @@
 
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Model,
@@ -41202,30 +41212,30 @@
 
 	  return Model;
 
-	})(__webpack_require__(143));
+	})(__webpack_require__(145));
 
 
 /***/ },
-/* 221 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Atomic, BaseObject, Binary, Canvas, Core, Element, Elements, EncodedImage, Foundation, Model, Promise, StateEpoch, V1Loader, Xbd, compositeModes, inspect, layoutModes, log, lowerCamelCase, matrix, merge, mergeInto, point, rect, stateEpoch, supportedCompositeModes,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Atomic = __webpack_require__(88);
+	Atomic = __webpack_require__(90);
 
-	Canvas = __webpack_require__(124);
+	Canvas = __webpack_require__(126);
 
-	Xbd = __webpack_require__(222);
+	Xbd = __webpack_require__(224);
 
-	Core = __webpack_require__(85);
+	Core = __webpack_require__(87);
 
-	Elements = __webpack_require__(82);
+	Elements = __webpack_require__(84);
 
-	Model = __webpack_require__(220);
+	Model = __webpack_require__(222);
 
 	Binary = Foundation.Binary, inspect = Foundation.inspect, BaseObject = Foundation.BaseObject, Promise = Foundation.Promise, log = Foundation.log, mergeInto = Foundation.mergeInto, lowerCamelCase = Foundation.lowerCamelCase, merge = Foundation.merge;
 
@@ -41625,38 +41635,38 @@
 
 
 /***/ },
-/* 222 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(223);
+	module.exports = __webpack_require__(225);
 
 
 /***/ },
-/* 223 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Xbd;
 
-	module.exports = Xbd = __webpack_require__(224);
+	module.exports = Xbd = __webpack_require__(226);
 
-	Xbd.Dictionary = __webpack_require__(226);
+	Xbd.Dictionary = __webpack_require__(228);
 
-	Xbd.Tag = __webpack_require__(227);
+	Xbd.Tag = __webpack_require__(229);
 
-	Xbd.Xbd = __webpack_require__(228);
+	Xbd.Xbd = __webpack_require__(230);
 
 	Xbd.finishLoad(["Dictionary", "Tag", "Xbd"]);
 
 
 /***/ },
-/* 224 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(225);
+	Art = __webpack_require__(227);
 
 	module.exports = Art.Xbd || (Art.Xbd = (function(superClass) {
 	  extend(Xbd, superClass);
@@ -41677,13 +41687,13 @@
 
 
 /***/ },
-/* 225 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -41704,12 +41714,12 @@
 
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Binary, Dictionary, binary, stream;
 
-	Binary = __webpack_require__(11).Binary;
+	Binary = __webpack_require__(14).Binary;
 
 	binary = Binary.binary;
 
@@ -41751,15 +41761,15 @@
 
 
 /***/ },
-/* 227 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Binary, Tag, Xbd, binary, stream,
 	  slice = [].slice;
 
-	Binary = __webpack_require__(11).Binary;
+	Binary = __webpack_require__(14).Binary;
 
-	Xbd = __webpack_require__(224);
+	Xbd = __webpack_require__(226);
 
 	binary = Binary.binary;
 
@@ -41893,20 +41903,20 @@
 
 
 /***/ },
-/* 228 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Binary, Dictionary, Tag, Xbd, stream;
 
-	Binary = __webpack_require__(11).Binary;
+	Binary = __webpack_require__(14).Binary;
 
 	stream = Binary.stream;
 
-	Tag = __webpack_require__(227);
+	Tag = __webpack_require__(229);
 
-	Dictionary = __webpack_require__(226);
+	Dictionary = __webpack_require__(228);
 
-	module.exports = Xbd = __webpack_require__(224);
+	module.exports = Xbd = __webpack_require__(226);
 
 	Xbd.indent = function(str, indentStr) {
 	  return indentStr + str.split("\n").join("\n" + indentStr);
@@ -41925,48 +41935,39 @@
 
 
 /***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(6);
-
-	module.exports = __webpack_require__(230);
-
-
-/***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
 
-	module.exports = React = __webpack_require__(231);
+	module.exports = React = __webpack_require__(232);
 
-	React.Aim = __webpack_require__(233);
+	React.Aim = __webpack_require__(234);
 
-	React.All = __webpack_require__(237);
+	React.All = __webpack_require__(238);
 
-	React.Component = __webpack_require__(238);
+	React.Component = __webpack_require__(239);
 
-	React.HotStyleProps = __webpack_require__(243);
+	React.HotStyleProps = __webpack_require__(244);
 
-	React.ReactArtEngineEpoch = __webpack_require__(236);
+	React.ReactArtEngineEpoch = __webpack_require__(237);
 
-	React.VirtualElement = __webpack_require__(234);
+	React.VirtualElement = __webpack_require__(235);
 
-	React.VirtualNode = __webpack_require__(235);
+	React.VirtualNode = __webpack_require__(236);
 
 	React.finishLoad(["Aim", "All", "Component", "HotStyleProps", "ReactArtEngineEpoch", "VirtualElement", "VirtualNode"]);
 
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(232);
+	Art = __webpack_require__(233);
 
 	module.exports = Art.React || (Art.React = (function(superClass) {
 	  extend(React, superClass);
@@ -41987,13 +41988,13 @@
 
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -42014,14 +42015,14 @@
 
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Aim, ArtEngineCore, Foundation, VirtualElement, bound, classForElement, createVirtualElementFactory, elementClassName, elementClassNames, elementFactory, i, len, log, max, min, ref;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	VirtualElement = __webpack_require__(234);
+	VirtualElement = __webpack_require__(235);
 
 	log = Foundation.log;
 
@@ -42144,13 +42145,13 @@
 
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(235)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, VirtualNode) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(236)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, VirtualNode) {
 	  var ArtEngineCore, BaseObject, Browser, CanvasElement, Element, Promise, Rectangle, VirtualElement, VirtualElementLocalBase, VirtualElementRemoteBase, compactFlatten, errorElementProps, globalCount, inspect, isPlainObject, isWebWorker, keepIfRubyTrue, log, merge, objectDiff, propsEq, shallowClone, stackTime, time;
 	  log = Foundation.log, compactFlatten = Foundation.compactFlatten, globalCount = Foundation.globalCount, time = Foundation.time, stackTime = Foundation.stackTime, BaseObject = Foundation.BaseObject, shallowClone = Foundation.shallowClone, inspect = Foundation.inspect, keepIfRubyTrue = Foundation.keepIfRubyTrue, stackTime = Foundation.stackTime, isPlainObject = Foundation.isPlainObject, compactFlatten = Foundation.compactFlatten, isWebWorker = Foundation.isWebWorker, objectDiff = Foundation.objectDiff, Browser = Foundation.Browser, merge = Foundation.merge, Promise = Foundation.Promise;
 	  propsEq = VirtualNode.propsEq;
@@ -42552,14 +42553,14 @@
 
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty,
 	  slice = [].slice;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(236)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, ReactArtEngineEpoch) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(237)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, ReactArtEngineEpoch) {
 	  var BaseObject, VirtualNode, compact, deepEach, emptyObject, flatten, globalCount, inspect, isObject, isPlainObject, keepIfRubyTrue, log, objectKeyCount, plainObjectsDeepEq, reactArtEngineEpoch, shallowClone;
 	  log = Foundation.log, compact = Foundation.compact, globalCount = Foundation.globalCount, flatten = Foundation.flatten, BaseObject = Foundation.BaseObject, shallowClone = Foundation.shallowClone, inspect = Foundation.inspect, objectKeyCount = Foundation.objectKeyCount, isObject = Foundation.isObject, deepEach = Foundation.deepEach, isPlainObject = Foundation.isPlainObject, keepIfRubyTrue = Foundation.keepIfRubyTrue, plainObjectsDeepEq = Foundation.plainObjectsDeepEq;
 	  reactArtEngineEpoch = ReactArtEngineEpoch.reactArtEngineEpoch;
@@ -42793,14 +42794,14 @@
 
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ArtEngineCore, BaseObject, Epoch, Foundation, GlobalEpochCycle, ReactArtEngineEpoch, clone, globalCount, inspect, isWebWorker, log, merge, peek, stackTime, timeout,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
 	log = Foundation.log, merge = Foundation.merge, clone = Foundation.clone, peek = Foundation.peek, inspect = Foundation.inspect, timeout = Foundation.timeout, BaseObject = Foundation.BaseObject, Epoch = Foundation.Epoch, globalCount = Foundation.globalCount, stackTime = Foundation.stackTime, isWebWorker = Foundation.isWebWorker, timeout = Foundation.timeout;
 
@@ -42842,10 +42843,10 @@
 
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(231), __webpack_require__(238), __webpack_require__(236), __webpack_require__(233)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, React, Component, ReactArtEngineEpoch, Aim) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(232), __webpack_require__(239), __webpack_require__(237), __webpack_require__(234)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, React, Component, ReactArtEngineEpoch, Aim) {
 	  var createAllClass, log, reactArtEngineEpoch, select;
 	  log = Foundation.log, createAllClass = Foundation.createAllClass, select = Foundation.select;
 	  reactArtEngineEpoch = ReactArtEngineEpoch.reactArtEngineEpoch;
@@ -42862,7 +42863,7 @@
 
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ArtEngineCore, BaseObject, Component, Element, Foundation, GlobalEpochCycle, HotLoader, ReactArtEngineEpoch, StateEpoch, VirtualNode, arrayWithout, clone, compactFlatten, countStep, createWithPostCreate, fastBind, globalCount, globalEpochCycle, inspect, isArray, isFunction, isObject, isString, keepIfRubyTrue, log, merge, mergeInto, onNextStateEpochReady, reactArtEngineEpoch, runHot, shallowClone, slice, stackTime, stateEpoch, time, timePerformance, upperCamelCase,
@@ -42870,19 +42871,19 @@
 	  hasProp = {}.hasOwnProperty,
 	  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	VirtualNode = __webpack_require__(235);
+	VirtualNode = __webpack_require__(236);
 
-	Element = __webpack_require__(233).Element;
+	Element = __webpack_require__(234).Element;
 
-	ReactArtEngineEpoch = __webpack_require__(236);
+	ReactArtEngineEpoch = __webpack_require__(237);
 
 	log = Foundation.log, merge = Foundation.merge, mergeInto = Foundation.mergeInto, clone = Foundation.clone, shallowClone = Foundation.shallowClone, inspect = Foundation.inspect, compactFlatten = Foundation.compactFlatten, keepIfRubyTrue = Foundation.keepIfRubyTrue, BaseObject = Foundation.BaseObject, fastBind = Foundation.fastBind, slice = Foundation.slice, isObject = Foundation.isObject, isString = Foundation.isString, isArray = Foundation.isArray, isFunction = Foundation.isFunction, globalCount = Foundation.globalCount, time = Foundation.time, stackTime = Foundation.stackTime, countStep = Foundation.countStep, createWithPostCreate = Foundation.createWithPostCreate, arrayWithout = Foundation.arrayWithout, upperCamelCase = Foundation.upperCamelCase;
 
 	reactArtEngineEpoch = ReactArtEngineEpoch.reactArtEngineEpoch;
 
-	HotLoader = __webpack_require__(239).HotLoader;
+	HotLoader = __webpack_require__(240).HotLoader;
 
 	runHot = HotLoader.runHot;
 
@@ -43703,34 +43704,34 @@
 
 
 /***/ },
-/* 239 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(240);
-
-
-/***/ },
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Webpack;
-
-	module.exports = Webpack = __webpack_require__(241);
-
-	Webpack.HotLoader = __webpack_require__(242);
-
-	Webpack.finishLoad(["HotLoader"]);
+	module.exports = __webpack_require__(241);
 
 
 /***/ },
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var Webpack;
+
+	module.exports = Webpack = __webpack_require__(242);
+
+	Webpack.HotLoader = __webpack_require__(243);
+
+	Webpack.finishLoad(["HotLoader"]);
+
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var DevTools,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	DevTools = __webpack_require__(207);
+	DevTools = __webpack_require__(209);
 
 	module.exports = DevTools.Webpack || (DevTools.Webpack = (function(superClass) {
 	  extend(Webpack, superClass);
@@ -43751,14 +43752,14 @@
 
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, HotLoader, log, peek, ref,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), BaseObject = ref.BaseObject, peek = ref.peek, log = ref.log;
+	ref = __webpack_require__(14), BaseObject = ref.BaseObject, peek = ref.peek, log = ref.log;
 
 	module.exports = HotLoader = (function(superClass) {
 	  extend(HotLoader, superClass);
@@ -43801,16 +43802,16 @@
 
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Component, Foundation, HotStyleProps,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Component = __webpack_require__(238);
+	Component = __webpack_require__(239);
 
 	module.exports = HotStyleProps = (function(superClass) {
 	  extend(HotStyleProps, superClass);
@@ -43830,50 +43831,66 @@
 
 
 /***/ },
-/* 244 */,
 /* 245 */,
 /* 246 */,
 /* 247 */,
-/* 248 */
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(6);
+	__webpack_require__(9);
 
-	__webpack_require__(229);
+	__webpack_require__(8);
 
-	module.exports = __webpack_require__(249);
+	module.exports = __webpack_require__(266);
 
 
 /***/ },
-/* 249 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Flux;
 
-	module.exports = Flux = __webpack_require__(250);
+	module.exports = Flux = __webpack_require__(267);
 
-	Flux.Core = __webpack_require__(252);
+	Flux.Core = __webpack_require__(269);
 
-	Flux.Db = __webpack_require__(259);
+	Flux.Db = __webpack_require__(276);
 
-	Flux.Models = __webpack_require__(264);
+	Flux.Models = __webpack_require__(281);
 
-	Flux.React = __webpack_require__(270);
+	Flux.React = __webpack_require__(287);
 
-	Flux.All = __webpack_require__(274);
+	Flux.All = __webpack_require__(291);
 
 	Flux.finishLoad(["All"]);
 
 
 /***/ },
-/* 250 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(251);
+	Art = __webpack_require__(268);
 
 	module.exports = Art.Flux || (Art.Flux = (function(superClass) {
 	  extend(Flux, superClass);
@@ -43894,13 +43911,13 @@
 
 
 /***/ },
-/* 251 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -43921,35 +43938,35 @@
 
 
 /***/ },
-/* 252 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Core;
 
-	module.exports = Core = __webpack_require__(253);
+	module.exports = Core = __webpack_require__(270);
 
-	Core.Entry = __webpack_require__(254);
+	Core.Entry = __webpack_require__(271);
 
-	Core.FluxModel = __webpack_require__(256);
+	Core.FluxModel = __webpack_require__(273);
 
-	Core.FluxStatus = __webpack_require__(255);
+	Core.FluxStatus = __webpack_require__(272);
 
-	Core.FluxStore = __webpack_require__(257);
+	Core.FluxStore = __webpack_require__(274);
 
-	Core.ModelRegistry = __webpack_require__(258);
+	Core.ModelRegistry = __webpack_require__(275);
 
 	Core.finishLoad(["Entry", "FluxModel", "FluxStatus", "FluxStore", "ModelRegistry"]);
 
 
 /***/ },
-/* 253 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Flux,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Flux = __webpack_require__(250);
+	Flux = __webpack_require__(267);
 
 	module.exports = Flux.Core || (Flux.Core = (function(superClass) {
 	  extend(Core, superClass);
@@ -43970,16 +43987,16 @@
 
 
 /***/ },
-/* 254 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Entry, Epoch, Foundation, Unique, clone, failure, inspect, log, merge, pending, pushIfNotPresent, ref, removeFirstMatch, shallowClone, success,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	ref = __webpack_require__(255), pending = ref.pending, success = ref.success, failure = ref.failure;
+	ref = __webpack_require__(272), pending = ref.pending, success = ref.success, failure = ref.failure;
 
 	log = Foundation.log, BaseObject = Foundation.BaseObject, merge = Foundation.merge, removeFirstMatch = Foundation.removeFirstMatch, pushIfNotPresent = Foundation.pushIfNotPresent, Epoch = Foundation.Epoch, shallowClone = Foundation.shallowClone, inspect = Foundation.inspect, Unique = Foundation.Unique, clone = Foundation.clone;
 
@@ -44087,7 +44104,7 @@
 
 
 /***/ },
-/* 255 */
+/* 272 */
 /***/ function(module, exports) {
 
 	var FluxStatus;
@@ -44109,20 +44126,20 @@
 
 
 /***/ },
-/* 256 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, FluxModel, Foundation, ModelRegistry, capitalize, compactFlatten, decapitalize, emailRegexp, fluxStore, globalCount, inspect, isFunction, isNumber, isString, isoDateRegexp, log, missing, nextTick, pending, pluralize, pureMerge, ref, shallowClone, success, time, urlRegexp,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	ref = __webpack_require__(255), missing = ref.missing, success = ref.success, pending = ref.pending;
+	ref = __webpack_require__(272), missing = ref.missing, success = ref.success, pending = ref.pending;
 
-	fluxStore = __webpack_require__(257).fluxStore;
+	fluxStore = __webpack_require__(274).fluxStore;
 
-	ModelRegistry = __webpack_require__(258);
+	ModelRegistry = __webpack_require__(275);
 
 	log = Foundation.log, BaseObject = Foundation.BaseObject, decapitalize = Foundation.decapitalize, pluralize = Foundation.pluralize, pureMerge = Foundation.pureMerge, shallowClone = Foundation.shallowClone, isString = Foundation.isString, emailRegexp = Foundation.emailRegexp, urlRegexp = Foundation.urlRegexp, isNumber = Foundation.isNumber, nextTick = Foundation.nextTick, capitalize = Foundation.capitalize, inspect = Foundation.inspect, isFunction = Foundation.isFunction, pureMerge = Foundation.pureMerge, isoDateRegexp = Foundation.isoDateRegexp, time = Foundation.time, globalCount = Foundation.globalCount, compactFlatten = Foundation.compactFlatten;
 
@@ -44338,20 +44355,20 @@
 
 
 /***/ },
-/* 257 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Entry, Epoch, FluxStore, Foundation, GlobalEpochCycle, ModelRegistry, Unique, clone, consistentJsonStringify, failure, globalCount, inspect, isFunction, isString, log, merge, missing, pending, plainObjectsDeepEq, pushIfNotPresent, ref, ref1, ref2, removeFirstMatch, success, time, timeout,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Entry = __webpack_require__(254);
+	Entry = __webpack_require__(271);
 
-	ModelRegistry = __webpack_require__(258);
+	ModelRegistry = __webpack_require__(275);
 
-	ref = __webpack_require__(255), success = ref.success, pending = ref.pending, missing = ref.missing, failure = ref.failure;
+	ref = __webpack_require__(272), success = ref.success, pending = ref.pending, missing = ref.missing, failure = ref.failure;
 
 	BaseObject = Foundation.BaseObject, merge = Foundation.merge, removeFirstMatch = Foundation.removeFirstMatch, pushIfNotPresent = Foundation.pushIfNotPresent, removeFirstMatch = Foundation.removeFirstMatch, Epoch = Foundation.Epoch, log = Foundation.log, isFunction = Foundation.isFunction, Unique = Foundation.Unique, clone = Foundation.clone, consistentJsonStringify = Foundation.consistentJsonStringify, isString = Foundation.isString, timeout = Foundation.timeout, plainObjectsDeepEq = Foundation.plainObjectsDeepEq, globalCount = Foundation.globalCount, time = Foundation.time, inspect = Foundation.inspect;
 
@@ -44669,14 +44686,14 @@
 
 
 /***/ },
-/* 258 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, ModelRegistry, decapitalize, inspect, isClass, log, ref,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), log = ref.log, BaseObject = ref.BaseObject, decapitalize = ref.decapitalize, isClass = ref.isClass, inspect = ref.inspect;
+	ref = __webpack_require__(14), log = ref.log, BaseObject = ref.BaseObject, decapitalize = ref.decapitalize, isClass = ref.isClass, inspect = ref.inspect;
 
 	module.exports = ModelRegistry = (function(superClass) {
 	  var models;
@@ -44725,31 +44742,31 @@
 
 
 /***/ },
-/* 259 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Db;
 
-	module.exports = Db = __webpack_require__(260);
+	module.exports = Db = __webpack_require__(277);
 
-	Db.FluxDbModel = __webpack_require__(261);
+	Db.FluxDbModel = __webpack_require__(278);
 
-	Db.FluxDbModelBase = __webpack_require__(262);
+	Db.FluxDbModelBase = __webpack_require__(279);
 
-	Db.FluxDbQueryModel = __webpack_require__(263);
+	Db.FluxDbQueryModel = __webpack_require__(280);
 
 	Db.finishLoad(["FluxDbModel", "FluxDbModelBase", "FluxDbQueryModel"]);
 
 
 /***/ },
-/* 260 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Flux,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Flux = __webpack_require__(250);
+	Flux = __webpack_require__(267);
 
 	module.exports = Flux.Db || (Flux.Db = (function(superClass) {
 	  extend(Db, superClass);
@@ -44770,18 +44787,18 @@
 
 
 /***/ },
-/* 261 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, FluxCore, FluxDbModel, FluxDbModelBase, FluxModel, FluxStatus, FluxStore, Foundation, ModelRegistry, capitalize, compact, decapitalize, emailRegexp, failure, fluxStore, idRegExpStr, inspect, isFunction, isHexColor, isId, isNumber, isPlainArray, isPlainObject, isString, log, merge, missing, nextTick, objectWithout, pending, pluralize, pureMerge, shallowClone, success, urlRegexp,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FluxCore = __webpack_require__(252);
+	FluxCore = __webpack_require__(269);
 
-	FluxDbModelBase = __webpack_require__(262);
+	FluxDbModelBase = __webpack_require__(279);
 
 	log = Foundation.log, BaseObject = Foundation.BaseObject, decapitalize = Foundation.decapitalize, pluralize = Foundation.pluralize, pureMerge = Foundation.pureMerge, shallowClone = Foundation.shallowClone, isString = Foundation.isString, emailRegexp = Foundation.emailRegexp, urlRegexp = Foundation.urlRegexp, isNumber = Foundation.isNumber, nextTick = Foundation.nextTick, capitalize = Foundation.capitalize, inspect = Foundation.inspect, isFunction = Foundation.isFunction, merge = Foundation.merge, objectWithout = Foundation.objectWithout, isPlainObject = Foundation.isPlainObject, isPlainArray = Foundation.isPlainArray, compact = Foundation.compact;
 
@@ -45136,16 +45153,16 @@
 
 
 /***/ },
-/* 262 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, FluxCore, FluxDbModelBase, FluxModel, FluxStatus, FluxStore, Foundation, ModelRegistry, capitalize, decapitalize, emailRegexp, failure, fluxStore, globalCount, idRegExpStr, inspect, isFunction, isHexColor, isId, isNumber, isString, log, merge, missing, nextTick, objectWithout, pending, pluralize, pureMerge, shallowClone, success, time, urlRegexp,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FluxCore = __webpack_require__(252);
+	FluxCore = __webpack_require__(269);
 
 	log = Foundation.log, BaseObject = Foundation.BaseObject, decapitalize = Foundation.decapitalize, pluralize = Foundation.pluralize, pureMerge = Foundation.pureMerge, shallowClone = Foundation.shallowClone, isString = Foundation.isString, emailRegexp = Foundation.emailRegexp, urlRegexp = Foundation.urlRegexp, isNumber = Foundation.isNumber, nextTick = Foundation.nextTick, capitalize = Foundation.capitalize, inspect = Foundation.inspect, isFunction = Foundation.isFunction, merge = Foundation.merge, objectWithout = Foundation.objectWithout, shallowClone = Foundation.shallowClone, time = Foundation.time, globalCount = Foundation.globalCount;
 
@@ -45385,13 +45402,13 @@
 
 
 /***/ },
-/* 263 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(262)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, FluxDbModelBase) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(279)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, FluxDbModelBase) {
 	  var BaseObject, FluxDbQueryModel, capitalize, decapitalize, emailRegexp, inspect, isFunction, isNumber, isString, log, nextTick, objectWithout, pluralize, pureMerge, shallowClone, urlRegexp;
 	  log = Foundation.log, BaseObject = Foundation.BaseObject, decapitalize = Foundation.decapitalize, pluralize = Foundation.pluralize, pureMerge = Foundation.pureMerge, shallowClone = Foundation.shallowClone, isString = Foundation.isString, emailRegexp = Foundation.emailRegexp, urlRegexp = Foundation.urlRegexp, isNumber = Foundation.isNumber, nextTick = Foundation.nextTick, capitalize = Foundation.capitalize, inspect = Foundation.inspect, isFunction = Foundation.isFunction, objectWithout = Foundation.objectWithout;
 
@@ -45435,33 +45452,33 @@
 
 
 /***/ },
-/* 264 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Models;
 
-	module.exports = Models = __webpack_require__(265);
+	module.exports = Models = __webpack_require__(282);
 
-	Models.ApplicationState = __webpack_require__(266);
+	Models.ApplicationState = __webpack_require__(283);
 
-	Models.VolatileModel = __webpack_require__(267);
+	Models.VolatileModel = __webpack_require__(284);
 
-	Models.VolatileQueryModel = __webpack_require__(269);
+	Models.VolatileQueryModel = __webpack_require__(286);
 
-	Models.VolatileStore = __webpack_require__(268);
+	Models.VolatileStore = __webpack_require__(285);
 
 	Models.finishLoad(["ApplicationState", "VolatileModel", "VolatileQueryModel", "VolatileStore"]);
 
 
 /***/ },
-/* 265 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Flux,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Flux = __webpack_require__(250);
+	Flux = __webpack_require__(267);
 
 	module.exports = Flux.Models || (Flux.Models = (function(superClass) {
 	  extend(Models, superClass);
@@ -45482,16 +45499,16 @@
 
 
 /***/ },
-/* 266 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ApplicationState, BaseObject, FluxCore, FluxModel, FluxStatus, FluxStore, Foundation, failure, fluxStore, isPlainObject, isString, log, merge, mergeInto, missing, pending, plainObjectsDeepEq, propsEq, success,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FluxCore = __webpack_require__(252);
+	FluxCore = __webpack_require__(269);
 
 	BaseObject = Foundation.BaseObject, log = Foundation.log, isString = Foundation.isString, isPlainObject = Foundation.isPlainObject, merge = Foundation.merge, plainObjectsDeepEq = Foundation.plainObjectsDeepEq, mergeInto = Foundation.mergeInto;
 
@@ -45734,13 +45751,13 @@
 
 
 /***/ },
-/* 267 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(252), __webpack_require__(268), __webpack_require__(269), __webpack_require__(259)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, FluxCore, VolatileStore, VolatileQueryModel, FluxDb) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(14), __webpack_require__(269), __webpack_require__(285), __webpack_require__(286), __webpack_require__(276)], __WEBPACK_AMD_DEFINE_RESULT__ = function(Foundation, FluxCore, VolatileStore, VolatileQueryModel, FluxDb) {
 	  var BaseObject, FluxDbModel, FluxModel, FluxStore, ModelRegistry, VolatileModel, decapitalize, fluxStore, log, pluralize, volatileStore;
 	  log = Foundation.log, BaseObject = Foundation.BaseObject, decapitalize = Foundation.decapitalize, pluralize = Foundation.pluralize;
 	  FluxStore = FluxCore.FluxStore, FluxModel = FluxCore.FluxModel, ModelRegistry = FluxCore.ModelRegistry;
@@ -45804,16 +45821,16 @@
 
 
 /***/ },
-/* 268 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, FluxCore, FluxStatus, FluxStore, Foundation, VolatileStore, arrayWithOne, clone, fluxStore, log, merge, mergeInfo, missing, simulateAsyncRequest, slice, success,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FluxCore = __webpack_require__(252);
+	FluxCore = __webpack_require__(269);
 
 	FluxStore = FluxCore.FluxStore, FluxStatus = FluxCore.FluxStatus;
 
@@ -45916,7 +45933,7 @@
 
 
 /***/ },
-/* 269 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var FluxDbQueryModel, Foundation, VolatileQueryModel, failure, log, missing, objectWithout, pending, ref, success,
@@ -45924,11 +45941,11 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FluxDbQueryModel = __webpack_require__(263);
+	FluxDbQueryModel = __webpack_require__(280);
 
-	ref = __webpack_require__(255), success = ref.success, failure = ref.failure, pending = ref.pending, missing = ref.missing;
+	ref = __webpack_require__(272), success = ref.success, failure = ref.failure, pending = ref.pending, missing = ref.missing;
 
 	log = Foundation.log, objectWithout = Foundation.objectWithout;
 
@@ -45976,29 +45993,29 @@
 
 
 /***/ },
-/* 270 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React;
 
-	module.exports = React = __webpack_require__(271);
+	module.exports = React = __webpack_require__(288);
 
-	React.FluxComponent = __webpack_require__(272);
+	React.FluxComponent = __webpack_require__(289);
 
-	React.FluxComponentBase = __webpack_require__(273);
+	React.FluxComponentBase = __webpack_require__(290);
 
 	React.finishLoad(["FluxComponent", "FluxComponentBase"]);
 
 
 /***/ },
-/* 271 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Flux,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Flux = __webpack_require__(250);
+	Flux = __webpack_require__(267);
 
 	module.exports = Flux.React || (Flux.React = (function(superClass) {
 	  extend(React, superClass);
@@ -46019,18 +46036,18 @@
 
 
 /***/ },
-/* 272 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Component, FluxComponent, FluxComponentBase, FluxCore, FluxStatus, Foundation, ModelRegistry, compactFlatten, createComponentFactory, globalCount, inspect, isFunction, isPlainObject, isString, log, mergeInfo, nextTick, pending, ref, rubyFalse, rubyTrue, success, time,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FluxCore = __webpack_require__(252);
+	FluxCore = __webpack_require__(269);
 
-	FluxComponentBase = __webpack_require__(273);
+	FluxComponentBase = __webpack_require__(290);
 
 	ref = Neptune.Art.React, Component = ref.Component, createComponentFactory = ref.createComponentFactory;
 
@@ -46380,18 +46397,18 @@
 
 
 /***/ },
-/* 273 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Component, FluxComponentBase, ModelRegistry, capitalize, fluxStore, globalCount, log, mergeInfo, nextTick, ref, time,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), log = ref.log, BaseObject = ref.BaseObject, nextTick = ref.nextTick, mergeInfo = ref.mergeInfo, capitalize = ref.capitalize, globalCount = ref.globalCount, time = ref.time;
+	ref = __webpack_require__(14), log = ref.log, BaseObject = ref.BaseObject, nextTick = ref.nextTick, mergeInfo = ref.mergeInfo, capitalize = ref.capitalize, globalCount = ref.globalCount, time = ref.time;
 
-	fluxStore = __webpack_require__(257).fluxStore;
+	fluxStore = __webpack_require__(274).fluxStore;
 
-	ModelRegistry = __webpack_require__(258);
+	ModelRegistry = __webpack_require__(275);
 
 	Component = Neptune.Art.React.Component;
 
@@ -46481,20 +46498,20 @@
 
 
 /***/ },
-/* 274 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ApplicationState, BaseObject, Flux, FluxComponent, FluxCore, FluxModel, FluxReact, FluxStatus, FluxStore, Foundation, ModelRegistry, createAllClass, fluxStore, select;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Flux = __webpack_require__(250);
+	Flux = __webpack_require__(267);
 
-	FluxCore = __webpack_require__(252);
+	FluxCore = __webpack_require__(269);
 
-	FluxReact = __webpack_require__(270);
+	FluxReact = __webpack_require__(287);
 
-	ApplicationState = __webpack_require__(266);
+	ApplicationState = __webpack_require__(283);
 
 	FluxStore = FluxCore.FluxStore, ModelRegistry = FluxCore.ModelRegistry, FluxModel = FluxCore.FluxModel, FluxStatus = FluxCore.FluxStatus;
 
@@ -46524,46 +46541,49 @@
 
 
 /***/ },
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(279);
+	__webpack_require__(297);
 
 
 /***/ },
-/* 279 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Step99RemoteChat;
 
-	module.exports = Step99RemoteChat = __webpack_require__(280);
+	module.exports = Step99RemoteChat = __webpack_require__(298);
 
-	Step99RemoteChat.App = __webpack_require__(281);
+	Step99RemoteChat.App = __webpack_require__(299);
 
-	Step99RemoteChat.ChatModel = __webpack_require__(374);
+	Step99RemoteChat.ChatMessage = __webpack_require__(392);
 
-	Step99RemoteChat.ChatRemoteModel = __webpack_require__(360);
+	Step99RemoteChat.ChatModel = __webpack_require__(378);
 
-	Step99RemoteChat.ChatView = __webpack_require__(372);
+	Step99RemoteChat.ChatView = __webpack_require__(390);
 
-	Step99RemoteChat.Config = __webpack_require__(282);
+	Step99RemoteChat.Config = __webpack_require__(300);
 
-	Step99RemoteChat.StyleProps = __webpack_require__(373);
+	Step99RemoteChat.Main = __webpack_require__(393);
 
-	Step99RemoteChat.finishLoad(["App", "ChatModel", "ChatRemoteModel", "ChatView", "Config", "StyleProps"]);
+	Step99RemoteChat.StyleProps = __webpack_require__(391);
+
+	Step99RemoteChat.finishLoad(["App", "ChatMessage", "ChatModel", "ChatView", "Config", "Main", "StyleProps"]);
 
 
 /***/ },
-/* 280 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Step99RemoteChat || (Neptune.Step99RemoteChat = (function(superClass) {
 	  extend(Step99RemoteChat, superClass);
@@ -46584,66 +46604,52 @@
 
 
 /***/ },
-/* 281 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var App, CanvasElement, ChatView, Element, Flux, Foundation, FullScreenApp, React, RectangleElement, TextElement, createComponentFactory, intRand, names, wordArray;
+	/* WEBPACK VAR INJECTION */(function(module) {var ChatModel, ChatView, Config, Element, Foundation, React, RectangleElement, createComponentFactory, randomElement, wordArray;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	FullScreenApp = __webpack_require__(6).FullScreenApp;
+	React = __webpack_require__(8);
 
-	React = __webpack_require__(229);
+	createComponentFactory = React.createComponentFactory, Element = React.Element, RectangleElement = React.RectangleElement;
 
-	Flux = __webpack_require__(248);
+	wordArray = Foundation.wordArray, randomElement = Foundation.randomElement;
 
-	if (true) {
-	  (__webpack_require__(282)).init();
-	  __webpack_require__(360);
-	} else {
-	  require('./chat_model');
-	}
+	Config = __webpack_require__(300).init();
 
-	ChatView = __webpack_require__(372);
+	ChatModel = __webpack_require__(378);
 
-	wordArray = Foundation.wordArray, intRand = Foundation.intRand;
+	ChatView = __webpack_require__(390);
 
-	createComponentFactory = React.createComponentFactory, Element = React.Element, RectangleElement = React.RectangleElement, TextElement = React.TextElement, CanvasElement = React.CanvasElement;
-
-	names = wordArray("alice bill craig dave elliot frank greg harmony ideth julie kate laura marry nate oliver polly quinn rob sally ted uncle vera william xavier yolanda zack");
-
-	App = createComponentFactory({
+	module.exports = createComponentFactory({
 	  module: module,
 	  render: function() {
-	    return CanvasElement({
-	      canvasId: "artCanvas",
+	    return Element({
 	      childrenLayout: "row"
 	    }, RectangleElement({
 	      inFlow: false,
 	      color: "#ddd"
 	    }), ChatView({
-	      currentUser: names[intRand(names.length)]
+	      currentUser: randomElement(wordArray("Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony\nIdeth   Julie Kate  Laura Marry  Nate  Oliver  Polly\nQuinn   Rob   Sally Ted   Uncle  Vera  William Xavier\nYolanda Zack"))
 	    }));
 	  }
 	});
 
-	FullScreenApp.init().then(function() {
-	  return App.instantiateAsTopComponent();
-	});
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 282 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Config, Foundation, Parse, Pusher, log;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Parse = __webpack_require__(283);
+	Parse = __webpack_require__(301);
 
-	Pusher = __webpack_require__(358);
+	Pusher = __webpack_require__(376);
 
 	log = Foundation.log;
 
@@ -46675,14 +46681,14 @@
 
 
 /***/ },
-/* 283 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(284);
+	module.exports = __webpack_require__(302);
 
 
 /***/ },
-/* 284 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -46696,31 +46702,31 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _interopRequireWildcard = __webpack_require__(286)['default'];
+	var _interopRequireWildcard = __webpack_require__(304)['default'];
 
-	var _decode = __webpack_require__(287);
+	var _decode = __webpack_require__(305);
 
 	var _decode2 = _interopRequireDefault(_decode);
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _InstallationController = __webpack_require__(350);
+	var _InstallationController = __webpack_require__(368);
 
 	var _InstallationController2 = _interopRequireDefault(_InstallationController);
 
-	var _ParseOp = __webpack_require__(333);
+	var _ParseOp = __webpack_require__(351);
 
 	var ParseOp = _interopRequireWildcard(_ParseOp);
 
-	var _RESTController = __webpack_require__(351);
+	var _RESTController = __webpack_require__(369);
 
 	var _RESTController2 = _interopRequireDefault(_RESTController);
 
@@ -46789,17 +46795,17 @@
 	});
 	/** End setters **/
 
-	Parse.ACL = __webpack_require__(288);
-	Parse.Analytics = __webpack_require__(352);
-	Parse.Cloud = __webpack_require__(353);
-	Parse.CoreManager = __webpack_require__(328);
-	Parse.Config = __webpack_require__(354);
-	Parse.Error = __webpack_require__(323);
-	Parse.FacebookUtils = __webpack_require__(355);
-	Parse.File = __webpack_require__(330);
-	Parse.GeoPoint = __webpack_require__(336);
-	Parse.Installation = __webpack_require__(356);
-	Parse.Object = __webpack_require__(324);
+	Parse.ACL = __webpack_require__(306);
+	Parse.Analytics = __webpack_require__(370);
+	Parse.Cloud = __webpack_require__(371);
+	Parse.CoreManager = __webpack_require__(346);
+	Parse.Config = __webpack_require__(372);
+	Parse.Error = __webpack_require__(341);
+	Parse.FacebookUtils = __webpack_require__(373);
+	Parse.File = __webpack_require__(348);
+	Parse.GeoPoint = __webpack_require__(354);
+	Parse.Installation = __webpack_require__(374);
+	Parse.Object = __webpack_require__(342);
 	Parse.Op = {
 	  Set: ParseOp.SetOp,
 	  Unset: ParseOp.UnsetOp,
@@ -46809,14 +46815,14 @@
 	  AddUnique: ParseOp.AddUniqueOp,
 	  Relation: ParseOp.RelationOp
 	};
-	Parse.Promise = __webpack_require__(331);
-	Parse.Push = __webpack_require__(357);
-	Parse.Query = __webpack_require__(338);
-	Parse.Relation = __webpack_require__(332);
-	Parse.Role = __webpack_require__(306);
-	Parse.Session = __webpack_require__(347);
-	Parse.Storage = __webpack_require__(348);
-	Parse.User = __webpack_require__(345);
+	Parse.Promise = __webpack_require__(349);
+	Parse.Push = __webpack_require__(375);
+	Parse.Query = __webpack_require__(356);
+	Parse.Relation = __webpack_require__(350);
+	Parse.Role = __webpack_require__(324);
+	Parse.Session = __webpack_require__(365);
+	Parse.Storage = __webpack_require__(366);
+	Parse.User = __webpack_require__(363);
 
 	Parse._request = function () {
 	  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
@@ -46852,7 +46858,7 @@
 	module.exports = Parse;
 
 /***/ },
-/* 285 */
+/* 303 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -46866,7 +46872,7 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 286 */
+/* 304 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -46891,7 +46897,7 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 287 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -46907,32 +46913,32 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports['default'] = decode;
 
-	var _ParseACL = __webpack_require__(288);
+	var _ParseACL = __webpack_require__(306);
 
 	var _ParseACL2 = _interopRequireDefault(_ParseACL);
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseGeoPoint = __webpack_require__(336);
+	var _ParseGeoPoint = __webpack_require__(354);
 
 	var _ParseGeoPoint2 = _interopRequireDefault(_ParseGeoPoint);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParseOp = __webpack_require__(333);
+	var _ParseOp = __webpack_require__(351);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
@@ -46984,7 +46990,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 288 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -47000,23 +47006,23 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _Object$keys = __webpack_require__(294)['default'];
+	var _Object$keys = __webpack_require__(312)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _ParseRole = __webpack_require__(306);
+	var _ParseRole = __webpack_require__(324);
 
 	var _ParseRole2 = _interopRequireDefault(_ParseRole);
 
-	var _ParseUser = __webpack_require__(345);
+	var _ParseUser = __webpack_require__(363);
 
 	var _ParseUser2 = _interopRequireDefault(_ParseUser);
 
@@ -47361,12 +47367,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 289 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Object$defineProperty = __webpack_require__(290)["default"];
+	var _Object$defineProperty = __webpack_require__(308)["default"];
 
 	exports["default"] = (function () {
 	  function defineProperties(target, props) {
@@ -47390,22 +47396,22 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 290 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(291), __esModule: true };
+	module.exports = { "default": __webpack_require__(309), __esModule: true };
 
 /***/ },
-/* 291 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(292);
+	var $ = __webpack_require__(310);
 	module.exports = function defineProperty(it, key, desc){
 	  return $.setDesc(it, key, desc);
 	};
 
 /***/ },
-/* 292 */
+/* 310 */
 /***/ function(module, exports) {
 
 	var $Object = Object;
@@ -47423,7 +47429,7 @@
 	};
 
 /***/ },
-/* 293 */
+/* 311 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -47437,43 +47443,43 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 294 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(295), __esModule: true };
+	module.exports = { "default": __webpack_require__(313), __esModule: true };
 
 /***/ },
-/* 295 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(296);
-	module.exports = __webpack_require__(302).Object.keys;
+	__webpack_require__(314);
+	module.exports = __webpack_require__(320).Object.keys;
 
 /***/ },
-/* 296 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 Object.keys(O)
-	var toObject = __webpack_require__(297);
+	var toObject = __webpack_require__(315);
 
-	__webpack_require__(299)('keys', function($keys){
+	__webpack_require__(317)('keys', function($keys){
 	  return function keys(it){
 	    return $keys(toObject(it));
 	  };
 	});
 
 /***/ },
-/* 297 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(298);
+	var defined = __webpack_require__(316);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 298 */
+/* 316 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -47483,13 +47489,13 @@
 	};
 
 /***/ },
-/* 299 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
-	var $export = __webpack_require__(300)
-	  , core    = __webpack_require__(302)
-	  , fails   = __webpack_require__(305);
+	var $export = __webpack_require__(318)
+	  , core    = __webpack_require__(320)
+	  , fails   = __webpack_require__(323);
 	module.exports = function(KEY, exec){
 	  var fn  = (core.Object || {})[KEY] || Object[KEY]
 	    , exp = {};
@@ -47498,12 +47504,12 @@
 	};
 
 /***/ },
-/* 300 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(301)
-	  , core      = __webpack_require__(302)
-	  , ctx       = __webpack_require__(303)
+	var global    = __webpack_require__(319)
+	  , core      = __webpack_require__(320)
+	  , ctx       = __webpack_require__(321)
 	  , PROTOTYPE = 'prototype';
 
 	var $export = function(type, name, source){
@@ -47549,7 +47555,7 @@
 	module.exports = $export;
 
 /***/ },
-/* 301 */
+/* 319 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -47558,18 +47564,18 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 302 */
+/* 320 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '1.2.6'};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 303 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(304);
+	var aFunction = __webpack_require__(322);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -47590,7 +47596,7 @@
 	};
 
 /***/ },
-/* 304 */
+/* 322 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -47599,7 +47605,7 @@
 	};
 
 /***/ },
-/* 305 */
+/* 323 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -47611,7 +47617,7 @@
 	};
 
 /***/ },
-/* 306 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -47643,29 +47649,29 @@
 	 */
 	'use strict';
 
-	var _get = __webpack_require__(307)['default'];
+	var _get = __webpack_require__(325)['default'];
 
-	var _inherits = __webpack_require__(314)['default'];
+	var _inherits = __webpack_require__(332)['default'];
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _ParseACL = __webpack_require__(288);
+	var _ParseACL = __webpack_require__(306);
 
 	var _ParseACL2 = _interopRequireDefault(_ParseACL);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParseObject2 = __webpack_require__(324);
+	var _ParseObject2 = __webpack_require__(342);
 
 	var _ParseObject3 = _interopRequireDefault(_ParseObject2);
 
@@ -47789,12 +47795,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 307 */
+/* 325 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Object$getOwnPropertyDescriptor = __webpack_require__(308)["default"];
+	var _Object$getOwnPropertyDescriptor = __webpack_require__(326)["default"];
 
 	exports["default"] = function get(_x, _x2, _x3) {
 	  var _again = true;
@@ -47838,57 +47844,57 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 308 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(309), __esModule: true };
+	module.exports = { "default": __webpack_require__(327), __esModule: true };
 
 /***/ },
-/* 309 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(292);
-	__webpack_require__(310);
+	var $ = __webpack_require__(310);
+	__webpack_require__(328);
 	module.exports = function getOwnPropertyDescriptor(it, key){
 	  return $.getDesc(it, key);
 	};
 
 /***/ },
-/* 310 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-	var toIObject = __webpack_require__(311);
+	var toIObject = __webpack_require__(329);
 
-	__webpack_require__(299)('getOwnPropertyDescriptor', function($getOwnPropertyDescriptor){
+	__webpack_require__(317)('getOwnPropertyDescriptor', function($getOwnPropertyDescriptor){
 	  return function getOwnPropertyDescriptor(it, key){
 	    return $getOwnPropertyDescriptor(toIObject(it), key);
 	  };
 	});
 
 /***/ },
-/* 311 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(312)
-	  , defined = __webpack_require__(298);
+	var IObject = __webpack_require__(330)
+	  , defined = __webpack_require__(316);
 	module.exports = function(it){
 	  return IObject(defined(it));
 	};
 
 /***/ },
-/* 312 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(313);
+	var cof = __webpack_require__(331);
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 	  return cof(it) == 'String' ? it.split('') : Object(it);
 	};
 
 /***/ },
-/* 313 */
+/* 331 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -47898,14 +47904,14 @@
 	};
 
 /***/ },
-/* 314 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Object$create = __webpack_require__(315)["default"];
+	var _Object$create = __webpack_require__(333)["default"];
 
-	var _Object$setPrototypeOf = __webpack_require__(317)["default"];
+	var _Object$setPrototypeOf = __webpack_require__(335)["default"];
 
 	exports["default"] = function (subClass, superClass) {
 	  if (typeof superClass !== "function" && superClass !== null) {
@@ -47926,50 +47932,50 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 315 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(316), __esModule: true };
+	module.exports = { "default": __webpack_require__(334), __esModule: true };
 
 /***/ },
-/* 316 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(292);
+	var $ = __webpack_require__(310);
 	module.exports = function create(P, D){
 	  return $.create(P, D);
 	};
 
 /***/ },
-/* 317 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(318), __esModule: true };
+	module.exports = { "default": __webpack_require__(336), __esModule: true };
 
 /***/ },
-/* 318 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(319);
-	module.exports = __webpack_require__(302).Object.setPrototypeOf;
+	__webpack_require__(337);
+	module.exports = __webpack_require__(320).Object.setPrototypeOf;
 
 /***/ },
-/* 319 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.3.19 Object.setPrototypeOf(O, proto)
-	var $export = __webpack_require__(300);
-	$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(320).set});
+	var $export = __webpack_require__(318);
+	$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(338).set});
 
 /***/ },
-/* 320 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Works with __proto__ only. Old v8 can't work with null proto objects.
 	/* eslint-disable no-proto */
-	var getDesc  = __webpack_require__(292).getDesc
-	  , isObject = __webpack_require__(321)
-	  , anObject = __webpack_require__(322);
+	var getDesc  = __webpack_require__(310).getDesc
+	  , isObject = __webpack_require__(339)
+	  , anObject = __webpack_require__(340);
 	var check = function(O, proto){
 	  anObject(O);
 	  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
@@ -47978,7 +47984,7 @@
 	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
 	    function(test, buggy, set){
 	      try {
-	        set = __webpack_require__(303)(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
+	        set = __webpack_require__(321)(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
 	        set(test, []);
 	        buggy = !(test instanceof Array);
 	      } catch(e){ buggy = true; }
@@ -47993,7 +47999,7 @@
 	};
 
 /***/ },
-/* 321 */
+/* 339 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -48001,17 +48007,17 @@
 	};
 
 /***/ },
-/* 322 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(321);
+	var isObject = __webpack_require__(339);
 	module.exports = function(it){
 	  if(!isObject(it))throw TypeError(it + ' is not an object!');
 	  return it;
 	};
 
 /***/ },
-/* 323 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -48032,7 +48038,7 @@
 	 */
 	"use strict";
 
-	var _classCallCheck = __webpack_require__(293)["default"];
+	var _classCallCheck = __webpack_require__(311)["default"];
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -48519,7 +48525,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 324 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -48535,89 +48541,89 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _Object$keys = __webpack_require__(294)['default'];
+	var _Object$keys = __webpack_require__(312)['default'];
 
-	var _Object$freeze = __webpack_require__(325)['default'];
+	var _Object$freeze = __webpack_require__(343)['default'];
 
-	var _Object$create = __webpack_require__(315)['default'];
+	var _Object$create = __webpack_require__(333)['default'];
 
-	var _Object$defineProperty = __webpack_require__(290)['default'];
+	var _Object$defineProperty = __webpack_require__(308)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _interopRequireWildcard = __webpack_require__(286)['default'];
+	var _interopRequireWildcard = __webpack_require__(304)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _canBeSerialized = __webpack_require__(329);
+	var _canBeSerialized = __webpack_require__(347);
 
 	var _canBeSerialized2 = _interopRequireDefault(_canBeSerialized);
 
-	var _decode = __webpack_require__(287);
+	var _decode = __webpack_require__(305);
 
 	var _decode2 = _interopRequireDefault(_decode);
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _equals = __webpack_require__(339);
+	var _equals = __webpack_require__(357);
 
 	var _equals2 = _interopRequireDefault(_equals);
 
-	var _escape2 = __webpack_require__(340);
+	var _escape2 = __webpack_require__(358);
 
 	var _escape3 = _interopRequireDefault(_escape2);
 
-	var _ObjectState = __webpack_require__(341);
+	var _ObjectState = __webpack_require__(359);
 
 	var ObjectState = _interopRequireWildcard(_ObjectState);
 
-	var _ParseACL = __webpack_require__(288);
+	var _ParseACL = __webpack_require__(306);
 
 	var _ParseACL2 = _interopRequireDefault(_ParseACL);
 
-	var _parseDate = __webpack_require__(343);
+	var _parseDate = __webpack_require__(361);
 
 	var _parseDate2 = _interopRequireDefault(_parseDate);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseOp = __webpack_require__(333);
+	var _ParseOp = __webpack_require__(351);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _ParseQuery = __webpack_require__(338);
+	var _ParseQuery = __webpack_require__(356);
 
 	var _ParseQuery2 = _interopRequireDefault(_ParseQuery);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
-	var _unique = __webpack_require__(337);
+	var _unique = __webpack_require__(355);
 
 	var _unique2 = _interopRequireDefault(_unique);
 
-	var _unsavedChildren = __webpack_require__(344);
+	var _unsavedChildren = __webpack_require__(362);
 
 	var _unsavedChildren2 = _interopRequireDefault(_unsavedChildren);
 
@@ -50347,33 +50353,33 @@
 	 */
 
 /***/ },
-/* 325 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(326), __esModule: true };
+	module.exports = { "default": __webpack_require__(344), __esModule: true };
 
 /***/ },
-/* 326 */
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(327);
-	module.exports = __webpack_require__(302).Object.freeze;
+	__webpack_require__(345);
+	module.exports = __webpack_require__(320).Object.freeze;
 
 /***/ },
-/* 327 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.5 Object.freeze(O)
-	var isObject = __webpack_require__(321);
+	var isObject = __webpack_require__(339);
 
-	__webpack_require__(299)('freeze', function($freeze){
+	__webpack_require__(317)('freeze', function($freeze){
 	  return function freeze(it){
 	    return $freeze && isObject(it) ? $freeze(it) : it;
 	  };
 	});
 
 /***/ },
-/* 328 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -50609,10 +50615,10 @@
 	    return config['UserController'];
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
 
 /***/ },
-/* 329 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -50628,22 +50634,22 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports['default'] = canBeSerialized;
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
@@ -50695,7 +50701,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 330 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -50711,21 +50717,21 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -50966,7 +50972,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 331 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -50980,9 +50986,9 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
@@ -51460,10 +51466,10 @@
 
 	exports['default'] = ParsePromise;
 	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
 
 /***/ },
-/* 332 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -51479,23 +51485,23 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _ParseOp = __webpack_require__(333);
+	var _ParseOp = __webpack_require__(351);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParseQuery = __webpack_require__(338);
+	var _ParseQuery = __webpack_require__(356);
 
 	var _ParseQuery2 = _interopRequireDefault(_ParseQuery);
 
@@ -51634,7 +51640,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 333 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -51650,42 +51656,42 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _get = __webpack_require__(307)['default'];
+	var _get = __webpack_require__(325)['default'];
 
-	var _inherits = __webpack_require__(314)['default'];
+	var _inherits = __webpack_require__(332)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.opFromJSON = opFromJSON;
 
-	var _arrayContainsObject = __webpack_require__(334);
+	var _arrayContainsObject = __webpack_require__(352);
 
 	var _arrayContainsObject2 = _interopRequireDefault(_arrayContainsObject);
 
-	var _decode = __webpack_require__(287);
+	var _decode = __webpack_require__(305);
 
 	var _decode2 = _interopRequireDefault(_decode);
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
-	var _unique = __webpack_require__(337);
+	var _unique = __webpack_require__(355);
 
 	var _unique2 = _interopRequireDefault(_unique);
 
@@ -52212,7 +52218,7 @@
 	exports.RelationOp = RelationOp;
 
 /***/ },
-/* 334 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -52228,14 +52234,14 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports['default'] = arrayContainsObject;
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
@@ -52254,7 +52260,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 335 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -52270,33 +52276,33 @@
 
 	'use strict';
 
-	var _Object$keys = __webpack_require__(294)['default'];
+	var _Object$keys = __webpack_require__(312)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _ParseACL = __webpack_require__(288);
+	var _ParseACL = __webpack_require__(306);
 
 	var _ParseACL2 = _interopRequireDefault(_ParseACL);
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseGeoPoint = __webpack_require__(336);
+	var _ParseGeoPoint = __webpack_require__(354);
 
 	var _ParseGeoPoint2 = _interopRequireDefault(_ParseGeoPoint);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParseOp = __webpack_require__(333);
+	var _ParseOp = __webpack_require__(351);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
@@ -52357,7 +52363,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 336 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -52373,17 +52379,17 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -52586,7 +52592,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 337 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -52602,18 +52608,18 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports['default'] = unique;
 
-	var _arrayContainsObject = __webpack_require__(334);
+	var _arrayContainsObject = __webpack_require__(352);
 
 	var _arrayContainsObject2 = _interopRequireDefault(_arrayContainsObject);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
@@ -52636,7 +52642,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 338 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -52652,37 +52658,37 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParseGeoPoint = __webpack_require__(336);
+	var _ParseGeoPoint = __webpack_require__(354);
 
 	var _ParseGeoPoint2 = _interopRequireDefault(_ParseGeoPoint);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -53785,7 +53791,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 339 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -53799,28 +53805,28 @@
 
 	'use strict';
 
-	var _Object$keys = __webpack_require__(294)['default'];
+	var _Object$keys = __webpack_require__(312)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports['default'] = equals;
 
-	var _ParseACL = __webpack_require__(288);
+	var _ParseACL = __webpack_require__(306);
 
 	var _ParseACL2 = _interopRequireDefault(_ParseACL);
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseGeoPoint = __webpack_require__(336);
+	var _ParseGeoPoint = __webpack_require__(354);
 
 	var _ParseGeoPoint2 = _interopRequireDefault(_ParseGeoPoint);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
@@ -53867,7 +53873,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 340 */
+/* 358 */
 /***/ function(module, exports) {
 
 	/**
@@ -53904,7 +53910,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 341 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -53920,7 +53926,7 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
@@ -53942,31 +53948,31 @@
 	exports.enqueueTask = enqueueTask;
 	exports._clearAllState = _clearAllState;
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
-	var _TaskQueue = __webpack_require__(342);
+	var _TaskQueue = __webpack_require__(360);
 
 	var _TaskQueue2 = _interopRequireDefault(_TaskQueue);
 
-	var _ParseOp = __webpack_require__(333);
+	var _ParseOp = __webpack_require__(351);
 
 	var objectState = {};
 
@@ -54141,7 +54147,7 @@
 	}
 
 /***/ },
-/* 342 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -54157,13 +54163,13 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -54218,7 +54224,7 @@
 	})();
 
 /***/ },
-/* 343 */
+/* 361 */
 /***/ function(module, exports) {
 
 	/**
@@ -54260,7 +54266,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 344 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -54276,22 +54282,22 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports['default'] = unsavedChildren;
 
-	var _ParseFile = __webpack_require__(330);
+	var _ParseFile = __webpack_require__(348);
 
 	var _ParseFile2 = _interopRequireDefault(_ParseFile);
 
-	var _ParseObject = __webpack_require__(324);
+	var _ParseObject = __webpack_require__(342);
 
 	var _ParseObject2 = _interopRequireDefault(_ParseObject);
 
-	var _ParseRelation = __webpack_require__(332);
+	var _ParseRelation = __webpack_require__(350);
 
 	var _ParseRelation2 = _interopRequireDefault(_ParseRelation);
 
@@ -54362,7 +54368,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 345 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -54378,53 +54384,53 @@
 
 	'use strict';
 
-	var _get = __webpack_require__(307)['default'];
+	var _get = __webpack_require__(325)['default'];
 
-	var _inherits = __webpack_require__(314)['default'];
+	var _inherits = __webpack_require__(332)['default'];
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _Object$defineProperty = __webpack_require__(290)['default'];
+	var _Object$defineProperty = __webpack_require__(308)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _interopRequireWildcard = __webpack_require__(286)['default'];
+	var _interopRequireWildcard = __webpack_require__(304)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _isRevocableSession = __webpack_require__(346);
+	var _isRevocableSession = __webpack_require__(364);
 
 	var _isRevocableSession2 = _interopRequireDefault(_isRevocableSession);
 
-	var _ObjectState = __webpack_require__(341);
+	var _ObjectState = __webpack_require__(359);
 
 	var ObjectState = _interopRequireWildcard(_ObjectState);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParseObject2 = __webpack_require__(324);
+	var _ParseObject2 = __webpack_require__(342);
 
 	var _ParseObject3 = _interopRequireDefault(_ParseObject2);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _ParseSession = __webpack_require__(347);
+	var _ParseSession = __webpack_require__(365);
 
 	var _ParseSession2 = _interopRequireDefault(_ParseSession);
 
-	var _Storage = __webpack_require__(348);
+	var _Storage = __webpack_require__(366);
 
 	var _Storage2 = _interopRequireDefault(_Storage);
 
@@ -55405,7 +55411,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 346 */
+/* 364 */
 /***/ function(module, exports) {
 
 	/**
@@ -55433,7 +55439,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 347 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -55457,37 +55463,37 @@
 	 */
 	'use strict';
 
-	var _get = __webpack_require__(307)['default'];
+	var _get = __webpack_require__(325)['default'];
 
-	var _inherits = __webpack_require__(314)['default'];
+	var _inherits = __webpack_require__(332)['default'];
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _isRevocableSession = __webpack_require__(346);
+	var _isRevocableSession = __webpack_require__(364);
 
 	var _isRevocableSession2 = _interopRequireDefault(_isRevocableSession);
 
-	var _ParseObject2 = __webpack_require__(324);
+	var _ParseObject2 = __webpack_require__(342);
 
 	var _ParseObject3 = _interopRequireDefault(_ParseObject2);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _ParseUser = __webpack_require__(345);
+	var _ParseUser = __webpack_require__(363);
 
 	var _ParseUser2 = _interopRequireDefault(_ParseUser);
 
@@ -55593,7 +55599,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 348 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -55609,13 +55615,13 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -55694,10 +55700,10 @@
 	  }
 	};
 
-	_CoreManager2['default'].setStorageController(__webpack_require__(349));
+	_CoreManager2['default'].setStorageController(__webpack_require__(367));
 
 /***/ },
-/* 349 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -55713,9 +55719,9 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -55744,7 +55750,7 @@
 	};
 
 /***/ },
-/* 350 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -55760,17 +55766,17 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _Storage = __webpack_require__(348);
+	var _Storage = __webpack_require__(366);
 
 	var _Storage2 = _interopRequireDefault(_Storage);
 
@@ -55813,7 +55819,7 @@
 	};
 
 /***/ },
-/* 351 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -55829,25 +55835,25 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _Storage = __webpack_require__(348);
+	var _Storage = __webpack_require__(366);
 
 	var _Storage2 = _interopRequireDefault(_Storage);
 
@@ -56048,10 +56054,10 @@
 	};
 
 	module.exports = RESTController;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
 
 /***/ },
-/* 352 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -56106,14 +56112,14 @@
 	 */
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.track = track;
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
@@ -56143,7 +56149,7 @@
 	});
 
 /***/ },
-/* 353 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -56159,30 +56165,30 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.run = run;
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _decode = __webpack_require__(287);
+	var _decode = __webpack_require__(305);
 
 	var _decode2 = _interopRequireDefault(_decode);
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
@@ -56256,7 +56262,7 @@
 	});
 
 /***/ },
-/* 354 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -56272,41 +56278,41 @@
 
 	'use strict';
 
-	var _createClass = __webpack_require__(289)['default'];
+	var _createClass = __webpack_require__(307)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _decode = __webpack_require__(287);
+	var _decode = __webpack_require__(305);
 
 	var _decode2 = _interopRequireDefault(_decode);
 
-	var _encode = __webpack_require__(335);
+	var _encode = __webpack_require__(353);
 
 	var _encode2 = _interopRequireDefault(_encode);
 
-	var _escape2 = __webpack_require__(340);
+	var _escape2 = __webpack_require__(358);
 
 	var _escape3 = _interopRequireDefault(_escape2);
 
-	var _ParseError = __webpack_require__(323);
+	var _ParseError = __webpack_require__(341);
 
 	var _ParseError2 = _interopRequireDefault(_ParseError);
 
-	var _ParsePromise = __webpack_require__(331);
+	var _ParsePromise = __webpack_require__(349);
 
 	var _ParsePromise2 = _interopRequireDefault(_ParsePromise);
 
-	var _Storage = __webpack_require__(348);
+	var _Storage = __webpack_require__(366);
 
 	var _Storage2 = _interopRequireDefault(_Storage);
 
@@ -56475,7 +56481,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 355 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -56491,17 +56497,17 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _parseDate = __webpack_require__(343);
+	var _parseDate = __webpack_require__(361);
 
 	var _parseDate2 = _interopRequireDefault(_parseDate);
 
-	var _ParseUser = __webpack_require__(345);
+	var _ParseUser = __webpack_require__(363);
 
 	var _ParseUser2 = _interopRequireDefault(_ParseUser);
 
@@ -56720,7 +56726,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 356 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -56736,19 +56742,19 @@
 
 	'use strict';
 
-	var _get = __webpack_require__(307)['default'];
+	var _get = __webpack_require__(325)['default'];
 
-	var _inherits = __webpack_require__(314)['default'];
+	var _inherits = __webpack_require__(332)['default'];
 
-	var _classCallCheck = __webpack_require__(293)['default'];
+	var _classCallCheck = __webpack_require__(311)['default'];
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _ParseObject2 = __webpack_require__(324);
+	var _ParseObject2 = __webpack_require__(342);
 
 	var _ParseObject3 = _interopRequireDefault(_ParseObject2);
 
@@ -56775,7 +56781,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 357 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -56791,18 +56797,18 @@
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(285)['default'];
+	var _interopRequireDefault = __webpack_require__(303)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 	exports.send = send;
 
-	var _CoreManager = __webpack_require__(328);
+	var _CoreManager = __webpack_require__(346);
 
 	var _CoreManager2 = _interopRequireDefault(_CoreManager);
 
-	var _ParseQuery = __webpack_require__(338);
+	var _ParseQuery = __webpack_require__(356);
 
 	var _ParseQuery2 = _interopRequireDefault(_ParseQuery);
 
@@ -56870,14 +56876,14 @@
 	});
 
 /***/ },
-/* 358 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(359);
+	module.exports = __webpack_require__(377);
 
 
 /***/ },
-/* 359 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -60867,16 +60873,18 @@
 
 
 /***/ },
-/* 360 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var Chat, ParsePusherDbModel, arrayWith, createHotWithPostCreate, log, ref,
+	/* WEBPACK VAR INJECTION */(function(module) {var Chat, Flux, ParsePusherDbModel, createHotWithPostCreate,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), log = ref.log, createHotWithPostCreate = ref.createHotWithPostCreate, arrayWith = ref.arrayWith;
+	createHotWithPostCreate = __webpack_require__(14).createHotWithPostCreate;
 
-	ParsePusherDbModel = __webpack_require__(361).ParsePusherDbModel;
+	Flux = __webpack_require__(265);
+
+	ParsePusherDbModel = __webpack_require__(379).ParsePusherDbModel;
 
 	createHotWithPostCreate(module, Chat = (function(superClass) {
 	  extend(Chat, superClass);
@@ -60893,7 +60901,6 @@
 
 	  Chat.query("chatRoom", {
 	    customParseQuery: function(chatRoom, query, models) {
-	      log("customParseQuery chatRoom: " + chatRoom);
 	      query.equalTo("chatRoom", chatRoom);
 	      return query.descending("lastPostCreatedAt");
 	    }
@@ -60911,45 +60918,45 @@
 
 	})(ParsePusherDbModel));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 361 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(362);
+	module.exports = __webpack_require__(380);
 
 
 /***/ },
-/* 362 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Parse;
 
-	module.exports = Parse = __webpack_require__(363);
+	module.exports = Parse = __webpack_require__(381);
 
-	Parse.ParseCurrentUser = __webpack_require__(366);
+	Parse.ParseCurrentUser = __webpack_require__(384);
 
-	Parse.ParseDbModel = __webpack_require__(367);
+	Parse.ParseDbModel = __webpack_require__(385);
 
-	Parse.ParseDbQueryModel = __webpack_require__(370);
+	Parse.ParseDbQueryModel = __webpack_require__(388);
 
-	Parse.ParsePusherDbModel = __webpack_require__(371);
+	Parse.ParsePusherDbModel = __webpack_require__(389);
 
-	Parse.ParseUtil = __webpack_require__(369);
+	Parse.ParseUtil = __webpack_require__(387);
 
 	Parse.finishLoad(["ParseCurrentUser", "ParseDbModel", "ParseDbQueryModel", "ParsePusherDbModel", "ParseUtil"]);
 
 
 /***/ },
-/* 363 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Flux,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Flux = __webpack_require__(364);
+	Flux = __webpack_require__(382);
 
 	module.exports = Flux.Parse || (Flux.Parse = (function(superClass) {
 	  extend(Parse, superClass);
@@ -60970,14 +60977,14 @@
 
 
 /***/ },
-/* 364 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Art,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Art = __webpack_require__(365);
+	Art = __webpack_require__(383);
 
 	module.exports = Art.Flux || (Art.Flux = (function(superClass) {
 	  extend(Flux, superClass);
@@ -60998,13 +61005,13 @@
 
 
 /***/ },
-/* 365 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	__webpack_require__(3);
+	__webpack_require__(4);
 
 	module.exports = Neptune.Art || (Neptune.Art = (function(superClass) {
 	  extend(Art, superClass);
@@ -61025,18 +61032,18 @@
 
 
 /***/ },
-/* 366 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Foundation, Parse, ParseCurrentUser, ParseDbModel, log, present,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Parse = __webpack_require__(283);
+	Parse = __webpack_require__(301);
 
-	ParseDbModel = __webpack_require__(367);
+	ParseDbModel = __webpack_require__(385);
 
 	BaseObject = Foundation.BaseObject, present = Foundation.present, log = Foundation.log;
 
@@ -61144,24 +61151,24 @@
 
 
 /***/ },
-/* 367 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Flux, FluxDbModel, Parse, ParseDbModel, ParseDbQueryModel, arrayWithOne, clone, globalCount, inspect, isArray, isString, log, merge, mergeInfo, objectWithout, parseErrorToStatusCode, peek, ref, slice, time,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), BaseObject = ref.BaseObject, mergeInfo = ref.mergeInfo, log = ref.log, clone = ref.clone, slice = ref.slice, merge = ref.merge, arrayWithOne = ref.arrayWithOne, peek = ref.peek, inspect = ref.inspect, isArray = ref.isArray, isString = ref.isString, objectWithout = ref.objectWithout, globalCount = ref.globalCount, time = ref.time;
+	ref = __webpack_require__(14), BaseObject = ref.BaseObject, mergeInfo = ref.mergeInfo, log = ref.log, clone = ref.clone, slice = ref.slice, merge = ref.merge, arrayWithOne = ref.arrayWithOne, peek = ref.peek, inspect = ref.inspect, isArray = ref.isArray, isString = ref.isString, objectWithout = ref.objectWithout, globalCount = ref.globalCount, time = ref.time;
 
-	Parse = __webpack_require__(283);
+	Parse = __webpack_require__(301);
 
-	Flux = __webpack_require__(368);
+	Flux = __webpack_require__(386);
 
 	FluxDbModel = Flux.Db.FluxDbModel;
 
-	parseErrorToStatusCode = __webpack_require__(369).parseErrorToStatusCode;
+	parseErrorToStatusCode = __webpack_require__(387).parseErrorToStatusCode;
 
-	ParseDbQueryModel = __webpack_require__(370);
+	ParseDbQueryModel = __webpack_require__(388);
 
 
 	/*
@@ -61605,7 +61612,7 @@
 
 
 /***/ },
-/* 368 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -61614,7 +61621,7 @@
 
 	This allows the client to load flux in web-worker mode (which avoids loading all of the art-engine).
 	 */
-	__webpack_require__(363);
+	__webpack_require__(381);
 
 	if (!Neptune.Art.Flux.Core) {
 	  console.error("Please require 'art-flux' or 'art-flux/web_worker' before 'art-flux-parse'");
@@ -61624,16 +61631,16 @@
 
 
 /***/ },
-/* 369 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Foundation, Parse, ParseUtil, isArray, log, objectWithout, peek,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	Parse = __webpack_require__(283);
+	Parse = __webpack_require__(301);
 
 	BaseObject = Foundation.BaseObject, log = Foundation.log, peek = Foundation.peek, isArray = Foundation.isArray, objectWithout = Foundation.objectWithout;
 
@@ -61767,7 +61774,7 @@
 
 
 /***/ },
-/* 370 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Flux, FluxDbQueryModel, ParseDbQueryModel, capitalize, decapitalize, emailRegexp, globalCount, inspect, isFunction, isNumber, isString, log, merge, models, nextTick, objectWithout, parseCallbackHandlers, pluralize, present, pureMerge, ref, shallowClone, time, urlRegexp,
@@ -61775,15 +61782,15 @@
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), log = ref.log, BaseObject = ref.BaseObject, decapitalize = ref.decapitalize, pluralize = ref.pluralize, pureMerge = ref.pureMerge, shallowClone = ref.shallowClone, isString = ref.isString, merge = ref.merge, emailRegexp = ref.emailRegexp, urlRegexp = ref.urlRegexp, isNumber = ref.isNumber, nextTick = ref.nextTick, capitalize = ref.capitalize, inspect = ref.inspect, isFunction = ref.isFunction, objectWithout = ref.objectWithout, present = ref.present, globalCount = ref.globalCount, time = ref.time;
+	ref = __webpack_require__(14), log = ref.log, BaseObject = ref.BaseObject, decapitalize = ref.decapitalize, pluralize = ref.pluralize, pureMerge = ref.pureMerge, shallowClone = ref.shallowClone, isString = ref.isString, merge = ref.merge, emailRegexp = ref.emailRegexp, urlRegexp = ref.urlRegexp, isNumber = ref.isNumber, nextTick = ref.nextTick, capitalize = ref.capitalize, inspect = ref.inspect, isFunction = ref.isFunction, objectWithout = ref.objectWithout, present = ref.present, globalCount = ref.globalCount, time = ref.time;
 
-	Flux = __webpack_require__(368);
+	Flux = __webpack_require__(386);
 
 	FluxDbQueryModel = Flux.Db.FluxDbQueryModel;
 
 	models = Flux.Core.ModelRegistry.models;
 
-	parseCallbackHandlers = __webpack_require__(369).parseCallbackHandlers;
+	parseCallbackHandlers = __webpack_require__(387).parseCallbackHandlers;
 
 
 	/*
@@ -61856,20 +61863,20 @@
 
 
 /***/ },
-/* 371 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var BaseObject, Parse, ParseDbModel, ParseDbQueryModel, ParsePusherDbModel, ParsePusherDbQueryModel, PusherLink, compact, compactFlatten, consistentJsonStringify, flatten, inspectLean, isArray, isString, log, merge, nextTick, pusherEventName, ref,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	ref = __webpack_require__(11), nextTick = ref.nextTick, BaseObject = ref.BaseObject, log = ref.log, merge = ref.merge, isString = ref.isString, isArray = ref.isArray, flatten = ref.flatten, compact = ref.compact, compactFlatten = ref.compactFlatten, consistentJsonStringify = ref.consistentJsonStringify, inspectLean = ref.inspectLean;
+	ref = __webpack_require__(14), nextTick = ref.nextTick, BaseObject = ref.BaseObject, log = ref.log, merge = ref.merge, isString = ref.isString, isArray = ref.isArray, flatten = ref.flatten, compact = ref.compact, compactFlatten = ref.compactFlatten, consistentJsonStringify = ref.consistentJsonStringify, inspectLean = ref.inspectLean;
 
-	Parse = __webpack_require__(283);
+	Parse = __webpack_require__(301);
 
-	ParseDbModel = __webpack_require__(367);
+	ParseDbModel = __webpack_require__(385);
 
-	ParseDbQueryModel = __webpack_require__(370);
+	ParseDbQueryModel = __webpack_require__(388);
 
 	pusherEventName = "changed";
 
@@ -62074,117 +62081,28 @@
 
 
 /***/ },
-/* 372 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var Atomic, CanvasElement, Element, Flux, Foundation, Message, PagingScrollElement, React, RectangleElement, StyleProps, TextElement, TextInput, createComponentFactory, createFluxComponentFactory, log, min, point;
+	/* WEBPACK VAR INJECTION */(function(module) {var ChatMessage, Element, Flux, PagingScrollElement, React, RectangleElement, StyleProps, TextElement, TextInput, createFluxComponentFactory;
 
-	Foundation = __webpack_require__(11);
+	React = __webpack_require__(8);
 
-	React = __webpack_require__(229);
+	Flux = __webpack_require__(265);
 
-	Flux = __webpack_require__(248);
+	StyleProps = __webpack_require__(391);
 
-	Atomic = __webpack_require__(88);
-
-	StyleProps = __webpack_require__(373);
-
-	log = Foundation.log, min = Foundation.min;
-
-	createComponentFactory = React.createComponentFactory, Element = React.Element, RectangleElement = React.RectangleElement, TextElement = React.TextElement, CanvasElement = React.CanvasElement, PagingScrollElement = React.PagingScrollElement, TextInput = React.TextInput;
+	Element = React.Element, RectangleElement = React.RectangleElement, TextElement = React.TextElement, PagingScrollElement = React.PagingScrollElement, TextInput = React.TextInput;
 
 	createFluxComponentFactory = Flux.createFluxComponentFactory;
 
-	point = Atomic.point;
-
-	Message = createFluxComponentFactory({
-	  module: module,
-	  render: function() {
-	    var color, currentUser, currentUsersMessage, line, message, ref, user;
-	    ref = this.props, currentUser = ref.currentUser, user = ref.user, message = ref.message;
-	    user = this.props.user;
-	    currentUsersMessage = user === currentUser;
-	    color = currentUsersMessage ? StyleProps.palette.lightPrimaryBackground : StyleProps.palette.grayBackground;
-	    line = [
-	      Element({
-	        size: function(ps, cs) {
-	          return cs.y;
-	        }
-	      }, RectangleElement({
-	        radius: 40,
-	        color: color
-	      }), {
-	        margin: 10
-	      }, TextElement(StyleProps.mediumText, {
-	        size: {
-	          hch: 1,
-	          ww: 1
-	        },
-	        padding: 10,
-	        align: "centerCenter",
-	        text: user.slice(0, 1).toUpperCase(),
-	        color: StyleProps.palette.text.white.primary
-	      })), Element({
-	        size: {
-	          hch: 1,
-	          ww: 1
-	        }
-	      }, Element({
-	        size: {
-	          cs: 1,
-	          max: {
-	            ww: 1
-	          }
-	        }
-	      }, currentUsersMessage ? {
-	        axis: {
-	          x: 1
-	        },
-	        location: {
-	          xw: 1
-	        }
-	      } : void 0, RectangleElement({
-	        inFlow: false,
-	        color: color
-	      }), TextElement(StyleProps.mediumText, {
-	        padding: 10,
-	        text: message,
-	        size: {
-	          cs: 1,
-	          max: {
-	            ww: 1
-	          }
-	        }
-	      })))
-	    ];
-	    if (currentUsersMessage) {
-	      line.reverse();
-	    }
-	    return Element({
-	      margin: 10,
-	      size: {
-	        ww: 1,
-	        hch: 1
-	      },
-	      childrenLayout: "row",
-	      addedAnimation: {
-	        from: {
-	          axis: {
-	            x: currentUsersMessage ? -1 : 1
-	          }
-	        }
-	      }
-	    }, line);
-	  }
-	});
+	ChatMessage = __webpack_require__(392);
 
 	module.exports = createFluxComponentFactory({
 	  module: module,
-	  subscriptions: [
-	    "chat.history", {
-	      chatsByChatRoom: "main"
-	    }
-	  ],
+	  subscriptions: {
+	    chatsByChatRoom: "main"
+	  },
 	  postMessage: function(arg) {
 	    var currentUser, target;
 	    target = arg.target;
@@ -62193,15 +62111,20 @@
 	    return target.value = "";
 	  },
 	  render: function() {
-	    var chatsByChatRoom, currentUser, history, postMessage, ref;
+	    var chatsByChatRoom, currentUser, postMessage;
 	    currentUser = this.props.currentUser;
-	    ref = this.state, history = ref.history, chatsByChatRoom = ref.chatsByChatRoom;
-	    history || (history = chatsByChatRoom || []);
+	    chatsByChatRoom = this.state.chatsByChatRoom;
 	    return Element({
+	      padding: 10,
 	      childrenLayout: "column"
 	    }, RectangleElement({
 	      inFlow: false,
-	      color: "white"
+	      color: "white",
+	      shadow: {
+	        blur: 10,
+	        offsetY: 3,
+	        color: "#0007"
+	      }
 	    }), Element({
 	      size: {
 	        ww: 1,
@@ -62225,11 +62148,12 @@
 	      inFlow: false,
 	      size: 0
 	    }), (function() {
-	      var i, len, results;
+	      var i, len, ref, results;
+	      ref = chatsByChatRoom || [];
 	      results = [];
-	      for (i = 0, len = history.length; i < len; i++) {
-	        postMessage = history[i];
-	        results.push(Message({
+	      for (i = 0, len = ref.length; i < len; i++) {
+	        postMessage = ref[i];
+	        results.push(ChatMessage({
 	          currentUser: currentUser
 	        }, postMessage));
 	      }
@@ -62251,21 +62175,23 @@
 	  }
 	});
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 373 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var Foundation, HotStyleProps, StyleProps, createHotWithPostCreate, merge,
+	/* WEBPACK VAR INJECTION */(function(module) {var Foundation, HotStyleProps, React, StyleProps, createHotWithPostCreate, merge,
 	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
 	  hasProp = {}.hasOwnProperty;
 
-	Foundation = __webpack_require__(11);
+	Foundation = __webpack_require__(14);
 
-	HotStyleProps = __webpack_require__(229).HotStyleProps;
+	React = __webpack_require__(8);
 
 	createHotWithPostCreate = Foundation.createHotWithPostCreate, merge = Foundation.merge;
+
+	HotStyleProps = React.HotStyleProps;
 
 	module.exports = createHotWithPostCreate(module, StyleProps = (function(superClass) {
 	  extend(StyleProps, superClass);
@@ -62283,7 +62209,8 @@
 	        primary: "#fffe"
 	      },
 	      black: {
-	        primary: "#000e"
+	        primary: "#000e",
+	        secondary: "#0007"
 	      }
 	    }
 	  };
@@ -62294,6 +62221,12 @@
 	    fontSize: 16
 	  };
 
+	  StyleProps.smallText = {
+	    color: StyleProps.palette.text.black.primary,
+	    fontFamily: "sans-serif",
+	    fontSize: 12
+	  };
+
 	  StyleProps.titleText = merge(StyleProps.mediumText, {
 	    color: StyleProps.palette.text.white.primary
 	  });
@@ -62302,46 +62235,106 @@
 
 	})(HotStyleProps));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
 
 /***/ },
-/* 374 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var ApplicationState, Chat, arrayWith, createHotWithPostCreate, log, models, ref, ref1,
-	  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
-	  hasProp = {}.hasOwnProperty;
+	/* WEBPACK VAR INJECTION */(function(module) {var Element, React, RectangleElement, StyleProps, TextElement, TextInput, createComponentFactory;
 
-	ref = __webpack_require__(11), createHotWithPostCreate = ref.createHotWithPostCreate, arrayWith = ref.arrayWith, log = ref.log;
+	React = __webpack_require__(8);
 
-	ref1 = __webpack_require__(248), ApplicationState = ref1.ApplicationState, models = ref1.models;
+	StyleProps = __webpack_require__(391);
 
-	if (!models.chat) {
-	  log("load chat local model");
-	  createHotWithPostCreate(module, Chat = (function(superClass) {
-	    extend(Chat, superClass);
+	createComponentFactory = React.createComponentFactory, Element = React.Element, RectangleElement = React.RectangleElement, TextElement = React.TextElement, TextInput = React.TextInput;
 
-	    function Chat() {
-	      return Chat.__super__.constructor.apply(this, arguments);
+	module.exports = createComponentFactory({
+	  module: module,
+	  render: function() {
+	    var currentUser, currentUsersMessage, message, ref, user;
+	    ref = this.props, currentUser = ref.currentUser, user = ref.user, message = ref.message;
+	    user = this.props.user;
+	    currentUsersMessage = user === currentUser;
+	    return Element({
+	      margin: 10,
+	      size: {
+	        ww: 1,
+	        hch: 1
+	      },
+	      childrenLayout: "row",
+	      addedAnimation: {
+	        from: {
+	          axis: {
+	            x: currentUsersMessage ? -1 : 1
+	          }
+	        }
+	      }
+	    }, Element({
+	      size: {
+	        hch: 1,
+	        ww: 1
+	      },
+	      childrenLayout: "column",
+	      childrenAlignment: currentUsersMessage ? "right" : "left"
+	    }, Element({
+	      size: {
+	        cs: 1,
+	        max: {
+	          ww: 1
+	        }
+	      }
+	    }, currentUsersMessage ? {
+	      axis: {
+	        x: 1
+	      },
+	      location: {
+	        xw: 1
+	      }
+	    } : void 0, RectangleElement({
+	      inFlow: false,
+	      color: currentUsersMessage ? StyleProps.palette.lightPrimaryBackground : StyleProps.palette.grayBackground
+	    }), TextElement(StyleProps.mediumText, {
+	      padding: 10,
+	      text: message,
+	      size: {
+	        cs: 1,
+	        max: {
+	          ww: 1
+	        }
+	      }
+	    })), TextElement(StyleProps.smallText, {
+	      text: user,
+	      margin: 5,
+	      color: StyleProps.palette.text.black.secondary
+	    })));
+	  }
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)(module)))
+
+/***/ },
+/* 393 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var App, Engine, React;
+
+	Engine = __webpack_require__(9);
+
+	React = __webpack_require__(8);
+
+	App = __webpack_require__(299);
+
+	Engine.FullScreenApp.init().then(function() {
+	  return React.createAndInstantiateTopComponent({
+	    render: function() {
+	      return React.CanvasElement({
+	        canvasId: "artCanvas"
+	      }, App());
 	    }
+	  });
+	});
 
-	    Chat.stateFields({
-	      history: []
-	    });
-
-	    Chat.prototype.postMessage = function(user, message) {
-	      return this.history = arrayWith(this.history, {
-	        user: user,
-	        message: message
-	      });
-	    };
-
-	    return Chat;
-
-	  })(ApplicationState));
-	}
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)(module)))
 
 /***/ }
 /******/ ]);
