@@ -57,14 +57,16 @@ module.exports = createFluxComponentFactory
   module: module
   subscriptions: "chat.history"
 
-  post: ({target}) ->
+  postMessage: ({target}) ->
     {currentUser} = @props
-    @models.chat.post currentUser, target.value
+    @models.chat.postMessage currentUser, target.value
     target.value = ""
 
   render: ->
     {currentUser} = @props
-    {history} = @state
+    {history, chatsByChatRoom} = @state
+    history ||= chatsByChatRoom || []
+
     Element
       padding: 10
       childrenLayout: "column"
@@ -81,13 +83,13 @@ module.exports = createFluxComponentFactory
           size: hch: 1, ww: 1
           childrenLayout: "column"
           Element inFlow: false, size: 0 # hack ensures first added message animates in
-          for post in history
-            Message currentUser: currentUser, post
+          for postMessage in history
+            Message currentUser: currentUser, postMessage
 
       Element
         size: ww:1, h:45
         RectangleElement color: StyleProps.palette.grayBackground
         TextInput StyleProps.mediumText,
-          on: enter: @post
+          on: enter: @postMessage
           padding: 10
           placeholder: "new message from #{currentUser}"
