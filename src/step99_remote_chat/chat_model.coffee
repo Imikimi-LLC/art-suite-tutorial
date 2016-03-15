@@ -1,4 +1,5 @@
-{log, createHotWithPostCreate} = require 'art-foundation'
+{createHotWithPostCreate} = require 'art-foundation'
+Flux = require 'art-flux'
 {ParsePusherDbModel} = require 'art-flux-parse'
 
 createHotWithPostCreate module, class Chat extends ParsePusherDbModel

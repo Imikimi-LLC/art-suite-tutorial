@@ -1,10 +1,8 @@
 Foundation = require 'art-foundation'
-Engine = require 'art-engine'
 React = require 'art-react'
-Flux = require 'art-flux'
+{createComponentFactory, Element, RectangleElement} = React
 
-{wordArray, intRand} = Foundation
-{FullScreenApp} = Engine
+{wordArray, randomElement} = Foundation
 
 Config = require './config'
 .init()
@@ -12,17 +10,16 @@ Config = require './config'
 ChatModel = require './chat_model'
 ChatView = require './chat_view'
 
-names = wordArray "alice bill craig dave elliot frank greg harmony ideth julie kate laura marry nate oliver polly quinn rob sally ted uncle vera william xavier yolanda zack"
-randomName = names[intRand names.length]
+module.exports = createComponentFactory
+  module: module
 
-{createAndInstantiateTopComponent, Element, RectangleElement, CanvasElement} = React
-
-FullScreenApp.init().then ->
-  createAndInstantiateTopComponent
-    module: module
-    render: ->
-      CanvasElement
-        canvasId: "artCanvas"
-        childrenLayout: "row"
-        RectangleElement inFlow: false, color: "#ddd"
-        ChatView currentUser: randomName
+  render: ->
+    Element
+      childrenLayout: "row"
+      RectangleElement inFlow: false, color: "#ddd"
+      ChatView currentUser: randomElement wordArray """
+        Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony
+        Ideth   Julie Kate  Laura Marry  Nate  Oliver  Polly
+        Quinn   Rob   Sally Ted   Uncle  Vera  William Xavier
+        Yolanda Zack
+        """

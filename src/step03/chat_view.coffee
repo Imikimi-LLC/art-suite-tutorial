@@ -1,24 +1,26 @@
 React = require 'art-react'
-Flux = require 'art-flux'
 StyleProps = require './style_props'
 
-{Element, RectangleElement, TextElement, PagingScrollElement, TextInput} = React
-{createFluxComponentFactory} = Flux
+{
+  createComponentFactory
+  Element
+  RectangleElement
+  TextElement
+  PagingScrollElement
+  TextInput
+} = React
 
 ChatMessage = require './chat_message'
 
-module.exports = createFluxComponentFactory
+module.exports = createComponentFactory
   module: module
-  subscriptions: chatsByChatRoom: "main"
-
-  postMessage: ({target}) ->
-    {currentUser} = @props
-    @models.chat.postMessage currentUser, target.value
-    target.value = ""
 
   render: ->
     {currentUser} = @props
-    {chatsByChatRoom} = @state
+    history = [
+      {user: "Alice", message: "Hi!"}
+      {user: "Bill", message: "Hi, Alice!"}
+    ]
 
     Element
       padding: 10
@@ -36,13 +38,12 @@ module.exports = createFluxComponentFactory
           size: hch: 1, ww: 1
           childrenLayout: "column"
           Element inFlow: false, size: 0 # hack ensures first added message animates in
-          for postMessage in chatsByChatRoom || []
+          for postMessage in history || []
             ChatMessage currentUser: currentUser, postMessage
 
       Element
         size: ww:1, h:45
         RectangleElement color: StyleProps.palette.grayBackground
         TextInput StyleProps.mediumText,
-          on: enter: @postMessage
           padding: 10
           placeholder: "new message from #{currentUser}"
