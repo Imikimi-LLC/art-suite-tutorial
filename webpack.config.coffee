@@ -3,7 +3,7 @@ module.exports = (require "art-foundation/configure_webpack")
     step01
     step02
     step03
-    step90_local_chat
-    step99_remote_chat
+    step04
+    step05
     """
   dirname: __dirname
