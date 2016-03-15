@@ -1,57 +1,11 @@
-Foundation = require 'art-foundation'
 React = require 'art-react'
 Flux = require 'art-flux'
-Atomic = require 'art-atomic'
 StyleProps = require './style_props'
 
-{log, min} = Foundation
-{createComponentFactory, Element, RectangleElement, TextElement, CanvasElement, PagingScrollElement, TextInput} = React
+{Element, RectangleElement, TextElement, PagingScrollElement, TextInput} = React
 {createFluxComponentFactory} = Flux
-{point} = Atomic
 
-Message = createFluxComponentFactory
-  module: module
-  render: ->
-    {currentUser, user, message} = @props
-    {user} = @props
-    currentUsersMessage = user == currentUser
-    color = if currentUsersMessage then StyleProps.palette.lightPrimaryBackground else StyleProps.palette.grayBackground
-
-    line = [
-      Element
-        size: (ps, cs) -> cs.y
-        RectangleElement radius: 40, color:color
-        margin: 10
-        TextElement StyleProps.mediumText,
-          size: hch:1, ww: 1
-          padding: 10
-          align: "centerCenter"
-          text: user.slice(0, 1).toUpperCase(), color: StyleProps.palette.text.white.primary
-
-      Element
-        size: hch:1, ww:1
-        Element
-          size: cs:1, max: ww:1
-          if currentUsersMessage
-            axis: x:1
-            location: xw: 1
-
-          RectangleElement inFlow: false, color: color
-          TextElement StyleProps.mediumText,
-            padding: 10
-            text: message
-            size: cs:1, max: ww:1
-    ]
-
-    if currentUsersMessage
-      line.reverse()
-
-    Element
-      margin: 10
-      size: ww:1, hch:1
-      childrenLayout: "row"
-      addedAnimation: from: axis: x: if currentUsersMessage then -1 else 1
-      line
+ChatMessage = require './chat_message'
 
 module.exports = createFluxComponentFactory
   module: module
@@ -64,8 +18,7 @@ module.exports = createFluxComponentFactory
 
   render: ->
     {currentUser} = @props
-    {history, chatsByChatRoom} = @state
-    history ||= chatsByChatRoom || []
+    {history} = @state
 
     Element
       padding: 10
@@ -83,8 +36,8 @@ module.exports = createFluxComponentFactory
           size: hch: 1, ww: 1
           childrenLayout: "column"
           Element inFlow: false, size: 0 # hack ensures first added message animates in
-          for postMessage in history
-            Message currentUser: currentUser, postMessage
+          for postMessage in history || []
+            ChatMessage currentUser: currentUser, postMessage
 
       Element
         size: ww:1, h:45

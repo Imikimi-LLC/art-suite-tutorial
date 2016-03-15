@@ -1,7 +1,8 @@
 Foundation = require 'art-foundation'
-{HotStyleProps} = require 'art-react'
+React = require 'art-react'
 
 {createHotWithPostCreate, merge} = Foundation
+{HotStyleProps} = React
 
 module.exports = createHotWithPostCreate module, class StyleProps extends HotStyleProps
 
@@ -11,12 +12,17 @@ module.exports = createHotWithPostCreate module, class StyleProps extends HotSty
     grayBackground:         "#eee"
     text:
       white: primary: "#fffe"
-      black: primary: "#000e"
+      black: primary: "#000e", secondary: "#0007"
 
   @mediumText:
     color: @palette.text.black.primary
     fontFamily: "sans-serif"
     fontSize: 16
+
+  @smallText:
+    color: @palette.text.black.primary
+    fontFamily: "sans-serif"
+    fontSize: 12
 
   @titleText: merge @mediumText,
     color: @palette.text.white.primary

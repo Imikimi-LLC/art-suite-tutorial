@@ -1,4 +1,4 @@
-{log, createHotWithPostCreate, arrayWith} = require 'art-foundation'
+{log, createHotWithPostCreate} = require 'art-foundation'
 {ParsePusherDbModel} = require 'art-flux-parse'
 
 createHotWithPostCreate module, class Chat extends ParsePusherDbModel
@@ -10,7 +10,6 @@ createHotWithPostCreate module, class Chat extends ParsePusherDbModel
 
   @query "chatRoom",
     customParseQuery: (chatRoom, query, models) ->
-      log "customParseQuery chatRoom: #{chatRoom}"
       query.equalTo "chatRoom", chatRoom
       query.descending "lastPostCreatedAt"
 

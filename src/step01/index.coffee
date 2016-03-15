@@ -2,8 +2,9 @@
 # file: step01/index.coffee
 
 module.exports =
-Step01     = require './namespace'
-Step01.App = require './app'
+Step01      = require './namespace'
+Step01.App  = require './app'
+Step01.Main = require './main'
 Step01.finishLoad(
-  ["App"]
+  ["App","Main"]
 )

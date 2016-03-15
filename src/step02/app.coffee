@@ -1,7 +1,6 @@
 React = require 'art-react'
 {createComponentFactory, Element, RectangleElement} = React
 
-ChatModel = require './chat_model'
 ChatView = require './chat_view'
 
 module.exports = createComponentFactory
@@ -10,6 +9,6 @@ module.exports = createComponentFactory
   render: ->
     Element
       childrenLayout: "row"
-      RectangleElement inFlow: false, color: "#ddd"
-      ChatView currentUser: "Alice"
-      ChatView currentUser: "Bill"
+      RectangleElement inFlow: false, color: "#eee"
+      ChatView currentUser: "alice"
+      ChatView currentUser: "bill"
