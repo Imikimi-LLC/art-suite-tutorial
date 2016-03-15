@@ -1,5 +1,7 @@
-React = require 'art-react'
-{createComponentFactory, Element, RectangleElement, TextElement} = React
+ArtSuite = require 'art-suite'
+{
+  createComponentFactory, Element, RectangleElement, TextElement
+} = ArtSuite
 
 module.exports = createComponentFactory
   module: module

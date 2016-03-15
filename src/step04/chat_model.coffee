@@ -1,5 +1,5 @@
-{createHotWithPostCreate, arrayWith, log} = require 'art-foundation'
-{ApplicationState, models} = require 'art-flux'
+ArtSuite = require 'art-suite'
+{createHotWithPostCreate, arrayWith, log, ApplicationState, models} = ArtSuite
 
 createHotWithPostCreate module, class Chat extends ApplicationState
   @stateFields

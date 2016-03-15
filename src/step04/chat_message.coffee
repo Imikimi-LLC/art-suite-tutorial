@@ -1,10 +1,10 @@
-React = require 'art-react'
+ArtSuite = require 'art-suite'
 StyleProps = require './style_props'
 
 {
   createComponentFactory, Element, RectangleElement, TextElement,
   TextInput
-} = React
+} = ArtSuite
 
 module.exports = createComponentFactory
   module: module

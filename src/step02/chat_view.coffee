@@ -1,4 +1,4 @@
-React = require 'art-react'
+ArtSuite = require 'art-suite'
 
 {
   Element
@@ -8,7 +8,7 @@ React = require 'art-react'
   PagingScrollElement
 
   createComponentFactory
-} = React
+} = ArtSuite
 
 module.exports = createComponentFactory
   module: module

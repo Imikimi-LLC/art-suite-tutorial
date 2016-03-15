@@ -1,8 +1,5 @@
-Foundation = require 'art-foundation'
-React = require 'art-react'
-
-{createHotWithPostCreate, merge} = Foundation
-{HotStyleProps} = React
+ArtSuite = require 'art-suite'
+{createHotWithPostCreate, merge, HotStyleProps} = ArtSuite
 
 module.exports = createHotWithPostCreate module, class StyleProps extends HotStyleProps
 

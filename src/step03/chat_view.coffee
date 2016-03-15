@@ -1,15 +1,16 @@
-React = require 'art-react'
-StyleProps = require './style_props'
+ArtSuite = require 'art-suite'
 
 {
-  createComponentFactory
   Element
   RectangleElement
+  TextInput
   TextElement
   PagingScrollElement
-  TextInput
-} = React
 
+  createComponentFactory
+} = ArtSuite
+
+StyleProps = require './style_props'
 ChatMessage = require './chat_message'
 
 module.exports = createComponentFactory

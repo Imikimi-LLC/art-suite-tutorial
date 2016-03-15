@@ -1,11 +1,17 @@
-Engine = require 'art-engine'
-React = require 'art-react'
+ArtSuite = require 'art-suite'
+
+{
+  FullScreenApp
+  createAndInstantiateTopComponent
+  CanvasElement
+} = ArtSuite
+
 App = require './app'
 
-Engine.FullScreenApp.init().then ->
+FullScreenApp.init().then ->
 
-  React.createAndInstantiateTopComponent
+  createAndInstantiateTopComponent
     render: ->
-      React.CanvasElement
+      CanvasElement
         canvasId: "artCanvas"
         App()

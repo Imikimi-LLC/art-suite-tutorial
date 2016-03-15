@@ -1,5 +1,7 @@
-React = require 'art-react'
-{createComponentFactory, Element, RectangleElement} = React
+ArtSuite = require 'art-suite'
+{
+  createComponentFactory, Element, RectangleElement, TextElement
+} = ArtSuite
 
 ChatModel = require './chat_model'
 ChatView = require './chat_view'

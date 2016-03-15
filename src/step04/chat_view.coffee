@@ -1,10 +1,16 @@
-React = require 'art-react'
-Flux = require 'art-flux'
+ArtSuite = require 'art-suite'
+
+{
+  Element
+  RectangleElement
+  TextInput
+  TextElement
+  PagingScrollElement
+
+  createFluxComponentFactory
+} = ArtSuite
+
 StyleProps = require './style_props'
-
-{Element, RectangleElement, TextElement, PagingScrollElement, TextInput} = React
-{createFluxComponentFactory} = Flux
-
 ChatMessage = require './chat_message'
 
 module.exports = createFluxComponentFactory

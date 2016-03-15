@@ -1,5 +1,7 @@
-React = require 'art-react'
-{createComponentFactory, Element, RectangleElement} = React
+ArtSuite = require 'art-suite'
+{
+  createComponentFactory, Element, RectangleElement, TextElement
+} = ArtSuite
 
 ChatView = require './chat_view'
 
@@ -10,5 +12,5 @@ module.exports = createComponentFactory
     Element
       childrenLayout: "row"
       RectangleElement inFlow: false, color: "#eee"
-      ChatView currentUser: "alice"
-      ChatView currentUser: "bill"
+      ChatView currentUser: "Alice"
+      ChatView currentUser: "Bill"
