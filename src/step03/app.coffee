@@ -11,6 +11,6 @@ module.exports = createComponentFactory
   render: ->
     Element
       childrenLayout: "row"
-      RectangleElement inFlow: false, color: "#ddd"
+      RectangleElement inFlow: false, color: "#eee"
       ChatView currentUser: "Alice"
       ChatView currentUser: "Bill"

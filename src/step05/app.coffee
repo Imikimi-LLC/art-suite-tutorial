@@ -16,7 +16,7 @@ module.exports = createComponentFactory
   render: ->
     Element
       childrenLayout: "row"
-      RectangleElement inFlow: false, color: "#ddd"
+      RectangleElement inFlow: false, color: "#eee"
       ChatView currentUser: randomElement wordArray """
         Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony
         Ideth   Julie Kate  Laura Marry  Nate  Oliver  Polly
