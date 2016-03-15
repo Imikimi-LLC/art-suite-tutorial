@@ -1,8 +1,8 @@
-Foundation = require 'art-foundation'
-React = require 'art-react'
-{createComponentFactory, Element, RectangleElement} = React
-
-{wordArray, randomElement} = Foundation
+ArtSuite = require 'art-suite'
+{
+  createComponentFactory, Element, RectangleElement, TextElement
+  wordArray, randomElement
+} = ArtSuite
 
 Config = require './config'
 .init()

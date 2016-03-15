@@ -1,6 +1,8 @@
-{createHotWithPostCreate} = require 'art-foundation'
-Flux = require 'art-flux'
-{ParsePusherDbModel} = require 'art-flux-parse'
+ArtSuite = require 'art-suite'
+ArtFluxParse = require 'art-flux-parse'
+
+{createHotWithPostCreate} = ArtSuite
+{ParsePusherDbModel} = ArtFluxParse
 
 createHotWithPostCreate module, class Chat extends ParsePusherDbModel
 
