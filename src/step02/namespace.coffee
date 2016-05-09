@@ -3,8 +3,5 @@
 
 require 'neptune-namespaces'
 module.exports = Neptune.Step02 ||
-class Neptune.Step02 extends Neptune.Base
-  @namespace: Neptune
-  @namespacePath: "Neptune.Step02"
-
-Neptune.addNamespace Neptune.Step02
+Neptune.addNamespace class Step02 extends Neptune.Base
+  ;
