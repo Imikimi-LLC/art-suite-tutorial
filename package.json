@@ -2,8 +2,10 @@
   "name": "art-suite-tutorial",
   "version": "0.0.1",
   "dependencies": {
-    "art-flux": "git://github.com/Imikimi-LLC/art-flux.git",
-    "art-flux-parse": "git://github.com/Imikimi-LLC/art-flux-parse.git"
+
+    "art-suite": "git://github.com/Imikimi-LLC/art-suite",
+    "art-flux": "git://github.com/Imikimi-LLC/art-flux",
+    "art-flux-parse": "git://github.com/Imikimi-LLC/art-flux-parse"
   },
   "scripts": {
     "hot": "webpack-dev-server --hot --inline --progress",
