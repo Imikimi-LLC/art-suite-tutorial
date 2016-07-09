@@ -12,6 +12,4 @@ FullScreenApp.init().then ->
 
   createAndInstantiateTopComponent
     render: ->
-      CanvasElement
-        canvasId: "artCanvas"
-        App()
+      CanvasElement App()
