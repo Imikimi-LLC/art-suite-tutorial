@@ -1,6 +1,6 @@
 {
   "name": "art-suite-tutorial",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "art-suite": "git://github.com/Imikimi-LLC/art-suite",
     "art-flux-parse": "git://github.com/Imikimi-LLC/art-flux-parse"
