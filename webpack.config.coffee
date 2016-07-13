@@ -5,5 +5,6 @@ module.exports = (require "art-foundation/configure_webpack")
     step03
     step04
     step05
+    step06
     """
   dirname: __dirname
