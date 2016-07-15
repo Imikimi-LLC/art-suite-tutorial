@@ -11,6 +11,8 @@ ArtEry = require 'art-ery'
   decapitalize
   merge
   Promise
+  eq
+  upperCamelCase
 } = Foundation
 
 {missing, failure, success, pending} = CommunicationStatus
@@ -18,9 +20,16 @@ ArtEry = require 'art-ery'
 {FluxModel} = Flux
 
 class ArtEryQueryFluxModel extends FluxModel
+  ###
+  options:
+    query: (key) ->
+      IN: will be the key (returned from fromFluxKey)
+      OUT: array of singleModel records
+        OR promise.then (arrayOfRecords) ->
+  ###
   constructor: (singlesModel, options = {})->
-    throw new Error "modelName and query required" unless isString(options.modelName) && isFunction(options.query)
-    super decapitalize options.modelName
+    throw new Error "query required" unless isFunction(options.query)
+    super null
 
     @_singlesModel = singlesModel
     @_options = options # used by derivative children
@@ -40,63 +49,100 @@ module.exports = class ArtEryFluxModel extends FluxModel
     @_pipeline.tableName = @getName()
     @_pipeline
 
-  @queryModel: (options) ->
-    new ArtEryQueryFluxModel @, options
+  @query: (map) ->
+    log map
+    for modelName, options of map
+      if isFunction options
+        options = query: options
+      class _ extends ArtEryQueryFluxModel
+        @_name: upperCamelCase modelName
+      new _ @, options
 
   @getter "pipeline"
 
   constructor: ->
     super
-    @_updateSerializer = new Promise.Serializer
+    @_updateSerializers = {}
     @_pipeline = @class._pipeline
 
-  # IN: key: string
-  # OUT: promise.then (fluxRecord) ->
-  loadFluxRecord: (key) ->
+  ###
+  IN: key: string
+  OUT:
+    promise.then (data) ->
+    promise.catch (response with .status and .error) ->
+  ###
+  load: (key) ->
     throw new Error "invalid key: #{inspect key}" unless isString key
-    @_pipeline.get key
-    .then (data) ->
-      status: Flux.success
-      data:   data
-    .catch (response) ->
-      status: response.status
-      error: response.error
+    @_getUpdateSerializer key
+    .then => @_pipeline.get key
+    .then (data) =>
+      @updateFluxStore key, status: success, data: data
+      data
 
   keyFromData: (data) -> data.key
 
   create: (data) ->
     @_pipeline.create data
     .then (data) =>
-      @fluxStore.update @name,
-        @keyFromData data
+      @updateFluxStore @keyFromData(data),
         status: success
         data: data
 
-  ###
-  overlapping update strategy:
-
-    1. each update immediatly applies to the local flux record, in invocation order
-    2. each remote request gets serialized so the next one only fires after the previous
-      one succeeded or failed.
-  ###
-  _restoreOldFluxRecord: (key, oldFluxRecord) ->
-    fluxStore.update @name, key, => oldFluxRecord
-
+  # merge data into the fluxRecord at @name/key
+  # only merge if data != the current fluxRecord.data
   _applyUpdateToFluxStore: (key, data) ->
-    new Promise (resolve) =>
-      @fluxStore.update @name,
-        @keyFromData data
-        (oldFluxRecord = {}) =>
-          merge oldFluxRecord, data: merge oldFluxRecord.data, data
-          resolve oldFluxRecord
+    @updateFluxStore key,
+      (oldFluxRecord) => merge oldFluxRecord, data: merge oldFluxRecord?.data, data
+
+  ###
+  Auto vivifies
+  When allDone:
+  - remove from @_updateSerializers
+  - update fluxStore with the best local understanding of the record's status
+  ###
+  _getUpdateSerializer: (key) ->
+    unless updateSerializer = @_updateSerializers[key]
+      updateSerializer = new Promise.Serializer
+       #prime the serializer with the current fluxRecord.data
+      updateSerializer.then => @fluxStore.get(key)?.data || {}
+
+    updateSerializer.allDonePromise().then (accumulatedSuccessfulUpdatesToData) =>
+      @updateFluxStore key, accumulatedSuccessfulUpdatesToData
+      delete @_updateSerializers[key]
+    updateSerializer
 
   update: (key, data) ->
     throw new Error "invalid key: #{inspect key}" unless isString key
 
+    # apply local update immediately
+    # NOTE: fluxStore.updates are automatically call-order serialized.
     @_applyUpdateToFluxStore key, data
-    .then (oldFluxRecord) =>
-      @_updateSerializer
-      .always => @_pipeline.update key, data
-      .catch (response) =>
-        @_restoreOldFluxRecord key, oldFluxRecord
-        throw response
+
+    new Promise (resolve, reject) =>
+      @_getUpdateSerializer key
+
+      # apply remote updates in serialized update-call-order
+      .then (accumulatedSuccessfulUpdatesToData) =>
+        ###
+
+        We call _applyUpdateToFluxStore twice in case a previous update failed
+        so fluxStore has the most accurate representation possible.
+
+        NOTE:
+
+          This effectively rolls back fluxStore to the version just before
+          this update was called. All pending updates after this one will be
+          'lost' UNTIL, those pending updates call their second
+          _applyUpdateToFluxStore upon their successes. So, technically, it
+          isn't the MOST accurate representation if a previous update failed,
+          but it will be resolved to the most accurate rep once all updates
+          have completed or failed.
+
+        ###
+        @_pipeline.update key, data
+        .then (response) =>
+          resolve response
+          merge accumulatedSuccessfulUpdatesToData, data
+        .catch (response) =>
+          reject response
+          accumulatedSuccessfulUpdatesToData

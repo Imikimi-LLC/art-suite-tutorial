@@ -12,19 +12,21 @@ ArtEry = require 'art-ery'
 
 createHotWithPostCreate module, class Chat extends ArtEryFluxModel
   @pipeline new DynamoDbPipeline
-    createTable:
-      attributes:
-        user:       'string'
-        message:    'string'
+    key: "chatRoom/createdAt"
 
   .filter   new TimestampFilter
   .filter   new ValidationFilter
     user:     "requiredTrimmedString"
     message:  "requiredTrimmedString"
+    chatRoom: "requiredTrimmedString"
 
-  @queryModel
-    modelName: "chatsByChatRoom"
-    query: (key) ->
+  @query
+    # TODO: thinking again I want to have standard support for non-string keys (consistentJsonStringify)
+    # I also want a standard fromFluxKey
+    # I figure every model will only use string or non-string keys.
+    # What if our standard toFluxKey notes on the model when it sees the first non-string-key, which
+    # causes fromFluxKey to start using JSON.parse to do its work.
+    chatsByChatRoom: (key) ->
       [
         user: "Bob"
         message: "Hi!"
