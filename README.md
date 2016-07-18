@@ -13,3 +13,7 @@ cd art-suite-tutorial
 npm install
 npm run hot
 ```
+
+### Learn More
+
+See the [Art Suite Wiki](https://github.com/Imikimi-LLC/art-suite/wiki)
