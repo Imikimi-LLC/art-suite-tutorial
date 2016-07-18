@@ -39,8 +39,7 @@ class ArtEryQueryFluxModel extends FluxModel
     @register()
 
   loadData: (key) ->
-    Promise.resolve()
-    .then => @query key
+    Promise.resolve @query key
 
 module.exports = class ArtEryFluxModel extends FluxModel
 
@@ -49,8 +48,23 @@ module.exports = class ArtEryFluxModel extends FluxModel
     @_pipeline.tableName = @getName()
     @_pipeline
 
-  @query: (map) ->
-    log map
+  @getter "pipeline"
+
+  constructor: ->
+    super
+    @_updateSerializers = {}
+    @_pipeline = @class._pipeline
+    @queries @_pipeline.queries
+    @actiopns @_pipeline.actions
+
+  ###
+  TODO:
+  queries need to go through an ArtEry pipeline.
+  queries should be invoked with that ArtEry pipeline as @
+  every record returned should get sent through the after-pipeline
+  as-if it were a "get" request
+  ###
+  queries: (map) ->
     for modelName, options of map
       if isFunction options
         options = query: options
@@ -58,12 +72,14 @@ module.exports = class ArtEryFluxModel extends FluxModel
         @_name: upperCamelCase modelName
       new _ @, options
 
-  @getter "pipeline"
-
-  constructor: ->
-    super
-    @_updateSerializers = {}
-    @_pipeline = @class._pipeline
+  ###
+  TODO:
+  actions need to go through an ArtEry pipeline.
+  actions should be invoked with that ArtEry pipeline as @
+  ###
+  actions: (map) ->
+    for actionName, action of map
+      @[actionName] = action
 
   ###
   IN: key: string
