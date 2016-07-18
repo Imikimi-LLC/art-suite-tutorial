@@ -10,4 +10,5 @@ module.exports = (require "art-foundation/configure_webpack")
   package:
     description: "Step by step demo of how to create a realtime chat app using the ArtSuite"
     dependencies:
-      "art-suite": "git://github.com/Imikimi-LLC/art-suite"
+      "art-suite":      "git://github.com/Imikimi-LLC/art-suite"
+      "art-flux-parse": "git://github.com/Imikimi-LLC/art-flux-parse"

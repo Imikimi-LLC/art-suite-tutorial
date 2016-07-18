@@ -1,6 +1,7 @@
 {
   "author": "Shane Brinkman-Davis Delamore, Imikimi LLC",
   "dependencies": {
+    "art-flux-parse": "git://github.com/Imikimi-LLC/art-flux-parse",
     "art-suite": "git://github.com/Imikimi-LLC/art-suite",
     "chai": "^3.5.0",
     "coffee-loader": "^0.7.2",
