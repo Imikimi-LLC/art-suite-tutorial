@@ -1,2 +1,3 @@
-Foundation = require 'art-foundation'
-require 'art-aws/AwsMinAppClientSideSdk'
+console.log "dude, where's the config"
+require './Config'
+require './Models'

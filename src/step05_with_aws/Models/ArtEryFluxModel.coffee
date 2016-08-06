@@ -34,12 +34,12 @@ class ArtEryQueryFluxModel extends FluxModel
     @_singlesModel = singlesModel
     @_options = options # used by derivative children
 
-    {@query} = options
+    {@query, @pipeline} = options
     @toFluxKey = options.toFluxKey if options.toFluxKey
     @register()
 
   loadData: (key) ->
-    Promise.resolve @query key
+    Promise.resolve @query key, @pipeline
 
 module.exports = class ArtEryFluxModel extends FluxModel
 
@@ -55,7 +55,7 @@ module.exports = class ArtEryFluxModel extends FluxModel
     @_updateSerializers = {}
     @_pipeline = @class._pipeline
     @queries @_pipeline.queries
-    @actiopns @_pipeline.actions
+    @actions @_pipeline.actions
 
   ###
   TODO:
@@ -70,7 +70,7 @@ module.exports = class ArtEryFluxModel extends FluxModel
         options = query: options
       class _ extends ArtEryQueryFluxModel
         @_name: upperCamelCase modelName
-      new _ @, options
+      new _ @, merge pipeline: @_pipeline, options
 
   ###
   TODO:
@@ -95,11 +95,12 @@ module.exports = class ArtEryFluxModel extends FluxModel
       @updateFluxStore key, status: success, data: data
       data
 
-  keyFromData: (data) -> data.key
+  keyFromData: (data) -> @_pipeline.keyFromData data
 
   create: (data) ->
     @_pipeline.create data
     .then (data) =>
+      log "pipeline create success", data: data
       @updateFluxStore @keyFromData(data),
         status: success
         data: data

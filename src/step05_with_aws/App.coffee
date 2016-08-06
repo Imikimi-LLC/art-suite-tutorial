@@ -4,10 +4,6 @@ ArtSuite = require 'art-suite'
   wordArray, randomElement
 } = ArtSuite
 
-Config = require './Config'
-.init()
-
-require './Models'
 ChatView = require './ChatView'
 
 module.exports = createComponentFactory

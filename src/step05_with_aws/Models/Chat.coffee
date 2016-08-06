@@ -5,29 +5,34 @@ ArtEryAws = require 'art-ery-aws'
 ArtEry = require 'art-ery'
 
 {DynamoDbPipeline} = ArtEryAws
-{ValidationFilter, TimestampFilter} = ArtEry
+{ValidationFilter, TimestampFilter, UuidFilter} = ArtEry
 
 {createHotWithPostCreate, log} = ArtSuite
 {ParsePusherDbModel} = ArtFluxParse
 
 createHotWithPostCreate module, class Chat extends ArtEryFluxModel
   @pipeline new DynamoDbPipeline
-    key: "chatRoom/createdAt"
+    globalIndexes:
+      chatsByChatRoom: "chatRoom/createdAt"
+
     queries:
-      chatsByChatRoom: (key) ->
+      chatsByChatRoom: (chatRoom, pipeline) ->
+        log query: chatsByChatRoom:
+          chatRoom:chatRoom, pipeline: pipeline
         [
           user: "Bob"
           message: "Hi!"
         ]
 
-  .filter   new TimestampFilter
-  .filter   new ValidationFilter
-    user:     "requiredTrimmedString"
-    message:  "requiredTrimmedString"
-    chatRoom: "requiredTrimmedString"
+  .filter     new UuidFilter
+  .filter     new TimestampFilter
+  .filter     new ValidationFilter
+    user:     "trimmedString"
+    message:  "trimmedString"
+    chatRoom: "trimmedString"
 
-  # postMessage: (user, message) ->
-  #   @post
-  #     user: user
-  #     message: message
-  #     chatRoom: "main"
+  postMessage: (user, message) ->
+    @create
+      user: user
+      message: message
+      chatRoom: "main"
