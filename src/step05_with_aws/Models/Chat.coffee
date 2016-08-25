@@ -7,7 +7,7 @@ ArtEry = require 'art-ery'
 {DynamoDbPipeline} = ArtEryAws
 {ValidationFilter, TimestampFilter, UuidFilter} = ArtEry
 
-{createHotWithPostCreate, log} = ArtSuite
+{createHotWithPostCreate, log, arrayWith} = ArtSuite
 {ParsePusherDbModel} = ArtFluxParse
 
 createHotWithPostCreate module, class Chat extends ArtEryFluxModel
@@ -16,13 +16,14 @@ createHotWithPostCreate module, class Chat extends ArtEryFluxModel
       chatsByChatRoom: "chatRoom/createdAt"
 
     queries:
-      chatsByChatRoom: (chatRoom, pipeline) ->
-        log query: chatsByChatRoom:
-          chatRoom:chatRoom, pipeline: pipeline
-        [
-          user: "Bob"
-          message: "Hi!"
-        ]
+      chatsByChatRoom:
+        query: (chatRoom, pipeline) ->
+          pipeline.queryDynamoDb
+            index: "chatsByChatRoom"
+            where: chatRoom: chatRoom
+          .then ({items}) -> items
+        queryKeyFromRecord: ({chatRoom}) -> chatRoom
+        localSort: (queryData) -> queryData.sort (a, b) -> a.createdAt - b.createdAt
 
   .filter     new UuidFilter
   .filter     new TimestampFilter
@@ -31,8 +32,8 @@ createHotWithPostCreate module, class Chat extends ArtEryFluxModel
     message:  "trimmedString"
     chatRoom: "trimmedString"
 
-  postMessage: (user, message) ->
+  postMessage: (chatRoom, user, message) ->
     @create
       user: user
       message: message
-      chatRoom: "main"
+      chatRoom: chatRoom

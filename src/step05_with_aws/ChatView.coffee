@@ -15,15 +15,15 @@ ChatMessage = require './ChatMessage'
 
 module.exports = createFluxComponentFactory
   module: module
-  subscriptions: chatsByChatRoom: "main"
+  subscriptions: chatsByChatRoom: ({chatRoom}) -> chatRoom
 
   postMessage: ({target}) ->
-    {currentUser} = @props
-    @models.chat.postMessage currentUser, target.value
+    {currentUser, chatRoom} = @props
+    @models.chat.postMessage chatRoom, currentUser, target.value
     target.value = ""
 
   render: ->
-    {currentUser} = @props
+    {currentUser, chatRoom} = @props
     {chatsByChatRoom} = @state
 
     Element
@@ -32,8 +32,11 @@ module.exports = createFluxComponentFactory
       RectangleElement inFlow: false, color:"white", shadow: blur: 10, offsetY: 3, color: "#0007"
       Element
         size: ww:1, hch:1
-        RectangleElement color: StyleProps.palette.primaryBackground
+        childrenLayout: "row"
+        RectangleElement inFlow: false, color: StyleProps.palette.primaryBackground
         TextElement StyleProps.titleText, padding: 10, text: currentUser
+        Element()
+        TextElement StyleProps.titleText, padding: 10, text: "room: " + chatRoom
 
       PagingScrollElement
         clip: true

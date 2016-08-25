@@ -13,7 +13,9 @@ module.exports = createComponentFactory
     Element
       childrenLayout: "row"
       RectangleElement inFlow: false, color: "#eee"
-      ChatView currentUser: randomElement wordArray """
+      ChatView
+        chatRoom: "fans"
+        currentUser: randomElement wordArray """
         Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony
         Ideth   Julie Kate  Laura Marry  Nate  Oliver  Polly
         Quinn   Rob   Sally Ted   Uncle  Vera  William Xavier
