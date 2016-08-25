@@ -166,8 +166,6 @@ module.exports = class ArtEryFluxModel extends FluxModel
     @_getUpdateSerializer key
     .updateFluxStore => @_pipeline.get key
 
-  keyFromData: (data) -> @_pipeline.keyFromData data
-
   create: (data) ->
     @_pipeline.create data
     .then (data) =>
