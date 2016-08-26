@@ -1,5 +1,5 @@
 ArtSuite = require 'art-suite'
-StyleProps = require './StyleProps'
+StyleProps = require '../StyleProps'
 
 {
   createComponentFactory, Element, RectangleElement, TextElement,
@@ -18,7 +18,9 @@ module.exports = createComponentFactory
       margin: 10
       size: ww:1, hch:1
       childrenLayout: "row"
-      addedAnimation: from: axis: x: if currentUsersMessage then -1 else 1
+      animators:
+        size: toFromVoid: ww:1, h: 0
+        axis: toFromVoid: x: if currentUsersMessage then -1 else 1
       Element
         size: hch:1, ww:1
         childrenLayout: "column"

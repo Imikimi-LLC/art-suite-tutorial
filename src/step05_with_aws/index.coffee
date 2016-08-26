@@ -4,10 +4,8 @@
 require './-requires'
 module.exports = require './namespace'
 .addModules
-  App:         require './App'        
-  ChatMessage: require './ChatMessage'
-  ChatView:    require './ChatView'   
-  Main:        require './Main'       
-  StyleProps:  require './StyleProps' 
+  Main:       require './Main'      
+  StyleProps: require './StyleProps'
+require './Components'
 require './Config'
 require './Models'

@@ -6,7 +6,7 @@ ArtSuite = require 'art-suite'
   CanvasElement
 } = ArtSuite
 
-App = require './App'
+{App} = require './Components'
 
 FullScreenApp.init().then ->
 

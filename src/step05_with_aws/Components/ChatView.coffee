@@ -10,7 +10,7 @@ ArtSuite = require 'art-suite'
   createFluxComponentFactory
 } = ArtSuite
 
-StyleProps = require './StyleProps'
+StyleProps = require '../StyleProps'
 ChatMessage = require './ChatMessage'
 
 module.exports = createFluxComponentFactory
@@ -19,7 +19,17 @@ module.exports = createFluxComponentFactory
 
   postMessage: ({target}) ->
     {currentUser, chatRoom} = @props
+    @setState pendingMessage:
+      chatRoom: chatRoom
+      user: currentUser
+      message: target.value
+
     @models.chat.postMessage chatRoom, currentUser, target.value
+    .then -> @setState pendingMessage: null
+    .catch (e) ->
+      @setState pendingMessage: null
+      throw e
+
     target.value = ""
 
   render: ->
@@ -40,6 +50,7 @@ module.exports = createFluxComponentFactory
 
       PagingScrollElement
         clip: true
+        childrenAlignment: "bottomLeft"
         Element
           padding: 10
           size: hch: 1, ww: 1

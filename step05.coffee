@@ -1,1 +1,1 @@
-require './src/step05'
+require './src/step05_with_aws'
