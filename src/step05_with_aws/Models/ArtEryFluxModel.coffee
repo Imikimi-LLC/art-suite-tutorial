@@ -100,8 +100,9 @@ class ArtEryQueryFluxModel extends FluxModel
   NOTE: @queryKeyFromRecord must be implemented!
   ###
   localUpdate: (updatedRecordData) ->
+    return unless updatedRecordData
     queryKey = @queryKeyFromRecord? updatedRecordData
-    throw new Error "invalid queryKey from #{formattedInspect queryKey}" unless isString queryKey
+    throw new Error "invalid queryKey from #{formattedInspect updatedRecordData}" unless isString queryKey
     return unless fluxRecord = @fluxStoreGet queryKey
     @updateFluxStore queryKey, data: @localSort @localMerge fluxRecord.data, updatedRecordData
 
@@ -164,12 +165,13 @@ module.exports = class ArtEryFluxModel extends FluxModel
   load: (key) ->
     throw new Error "invalid key: #{inspect key}" unless isString key
     @_getUpdateSerializer key
-    .updateFluxStore => @_pipeline.get key
+    .updateFluxStore =>
+      @_pipeline.get key
+    false
 
   create: (data) ->
     @_pipeline.create data
     .then (data) =>
-      log "pipeline create success", data: data
       @updateFluxStore @keyFromData(data),
         status: success
         data: data
@@ -197,11 +199,11 @@ module.exports = class ArtEryFluxModel extends FluxModel
       updateSerializer = new Promise.Serializer
        #prime the serializer with the current fluxRecord.data
       updateSerializer.then => @fluxStoreGet(key)?.data || {}
-      updateSerializer.updateFluxStore = (updateFunction) ->
+      updateSerializer.updateFluxStore = (updateFunction) =>
         updateSerializer.then (data) =>
           Promise.resolve updateFunction data
           .catch -> data # on error, roll back flux-Store to the last known-good data
-          .then (data) ->
+          .then (data) =>
             @updateFluxStore key, status: success, data: data
             data
         updateSerializer
@@ -214,12 +216,13 @@ module.exports = class ArtEryFluxModel extends FluxModel
     queryModel.localUpdate updatedRecord for queryModel in @_queryModels
     null
 
-  fluxStoreEntryUpdated: ({key, fluxRecord}) -> @_updateQueries fluxRecord.data
+  fluxStoreEntryUpdated: ({key, fluxRecord}) ->
+    @_updateQueries fluxRecord.data
 
   _optimisticallyUpdateFluxStore: (key, fieldsToUpdate) ->
     # apply local update immediately
     # This optimistically updates the local copy assuming all updates will succeed
-    @fluxStore.update key,
+    @updateFluxStore key,
       (oldFluxRecord) => merge oldFluxRecord, data: merge oldFluxRecord?.data, fieldsToUpdate
 
   update: (key, data) ->
