@@ -3,5 +3,4 @@
 
 module.exports = require './namespace'
 .addModules
-  ArtEryFluxModel: require './ArtEryFluxModel'
-  Chat:            require './Chat'           
+  Chat: require './Chat'

@@ -1,6 +1,6 @@
 ArtSuite = require 'art-suite'
 ArtFluxParse = require 'art-flux-parse'
-ArtEryFluxModel = require './ArtEryFluxModel'
+ArtEryFluxModel = require 'art-ery-aws/ArtEryFluxModel'
 ArtEryAws = require 'art-ery-aws'
 ArtEry = require 'art-ery'
 
