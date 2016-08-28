@@ -21,6 +21,7 @@ Dialog = createFluxComponentFactory
     Element
       size: size || ps: 1
       location: location
+
       axis: axis
       padding: 10
       childrenLayout: "column"
@@ -105,5 +106,8 @@ module.exports = createFluxComponentFactory
 
       editDialogProps && Element
         on: pointerClick: @hideEditDialog
+        animators:
+          opacity: toFromVoid: 0
+          location: toFromVoid: y: 10
         inFlow: false
         EditDialog hideEditDialog: @hideEditDialog, editDialogProps
