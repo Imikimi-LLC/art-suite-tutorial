@@ -68,7 +68,10 @@ module.exports = createFluxComponentFactory
   postMessage: ({target}) ->
     {currentUser, chatRoom} = @props
 
-    @models.chat.postMessage chatRoom, currentUser, target.value
+    @models.chat.create
+      chatRoom: chatRoom
+      user: currentUser
+      message: target.value
 
     target.value = ""
 
