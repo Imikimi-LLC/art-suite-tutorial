@@ -6,9 +6,16 @@ ArtSuite = require 'art-suite'
   CanvasElement
 } = ArtSuite
 
-{App} = require './Components'
+require './Config'
+{ArtEryFluxModel} = require 'art-ery/Flux'
+{DynamoDbPipeline} = require 'art-ery-aws'
+require './Pipelines'
 
-FullScreenApp.init().then ->
+FullScreenApp.init()
+.then -> DynamoDbPipeline.createTablesForAllRegisteredPipelines()
+.then -> ArtEryFluxModel.defineModelsForAllPipelines()
+.then ->
+  {App} = require './Components'
 
   createAndInstantiateTopComponent
     render: ->
