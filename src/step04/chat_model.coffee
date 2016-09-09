@@ -1,7 +1,7 @@
 ArtSuite = require 'art-suite'
-{createHotWithPostCreate, arrayWith, log, ApplicationState, models} = ArtSuite
+{createWithPostCreate, arrayWith, log, ApplicationState, models} = ArtSuite
 
-createHotWithPostCreate module, class Chat extends ApplicationState
+createWithPostCreate module, class Chat extends ApplicationState
   @stateFields
     history: []
 

@@ -1,10 +1,10 @@
 ArtSuite = require 'art-suite'
 ArtFluxParse = require 'art-flux-parse'
 
-{createHotWithPostCreate} = ArtSuite
+{createWithPostCreate} = ArtSuite
 {ParsePusherDbModel} = ArtFluxParse
 
-createHotWithPostCreate module, class Chat extends ParsePusherDbModel
+createWithPostCreate module, class Chat extends ParsePusherDbModel
 
   @fields
     user:     @fieldTypes.requiredTrimmedString

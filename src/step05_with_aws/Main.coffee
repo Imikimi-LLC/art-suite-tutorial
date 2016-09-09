@@ -4,6 +4,7 @@ ArtSuite = require 'art-suite'
   FullScreenApp
   createAndInstantiateTopComponent
   CanvasElement
+  log
 } = ArtSuite
 
 require './Config'
@@ -20,3 +21,7 @@ FullScreenApp.init()
   createAndInstantiateTopComponent
     render: ->
       CanvasElement App()
+
+.catch (error) ->
+  console.error error
+  log ArtSuiteTutorial: initError: error
