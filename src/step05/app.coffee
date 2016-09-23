@@ -11,7 +11,6 @@ ChatModel = require './chat_model'
 ChatView = require './chat_view'
 
 defineModule module, createComponentFactory
-  module: module
 
   render: ->
     Element

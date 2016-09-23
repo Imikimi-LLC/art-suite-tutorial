@@ -12,7 +12,6 @@ ArtSuite = require 'art-suite'
 } = ArtSuite
 
 defineModule module, createComponentFactory
-  module: module
 
   render: ->
     {currentUser} = @props

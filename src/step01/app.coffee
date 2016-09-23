@@ -1,10 +1,12 @@
-ArtSuite = require 'art-suite'
 {
-  defineModule, createComponentFactory, CanvasElement, RectangleElement, TextElement
-} = ArtSuite
+  defineModule
+  createComponentFactory
+  CanvasElement
+  RectangleElement
+  TextElement
+} = require 'art-suite'
 
 defineModule module, createComponentFactory
-  module: module
 
   render: ->
     CanvasElement null,

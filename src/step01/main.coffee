@@ -1,2 +1,1 @@
-{fullScreenReactAppInit} = require 'art-suite'
-fullScreenReactAppInit require './app'
+(require 'art-suite').fullScreenReactAppInit require './app'

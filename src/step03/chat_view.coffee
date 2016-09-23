@@ -15,7 +15,6 @@ StyleProps = require './style_props'
 ChatMessage = require './chat_message'
 
 defineModule module, createComponentFactory
-  module: module
 
   render: ->
     {currentUser} = @props

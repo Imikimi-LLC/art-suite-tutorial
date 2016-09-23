@@ -6,7 +6,6 @@ ArtSuite = require 'art-suite'
 ChatView = require './chat_view'
 
 defineModule module, createComponentFactory
-  module: module
 
   render: ->
     CanvasElement

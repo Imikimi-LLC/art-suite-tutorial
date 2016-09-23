@@ -14,7 +14,7 @@ StyleProps = require './style_props'
 ChatMessage = require './chat_message'
 
 module.exports = createFluxComponentFactory
-  module: module
+
   subscriptions: "chat.history"
 
   postMessage: ({target}) ->

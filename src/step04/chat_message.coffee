@@ -7,7 +7,6 @@ StyleProps = require './style_props'
 } = ArtSuite
 
 defineModule module, createComponentFactory
-  module: module
 
   render: ->
     {currentUser, user, message} = @props
