@@ -1,11 +1,11 @@
 ArtSuite = require 'art-suite'
 {
-  createComponentFactory, CanvasElement, RectangleElement, TextElement
+  defineModule, createComponentFactory, CanvasElement, RectangleElement, TextElement
 } = ArtSuite
 
 ChatView = require './chat_view'
 
-module.exports = createComponentFactory
+defineModule module, createComponentFactory
   module: module
 
   render: ->

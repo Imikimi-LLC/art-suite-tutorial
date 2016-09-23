@@ -2,13 +2,13 @@ ArtSuite = require 'art-suite'
 StyleProps = require '../StyleProps'
 
 {
-  createComponentFactory, Element, RectangleElement, TextElement,
+  defineModule, createComponentFactory, Element, RectangleElement, TextElement,
   TextInput
   OutlineElement, FillElement
   log
 } = ArtSuite
 
-module.exports = createComponentFactory
+defineModule module, createComponentFactory
   module: module
 
   mouseIn: -> @setState mouseIn: true

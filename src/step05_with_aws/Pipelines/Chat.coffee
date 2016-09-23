@@ -7,6 +7,6 @@ defineModule module, ->
     @globalIndexes chatsByChatRoom: "chatRoom/createdAt"
 
     @filter     createDatabaseFilters
-      user:     requiredPresent: "trimmedString"
-      message:  requiredPresent: "trimmedString"
-      chatRoom: requiredPresent: "trimmedString"
+      user:     "rquired trimmedString"
+      message:  "rquired trimmedString"
+      chatRoom: "rquired trimmedString"

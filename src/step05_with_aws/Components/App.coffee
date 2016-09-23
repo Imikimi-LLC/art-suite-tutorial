@@ -1,16 +1,17 @@
 ArtSuite = require 'art-suite'
 {
-  createComponentFactory, Element, RectangleElement, TextElement
+  defineModule, createComponentFactory, CanvasElement, RectangleElement, TextElement
   wordArray, randomElement
+  log
 } = ArtSuite
 
 ChatView = require './ChatView'
 
-module.exports = createComponentFactory
-  module: module
+defineModule module, createComponentFactory
 
   render: ->
-    Element
+    log "App CanvasElement"
+    CanvasElement
       childrenLayout: "row"
       RectangleElement inFlow: false, color: "#eee"
       ChatView

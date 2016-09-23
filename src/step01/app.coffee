@@ -1,9 +1,9 @@
 ArtSuite = require 'art-suite'
 {
-  createComponentFactory, CanvasElement, RectangleElement, TextElement
+  defineModule, createComponentFactory, CanvasElement, RectangleElement, TextElement
 } = ArtSuite
 
-module.exports = createComponentFactory
+defineModule module, createComponentFactory
   module: module
 
   render: ->

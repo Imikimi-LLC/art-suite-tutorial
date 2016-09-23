@@ -2,11 +2,11 @@ ArtSuite = require 'art-suite'
 StyleProps = require './style_props'
 
 {
-  createComponentFactory, Element, RectangleElement, TextElement,
+  defineModule, createComponentFactory, Element, RectangleElement, TextElement,
   TextInput
 } = ArtSuite
 
-module.exports = createComponentFactory
+defineModule module, createComponentFactory
   module: module
 
   render: ->

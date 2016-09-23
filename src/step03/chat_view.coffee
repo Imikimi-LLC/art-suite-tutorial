@@ -1,6 +1,7 @@
 ArtSuite = require 'art-suite'
 
 {
+  defineModule
   Element
   RectangleElement
   TextInput
@@ -13,7 +14,7 @@ ArtSuite = require 'art-suite'
 StyleProps = require './style_props'
 ChatMessage = require './chat_message'
 
-module.exports = createComponentFactory
+defineModule module, createComponentFactory
   module: module
 
   render: ->

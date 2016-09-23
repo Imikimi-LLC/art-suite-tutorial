@@ -1,6 +1,7 @@
 ArtSuite = require 'art-suite'
 
 {
+  defineModule
   Element
   RectangleElement
   TextInput
@@ -10,7 +11,7 @@ ArtSuite = require 'art-suite'
   createComponentFactory
 } = ArtSuite
 
-module.exports = createComponentFactory
+defineModule module, createComponentFactory
   module: module
 
   render: ->
