@@ -1,4 +1,4 @@
-{defineModule, log, arrayWith} = require 'art-suite'
+{defineModule, log} = require 'art-suite'
 {DynamoDbPipeline} = require 'art-ery-aws'
 {createDatabaseFilters} = require 'art-ery/Filters'
 
@@ -7,6 +7,6 @@ defineModule module, ->
     @globalIndexes chatsByChatRoom: "chatRoom/createdAt"
 
     @filter     createDatabaseFilters
-      user:     "rquired trimmedString"
-      message:  "rquired trimmedString"
-      chatRoom: "rquired trimmedString"
+      user:     "required trimmedString"
+      message:  "required trimmedString"
+      chatRoom: "required trimmedString"

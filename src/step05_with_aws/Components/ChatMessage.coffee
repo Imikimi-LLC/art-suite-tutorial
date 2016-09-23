@@ -9,7 +9,6 @@ StyleProps = require '../StyleProps'
 } = ArtSuite
 
 defineModule module, createComponentFactory
-  module: module
 
   mouseIn: -> @setState mouseIn: true
   mouseOut: -> @setState mouseIn: false

@@ -9,108 +9,109 @@ ArtSuite = require 'art-suite'
   arrayWith
   createFluxComponentFactory
   log
+  defineModule
 } = ArtSuite
 
 StyleProps = require '../StyleProps'
 ChatMessage = require './ChatMessage'
 
-Dialog = createFluxComponentFactory
-  module: module
-  render: ->
-    {size, axis, location, children, title, message} = @props
-    Element
-      size: size || ps: 1
-      location: location
+defineModule module, ->
 
-      axis: axis
-      padding: 10
-      childrenLayout: "column"
-      RectangleElement inFlow: false, color:"white", shadow: blur: 10, offsetY: 3, color: "#0007"
+  Dialog = createFluxComponentFactory
+
+    render: ->
+      {size, axis, location, children, title, message} = @props
       Element
-        size: ww:1, hch:1
-        childrenLayout: "row"
-        RectangleElement inFlow: false, color: StyleProps.palette.primaryBackground
-        TextElement StyleProps.titleText, padding: 10, text: title
-        Element()
-        message && TextElement StyleProps.titleText, padding: 10, text: message
+        size: size || ps: 1
+        location: location
 
-      children
+        axis: axis
+        padding: 10
+        childrenLayout: "column"
+        RectangleElement inFlow: false, color:"white", shadow: blur: 10, offsetY: 3, color: "#0007"
+        Element
+          size: ww:1, hch:1
+          childrenLayout: "row"
+          RectangleElement inFlow: false, color: StyleProps.palette.primaryBackground
+          TextElement StyleProps.titleText, padding: 10, text: title
+          Element()
+          message && TextElement StyleProps.titleText, padding: 10, text: message
 
-EditDialog = createFluxComponentFactory
-  module: module
-  subscriptions: "chat"
+        children
 
-  updateMessage: ({target}) ->
-    {chatId} = @props
-    @models.chat.update chatId, message: target.value
-    @props.hideEditDialog?()
+  EditDialog = createFluxComponentFactory
+    subscriptions: "chat"
 
-  render: ->
-    {chat} = @state
-    Dialog
-      title: "edit message"
-      size: w: 300, hch: 1
-      axis: .5
-      location: ps: .5
-      Element
-        size: ww:1, h:45
-        RectangleElement color: StyleProps.palette.grayBackground
-        chat && TextInput StyleProps.mediumText,
-          on: enter: @updateMessage
-          padding: 10
-          value: chat.message
-          placeholder: "edit here"
+    updateMessage: ({target}) ->
+      {chatId} = @props
+      @models.chat.update chatId, message: target.value
+      @props.hideEditDialog?()
 
-module.exports = createFluxComponentFactory
-  module: module
-  subscriptions: chatsByChatRoom: ({chatRoom}) -> chatRoom
+    render: ->
+      {chat} = @state
+      Dialog
+        title: "edit message"
+        size: w: 300, hch: 1
+        axis: .5
+        location: ps: .5
+        Element
+          size: ww:1, h:45
+          RectangleElement color: StyleProps.palette.grayBackground
+          chat && TextInput StyleProps.mediumText,
+            on: enter: @updateMessage
+            padding: 10
+            value: chat.message
+            placeholder: "edit here"
 
-  postMessage: ({target}) ->
-    {currentUser, chatRoom} = @props
+  createFluxComponentFactory
+    subscriptions: chatsByChatRoom: ({chatRoom}) -> chatRoom
 
-    @models.chat.create
-      chatRoom: chatRoom
-      user: currentUser
-      message: target.value
+    postMessage: ({target}) ->
+      {currentUser, chatRoom} = @props
 
-    target.value = ""
+      @models.chat.create
+        chatRoom: chatRoom
+        user: currentUser
+        message: target.value
 
-  showEditDialog: (props) ->
-    @setState editDialogProps: props
+      target.value = ""
 
-  hideEditDialog: -> @setState editDialogProps: null
+    showEditDialog: (props) ->
+      @setState editDialogProps: props
 
-  render: ->
-    {currentUser, chatRoom} = @props
-    {chatsByChatRoom, pendingMessage, editDialogProps} = @state
+    hideEditDialog: -> @setState editDialogProps: null
 
-    Dialog
-      title: currentUser
-      message: "room: #{chatRoom}"
+    render: ->
+      {currentUser, chatRoom} = @props
+      {chatsByChatRoom, pendingMessage, editDialogProps} = @state
 
-      PagingScrollElement
-        clip: true
-        childrenAlignment: "bottomLeft"
-        chatsByChatRoom && Element
-          padding: 10
-          size: hch: 1, ww: 1
-          childrenLayout: "column"
-          Element inFlow: false, size: 0 # hack ensures first added message animates in
-          for postMessage in chatsByChatRoom
-            ChatMessage currentUser: currentUser, showEditDialog: @showEditDialog, postMessage
+      Dialog
+        title: currentUser
+        message: "room: #{chatRoom}"
 
-      Element
-        size: ww:1, h:45
-        RectangleElement color: StyleProps.palette.grayBackground
-        TextInput StyleProps.mediumText,
-          on: enter: @postMessage
-          padding: 10
-          placeholder: "new message from #{currentUser}"
+        PagingScrollElement
+          clip: true
+          childrenAlignment: "bottomLeft"
+          chatsByChatRoom && Element
+            padding: 10
+            size: hch: 1, ww: 1
+            childrenLayout: "column"
+            Element inFlow: false, size: 0 # hack ensures first added message animates in
+            for postMessage in chatsByChatRoom
+              ChatMessage currentUser: currentUser, showEditDialog: @showEditDialog, postMessage
 
-      editDialogProps && Element
-        on: pointerClick: @hideEditDialog
-        animators:
-          opacity: toFromVoid: 0
-          location: toFromVoid: y: 10
-        inFlow: false
-        EditDialog hideEditDialog: @hideEditDialog, editDialogProps
+        Element
+          size: ww:1, h:45
+          RectangleElement color: StyleProps.palette.grayBackground
+          TextInput StyleProps.mediumText,
+            on: enter: @postMessage
+            padding: 10
+            placeholder: "new message from #{currentUser}"
+
+        editDialogProps && Element
+          on: pointerClick: @hideEditDialog
+          animators:
+            opacity: toFromVoid: 0
+            location: toFromVoid: y: 10
+          inFlow: false
+          EditDialog hideEditDialog: @hideEditDialog, editDialogProps
