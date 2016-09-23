@@ -1,6 +1,6 @@
 ArtSuite = require 'art-suite'
 {
-  createComponentFactory, Element, RectangleElement, TextElement
+  createComponentFactory, CanvasElement, RectangleElement, TextElement
 } = ArtSuite
 
 ChatModel = require './chat_model'
@@ -10,7 +10,7 @@ module.exports = createComponentFactory
   module: module
 
   render: ->
-    Element
+    CanvasElement
       childrenLayout: "row"
       RectangleElement inFlow: false, color: "#eee"
       ChatView currentUser: "Alice"

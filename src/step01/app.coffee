@@ -1,12 +1,12 @@
 ArtSuite = require 'art-suite'
 {
-  createComponentFactory, Element, RectangleElement, TextElement
+  createComponentFactory, CanvasElement, RectangleElement, TextElement
 } = ArtSuite
 
 module.exports = createComponentFactory
   module: module
 
   render: ->
-    Element null,
+    CanvasElement null,
       RectangleElement color: "white"
       TextElement text: "Hello world!"
