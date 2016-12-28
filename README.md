@@ -8,7 +8,7 @@ Try it now: [chat](http://imikimi-llc.github.io/art-suite-tutorial/chat/)
 ### Install and Run
 
 ```
-git clone https://github.com/Imikimi-LLC/art-suite-tutorial/
+git clone https://github.com/imikimi/art-suite-tutorial/
 cd art-suite-tutorial
 npm install
 npm run hot
@@ -18,4 +18,4 @@ Then go to: [http://localhost:8080/webpack-dev-server/](http://localhost:8080/we
 
 ### Learn More
 
-See the [Art Suite Wiki](https://github.com/Imikimi-LLC/art-suite/wiki)
+See the [Art Suite Wiki](https://github.com/imikimi/art-suite/wiki)
