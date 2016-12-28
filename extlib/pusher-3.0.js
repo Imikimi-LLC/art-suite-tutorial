@@ -1002,10 +1002,10 @@
    * only in certain environments. Please take care of monitoring the state of
    * the request yourself.
    *
-   * @param {String} src
+   * @param {String} source
    */
-  function ScriptRequest(src) {
-    this.src = src;
+  function ScriptRequest(source) {
+    this.source = source;
   }
   var prototype = ScriptRequest.prototype;
 
@@ -1015,11 +1015,11 @@
    */
   prototype.send = function(receiver) {
     var self = this;
-    var errorString = "Error loading " + self.src;
+    var errorString = "Error loading " + self.source;
 
     self.script = document.createElement("script");
     self.script.id = receiver.id;
-    self.script.src = self.src;
+    self.script.source = self.source;
     self.script.type = "text/javascript";
     self.script.charset = "UTF-8";
 
@@ -3968,7 +3968,7 @@
       };
 
       var callback_name = "Pusher.auth_callbacks['" + callbackName + "']";
-      script.src = this.options.authEndpoint +
+      script.source = this.options.authEndpoint +
         '?callback=' +
         encodeURIComponent(callback_name) +
         '&' +
