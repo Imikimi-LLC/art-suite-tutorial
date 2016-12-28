@@ -1,11 +1,10 @@
-ArtSuite = require 'art-suite'
 {
-  defineModule, createComponentFactory, CanvasElement, RectangleElement, TextElement
-} = ArtSuite
+  defineModule, Component, CanvasElement, RectangleElement, TextElement
+} = require 'art-suite'
 
-ChatView = require './chat_view'
+ChatView = require './ChatView'
 
-defineModule module, createComponentFactory
+defineModule module, class App extends Component
 
   render: ->
     CanvasElement

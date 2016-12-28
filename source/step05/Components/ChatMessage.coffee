@@ -1,14 +1,12 @@
-ArtSuite = require 'art-suite'
-StyleProps = require '../StyleProps'
-
 {
-  defineModule, createComponentFactory, Element, RectangleElement, TextElement,
+  defineModule, Component, Element, RectangleElement, TextElement,
   TextInput
   OutlineElement, FillElement
   log
-} = ArtSuite
+} = require 'art-suite'
+StyleProps = require '../StyleProps'
 
-defineModule module, createComponentFactory
+defineModule module, class ChatMessage extends Component
 
   mouseIn: -> @setState mouseIn: true
   mouseOut: -> @setState mouseIn: false

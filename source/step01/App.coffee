@@ -1,12 +1,12 @@
 {
   defineModule
-  createComponentFactory
+  Component
   CanvasElement
   RectangleElement
   TextElement
 } = require 'art-suite'
 
-defineModule module, createComponentFactory
+defineModule module, class App extends Component
 
   render: ->
     CanvasElement null,

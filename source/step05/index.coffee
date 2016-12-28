@@ -3,10 +3,8 @@
 
 module.exports = require './namespace'
 .addModules
-  App:         require './app'         
-  ChatMessage: require './chat_message'
-  ChatModel:   require './chat_model'  
-  ChatView:    require './chat_view'   
-  Config:      require './config'      
-  Main:        require './main'        
-  StyleProps:  require './style_props' 
+  Main:       require './Main'      
+  StyleProps: require './StyleProps'
+require './Components'
+require './Configs'
+require './Pipelines'

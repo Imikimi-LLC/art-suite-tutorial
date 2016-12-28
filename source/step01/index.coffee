@@ -3,5 +3,5 @@
 
 module.exports = require './namespace'
 .addModules
-  App:  require './app' 
-  Main: require './main'
+  App:  require './App' 
+  Main: require './Main'

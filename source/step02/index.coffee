@@ -3,6 +3,6 @@
 
 module.exports = require './namespace'
 .addModules
-  App:      require './app'      
-  ChatView: require './chat_view'
-  Main:     require './main'     
+  App:      require './App'     
+  ChatView: require './ChatView'
+  Main:     require './Main'    

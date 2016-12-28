@@ -1,12 +1,12 @@
 ArtSuite = require 'art-suite'
-StyleProps = require './style_props'
+StyleProps = require './StyleProps'
 
 {
-  defineModule, createComponentFactory, Element, RectangleElement, TextElement,
+  defineModule, Component, Element, RectangleElement, TextElement,
   TextInput
 } = ArtSuite
 
-defineModule module, createComponentFactory
+defineModule module, class ChatMessage extends Component
 
   render: ->
     {currentUser, user, message} = @props
@@ -17,7 +17,10 @@ defineModule module, createComponentFactory
       margin: 10
       size: ww:1, hch:1
       childrenLayout: "row"
-      addedAnimation: from: axis: x: if currentUsersMessage then -1 else 1
+      animators:
+        size: voidValue: ww:1, h: 0
+        axis: voidValue: x: if currentUsersMessage then -1 else 1
+
       Element
         size: hch:1, ww:1
         childrenLayout: "column"

@@ -1,7 +1,6 @@
-ArtSuite = require 'art-suite'
-{createWithPostCreate, arrayWith, log, ApplicationState, models} = ArtSuite
+{defineModule, arrayWith, log, ApplicationState, models} = require 'art-suite'
 
-createWithPostCreate module, class Chat extends ApplicationState
+defineModule module, class Chat extends ApplicationState
   @stateFields
     history: []
 

@@ -1,7 +1,6 @@
-ArtSuite = require 'art-suite'
-{createWithPostCreate, merge, HotStyleProps} = ArtSuite
+{defineModule, merge, HotStyleProps} = require 'art-suite'
 
-module.exports = createWithPostCreate module, class StyleProps extends HotStyleProps
+defineModule module, class StyleProps extends HotStyleProps
 
   @palette:
     primaryBackground:      "#00bcd4"

@@ -1,30 +1,22 @@
-ArtSuite = require 'art-suite'
-
 {
+  defineModule
   Element
   RectangleElement
   TextInput
   TextElement
   PagingScrollElement
 
-  createFluxComponentFactory
-} = ArtSuite
+  FluxComponent
+} = require 'art-suite'
 
-StyleProps = require './style_props'
-ChatMessage = require './chat_message'
+StyleProps = require '../StyleProps'
+ChatMessage = require './ChatMessage'
 
-module.exports = createFluxComponentFactory
-
-  subscriptions: chatsByChatRoom: "main"
-
-  postMessage: ({target}) ->
-    {currentUser} = @props
-    @models.chat.postMessage currentUser, target.value
-    target.value = ""
+defineModule module, class ChatView extends FluxComponent
+  @subscriptions chatsByChatRoom: ({chatRoom}) -> chatRoom
 
   render: ->
     {currentUser} = @props
-    {chatsByChatRoom} = @state
 
     Element
       padding: 10
@@ -42,13 +34,12 @@ module.exports = createFluxComponentFactory
           size: hch: 1, ww: 1
           childrenLayout: "column"
           Element inFlow: false, size: 0 # hack ensures first added message animates in
-          for postMessage in chatsByChatRoom || []
+          for postMessage in @chatRoom || []
             ChatMessage currentUser: currentUser, postMessage
 
       Element
         size: ww:1, h:45
         RectangleElement color: StyleProps.palette.grayBackground
         TextInput StyleProps.mediumText,
-          on: enter: @postMessage
           padding: 10
           placeholder: "new message from #{currentUser}"

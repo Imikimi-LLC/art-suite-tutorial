@@ -7,13 +7,14 @@ ArtSuite = require 'art-suite'
   TextElement
   PagingScrollElement
 
-  createFluxComponentFactory
+  FluxComponent
+  defineModule
 } = ArtSuite
 
-StyleProps = require './style_props'
-ChatMessage = require './chat_message'
+StyleProps = require './StyleProps'
+ChatMessage = require './ChatMessage'
 
-module.exports = createFluxComponentFactory
+defineModule module, class ChatView extends FluxComponent
 
   subscriptions: "chat.history"
 

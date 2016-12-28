@@ -3,9 +3,9 @@
 
 module.exports = require './namespace'
 .addModules
-  App:         require './app'         
-  ChatMessage: require './chat_message'
-  ChatModel:   require './chat_model'  
-  ChatView:    require './chat_view'   
-  Main:        require './main'        
-  StyleProps:  require './style_props' 
+  App:         require './App'        
+  ChatMessage: require './ChatMessage'
+  ChatModel:   require './ChatModel'  
+  ChatView:    require './ChatView'   
+  Main:        require './Main'       
+  StyleProps:  require './StyleProps' 

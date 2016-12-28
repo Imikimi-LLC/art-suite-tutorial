@@ -1,15 +1,13 @@
-ArtSuite = require 'art-suite'
-
 {
-  FullScreenApp
-  createAndInstantiateTopComponent
-  CanvasElement
-} = ArtSuite
+  initArtSuiteApp
+  Promise
+} = require 'art-suite'
 
-App = require './app'
+require './Configs'
+require './Pipelines'
 
-FullScreenApp.init().then ->
-
-  createAndInstantiateTopComponent
-    render: ->
-      CanvasElement App()
+initArtSuiteApp
+  MainComponent: require './Components/App'
+  prepare: Promise
+    .then -> (require 'art-ery-aws' ).DynamoDbPipeline.createTablesForAllRegisteredPipelines()
+    .then -> (require 'art-ery/Flux').ArtEryFluxModel.defineModelsForAllPipelines()

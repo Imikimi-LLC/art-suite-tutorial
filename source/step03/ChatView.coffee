@@ -1,5 +1,3 @@
-ArtSuite = require 'art-suite'
-
 {
   defineModule
   Element
@@ -8,13 +6,13 @@ ArtSuite = require 'art-suite'
   TextElement
   PagingScrollElement
 
-  createComponentFactory
-} = ArtSuite
+  Component
+} = require 'art-suite'
 
-StyleProps = require './style_props'
-ChatMessage = require './chat_message'
+StyleProps = require './StyleProps'
+ChatMessage = require './ChatMessage'
 
-defineModule module, createComponentFactory
+defineModule module, class ChatView extends Component
 
   render: ->
     {currentUser} = @props

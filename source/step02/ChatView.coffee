@@ -1,17 +1,14 @@
-ArtSuite = require 'art-suite'
-
 {
   defineModule
   Element
   RectangleElement
   TextInput
   TextElement
-  PagingScrollElement
 
-  createComponentFactory
-} = ArtSuite
+  Component
+} = require 'art-suite'
 
-defineModule module, createComponentFactory
+defineModule module, class ChatView extends Component
 
   render: ->
     {currentUser} = @props
@@ -23,7 +20,7 @@ defineModule module, createComponentFactory
       RectangleElement inFlow: false, color: "white", shadow: blur: 10, offsetY: 3, color: "#0007"
 
       Element
-        size: ww:1, hch:1
+        size: ww: 1, hch: 1
         RectangleElement color: "#00bcd4"
         TextElement
           color: "white"
@@ -39,7 +36,7 @@ defineModule module, createComponentFactory
           text: "(messages go here)"
 
       Element
-        size: ww:1, h:45
+        size: ww: 1, h: 45
         RectangleElement color: "#eee"
         TextInput
           fontFamily: "sans-serif"
