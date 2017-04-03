@@ -1,0 +1,14 @@
+import &ArtSuite
+
+class App extends Component
+
+  render: ->
+    CanvasElement
+      RectangleElement
+        colors: #f77 #fbc #f77 #fbc #f77 #fbc
+
+      TextElement
+        color:    :white
+        padding:  10
+        fontSize: 25
+        text:     "" Hello world!

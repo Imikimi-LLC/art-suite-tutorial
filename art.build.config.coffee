@@ -1,11 +1,16 @@
 module.exports =
-  description: "Step by step demo of how to create a realtime chat app using the ArtSuite"
-  dependencies:
-    "art-suite":      "git://github.com/imikimi/art-suite"
-    "art-flux-parse": "git://github.com/imikimi/art-flux-parse"
+  package:
+    description: "Step by step demo of how to create a realtime chat app using the ArtSuite"
+    dependencies:
+      "art-suite":      "git://github.com/imikimi/art-suite"
+      "art-flux-parse": "git://github.com/imikimi/art-flux-parse"
+      "caffeine-script":          ">=0.0.0"
+      "caffeine-script-runtime":  ">=0.0.0"
 
   webpack:
-    common: {}
+    common:
+      resolve: extensions: [".caf", ".caffeine"]
+      module: rules: [test: /\.caf(feine)?$/, loader: "caffeine-mc/webpack-loader"]
     targets:
       step01: {}
       step02: {}
