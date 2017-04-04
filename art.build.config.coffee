@@ -4,8 +4,8 @@ module.exports =
     dependencies:
       "art-suite":      "git://github.com/imikimi/art-suite"
       "art-flux-parse": "git://github.com/imikimi/art-flux-parse"
-      "caffeine-script":          ">=0.0.0"
-      "caffeine-script-runtime":  ">=0.0.0"
+      "caffeine-script":          ">=0.35.0"
+      "caffeine-script-runtime":  ">=0.32.7"
 
   webpack:
     common:
