@@ -1,0 +1,10 @@
+import &ArtSuite
+{DynamoDbPipeline} = &ArtEryAws
+
+class Chat extends DynamoDbPipeline
+  @globalIndexes chatsByChatRoom: :chatRoom/createdAt
+
+  @addDatabaseFilters
+    user:     "" required trimmedString
+    message:  "" required trimmedString
+    chatRoom: "" required trimmedString

@@ -1,11 +1,15 @@
 import &ArtSuite
 
 class ChatView extends FluxComponent
-  @subscriptions :chat.history
+  @subscriptions chatsByChatRoom: ({chatRoom}) -> chatRoom
 
   postMessage: ({target}) ->
-    {currentUser} = @props
-    @models.chat.postMessage currentUser, target.value
+    @models.chat.create
+      data: {}
+        @props.currentUser
+        @props.chatRoom
+        message:  target.value
+
     target.value = ""
 
   render: ->

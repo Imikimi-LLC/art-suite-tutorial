@@ -1,6 +1,6 @@
-{defineModule, log, Config, mergeInto, deepMerge} = require 'art-foundation'
+import &ArtStandardLib
 
-defineModule module, class Development extends Config
+class Development extends &ArtConfig.Config
   Art:
     Aws:
       credentials:

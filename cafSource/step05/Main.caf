@@ -1,0 +1,10 @@
+import &ArtSuite
+
+&Configs
+&Pipelines
+
+initArtSuiteApp
+  MainComponent: &Components/App
+  prepare: Promise
+    .then -> &ArtEry.sendInitializeRequestToAllPipelines()
+    .then -> &ArtEry/Flux.ArtEryFluxModel.defineModelsForAllPipelines()

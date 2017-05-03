@@ -2,23 +2,19 @@ import &ArtSuite
 
 class ChatView extends Component
 
+  history:
+    # Some fake history
+    {} user: :Alice   message: "" Hi!
+    {} user: :Bill    message: "" Hi, Alice!
+
   render: ->
     {currentUser} = @props
-    history =
-      {} user: :Alice   message: "" Hi!
-      {} user: :Bill    message: "" Hi, Alice!
 
     Element
       padding: 10
-      childrenLayout: "column"
+      childrenLayout: :column
 
-      RectangleElement
-        inFlow: false
-        color:  :white
-        shadow:
-          blur:     10
-          offsetY:  3
-          color:    #0007
+      RectangleElement inFlow: false &StyleProps.chatViewBackground
 
       Element
         size: ww:1, hch:1

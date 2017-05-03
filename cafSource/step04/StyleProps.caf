@@ -23,3 +23,10 @@ class StyleProps extends HotStyleProps
   @titleText: merge
     @mediumText
     color: @palette.text.white.primary
+
+  @chatViewBackground:
+    color:  :white
+    shadow:
+      blur:     10
+      offsetY:  3
+      color:    #0007
