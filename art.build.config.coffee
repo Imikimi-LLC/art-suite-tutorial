@@ -8,9 +8,6 @@ module.exports =
       "caffeine-script-runtime":  ">=0.32.7"
 
   webpack:
-    common:
-      resolve: extensions: [".caf", ".caffeine"]
-      module: rules: [test: /\.caf(feine)?$/, loader: "caffeine-mc/webpack-loader"]
     targets:
       step01: {}
       step02: {}

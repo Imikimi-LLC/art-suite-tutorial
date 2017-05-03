@@ -1,7 +1,5 @@
 import &ArtSuite
 
-&StyleProps
-
 class ChatMessage extends Component
 
   render: ->
@@ -37,18 +35,18 @@ class ChatMessage extends Component
             inFlow: false
             color:
               if currentUsersMessage
-                StyleProps.palette.lightPrimaryBackground
+                &StyleProps.palette.lightPrimaryBackground
               else
-                StyleProps.palette.grayBackground
+                &StyleProps.palette.grayBackground
 
           TextElement
-            StyleProps.mediumText
+            &StyleProps.mediumText
             padding:  10
             text:     message
             size:     cs:1, max: ww:1
 
         TextElement
-          StyleProps.smallText
+          &StyleProps.smallText
           text:   user
           margin: 5
-          color:  StyleProps.palette.text.black.secondary
+          color:  &StyleProps.palette.text.black.secondary

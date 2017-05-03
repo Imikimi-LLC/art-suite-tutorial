@@ -1,7 +1,5 @@
 import &ArtSuite
 
-&ChatView
-
 class App extends Component
 
   render: ->
@@ -10,5 +8,5 @@ class App extends Component
 
       RectangleElement inFlow: false, color: #eee
 
-      ChatView currentUser: :Alice
-      ChatView currentUser: :Bill
+      &ChatView currentUser: :Alice
+      &ChatView currentUser: :Bill
