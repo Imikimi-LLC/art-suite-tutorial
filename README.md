@@ -11,18 +11,238 @@ This tutorial shows how to make a realtime chat app in 5 easy steps.
 git clone https://github.com/imikimi/art-suite-tutorial/
 cd art-suite-tutorial
 npm install
-npm run hot
+./node_modules/.bin/webpack-dev-server
 ```
 
 Then go to: [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)
 
-### Steps
+To run Step 5, you also need to start a local DynamoDb server. Open up another terminal window:
 
-* step01: Hello world! [run](http://imikimi.github.io/art-suite-tutorial/step01)
-* step02: ArtEngine and ArtReact UI Basics &amp; Hot Loading (+ChatView) [run](http://imikimi.github.io/art-suite-tutorial/step02)
-* step03: Styles (+ChatMessage +StyleProps) [run](http://imikimi.github.io/art-suite-tutorial/step03)
-* step04: ArtFlux with local data (+ChatModel) [run](http://imikimi.github.io/art-suite-tutorial/step04)
-* step05: ArtFlux with remote Data on DynamoDb (must be run locally with a local dynamoDb)
+```
+cd art-suite-tutorial
+./node_modules/art-aws/start_dynamo_db_local_server.coffee
+```
+
+### In 5 Steps
+
+Steps 1-3 lay the foundations and are all non-interactive. Step 4 adds real interactivity, and Step 5 adds a real back-end database.
+
+#### step01: Hello world! [(run)](http://imikimi.github.io/art-suite-tutorial/step01)
+
+```coffeescript
+# step01/Main.caf
+&ArtSuite.initArtSuiteApp MainComponent: &App
+
+# step01/App.caf
+import &ArtSuite
+
+class App extends Component
+
+  render: ->
+    CanvasElement
+      RectangleElement
+        colors: #00bcd4 #eee
+
+      TextElement
+        color:    :white
+        padding:  10
+        fontSize: 25
+        text:     "" Hello world!
+```
+
+#### Step 2: ArtEngine and ArtReact UI Basics &amp; Hot Loading (+ChatView) [(run)](http://imikimi.github.io/art-suite-tutorial/step02)
+
+Step 2 jumps right in and builds out a large chunk of the UI, and yet, it doesn't require much code. The entirety of changes from Step 1 are listed below. 
+
+```coffeescript
+# step02/App.caf
+import &ArtSuite
+
+class App extends Component
+
+  render: ->
+    CanvasElement
+      childrenLayout: :row
+
+      RectangleElement inFlow: false, color: #eee
+
+      &ChatView currentUser: :Alice
+      &ChatView currentUser: :Bill
+
+# step02/ChatView.caf
+import &ArtSuite
+
+class ChatView extends Component
+
+  render: ->
+    {currentUser} = @props
+
+    Element
+      padding: 10
+      childrenLayout: :column
+
+      RectangleElement
+        inFlow: false
+        color:  :white
+        shadow:
+          blur:     10
+          offsetY:  3
+          color:    #0007
+
+      Element
+        size: ww: 1, hch: 1
+        RectangleElement color: #00bcd4
+        TextElement
+          color:      :white
+          fontFamily: :sans-serif
+          padding:    10
+          text:       currentUser
+
+      Element
+        TextElement
+          fontFamily: :sans-serif
+          padding:    10
+          opacity:    .25
+          text:       "" (messages go here)
+
+      Element
+        size: ww: 1, h: 45
+        RectangleElement color: #eee
+        TextInput
+          fontFamily:   :sans-serif
+          padding:      10
+          placeholder:  "" new message from #{currentUser}
+
+```
+
+#### Step 3: Styles (+ChatMessage +StyleProps) [(run)](http://imikimi.github.io/art-suite-tutorial/step03)
+
+Step 3 adds the `ChatMessage` view and shows how you can do styles. Here is a partial listing:
+
+```coffeescript
+# step03/StyleProps.caf
+import &ArtSuite
+
+class StyleProps extends HotStyleProps
+
+  @palette:
+    primaryBackground:      #00bcd4
+    lightPrimaryBackground: #c7ebf0
+    grayBackground:         #eee
+    text:
+      white: primary: #fffe
+      black: primary: #000e, secondary: #0007
+
+  @mediumText:
+    color:      @palette.text.black.primary
+    fontFamily: :sans-serif
+    fontSize:   16
+
+  @smallText:
+    color:      @palette.text.black.primary
+    fontFamily: :sans-serif
+    fontSize:   12
+
+  @titleText: merge
+    @mediumText
+    color: @palette.text.white.primary
+
+# step03/ChatMessage.caf
+import &ArtSuite
+
+class ChatMessage extends Component
+
+  render: ->
+    {currentUser, user, message} = @props
+
+    currentUsersMessage = user == currentUser
+
+    Element
+      margin: 10
+      size: ww: 1, hch: 1
+      childrenLayout: :row
+      animators:
+        size: toFrom: ww: 1, h: 0
+        axis: toFrom: x: if currentUsersMessage then -1 else 1
+
+      Element
+        size:           hch: 1, ww: 1
+        childrenLayout: :column
+
+        childrenAlignment:
+          if currentUsersMessage
+            :right
+          else
+            :left
+
+        Element
+          size: cs: 1, max: ww: 1
+          if currentUsersMessage
+            axis:     x:  1
+            location: xw: 1
+
+          RectangleElement
+            inFlow: false
+            color:
+              if currentUsersMessage
+                &StyleProps.palette.lightPrimaryBackground
+              else
+                &StyleProps.palette.grayBackground
+
+          TextElement
+            &StyleProps.mediumText
+            padding:  10
+            text:     message
+            size:     cs:1, max: ww:1
+
+        TextElement
+          &StyleProps.smallText
+          text:   user
+          margin: 5
+          color:  &StyleProps.palette.text.black.secondary
+```
+
+#### Step 4: ArtFlux with local data (+ChatModel) [(run)](http://imikimi.github.io/art-suite-tutorial/step04)
+
+Step 4 adds a local FluxModel for storing state. Finally the chat actually works! Alice and Bill can post messages to each other. Here is all the gist of the new code:
+
+```coffeescript
+# step04/ChatModel.caf
+import &ArtSuite
+
+class Chat extends ApplicationState
+
+  @stateFields
+    history: []
+
+  postMessage: (user, message) ->
+    @history = arrayWith @history, user: user, message: message
+    
+# step04/ChatView.caf - partial
+import &ArtSuite
+
+class ChatView extends FluxComponent
+
+  @subscriptions :chat.history
+
+  postMessage: ({target}) ->
+    {currentUser} = @props
+    @models.chat.postMessage currentUser, target.value
+    target.value = ""
+    
+  render: ->
+
+    # ...
+    
+    TextInput
+      &StyleProps.mediumText
+      on: enter: @postMessage # <NEW>
+      padding: 10
+      placeholder: "" new message from #{currentUser}
+```
+
+#### Step 5: ArtFlux with remote Data on DynamoDb
+Step 5 introduces remote data. It uses DynamoDb as an example. To run, follow the Install instructions above.
 
 ### Learn More
 
