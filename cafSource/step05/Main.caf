@@ -2,6 +2,7 @@ import &ArtSuite
 
 &Configs
 &Pipelines
+&ArtAws/Client
 
 initArtSuiteApp
   MainComponent: &Components/App

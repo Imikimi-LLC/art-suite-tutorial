@@ -8,6 +8,9 @@ module.exports =
       "caffeine-script-runtime":  ">=0.32.7"
 
   webpack:
+    common:
+      output: path: "#{__dirname}/docs"
+
     targets:
       step01: {}
       step02: {}

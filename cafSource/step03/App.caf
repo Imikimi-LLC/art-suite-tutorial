@@ -1,4 +1,4 @@
-import &ArtSuite
+import &ArtSuite, &StyleProps
 
 class App extends Component
 
@@ -6,7 +6,7 @@ class App extends Component
     CanvasElement
       childrenLayout: :row
 
-      RectangleElement inFlow: false, color: &StyleProps.palette.grayBackground
+      RectangleElement inFlow: false, color: palette.grayBackground
 
       &ChatView currentUser: :Alice
       &ChatView currentUser: :Bill

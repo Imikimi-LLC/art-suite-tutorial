@@ -1,6 +1,6 @@
 {
   defineModule, Component, Element, RectangleElement, TextElement,
-  TextInput
+  TextInputElement
 } = require 'art-suite'
 
 StyleProps = require './StyleProps'

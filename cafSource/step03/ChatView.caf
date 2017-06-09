@@ -1,4 +1,4 @@
-import &ArtSuite
+import &ArtSuite, &StyleProps
 
 class ChatView extends Component
 
@@ -14,14 +14,14 @@ class ChatView extends Component
       padding: 10
       childrenLayout: :column
 
-      RectangleElement inFlow: false &StyleProps.chatViewBackground
+      RectangleElement chatViewBackground, inFlow: false
 
       Element
         size: ww:1, hch:1
 
-        RectangleElement color: &StyleProps.palette.primaryBackground
+        RectangleElement color: palette.primaryBackground
 
-        TextElement &StyleProps.titleText, padding: 10, text: currentUser
+        TextElement titleText, padding: 10, text: currentUser
 
       PagingScrollElement
         clip: true
@@ -33,7 +33,7 @@ class ChatView extends Component
 
           Element inFlow: false, size: 0 # hack ensures first added message animates in
 
-          array postMessage from history
+          array postMessage from @history
             &ChatMessage
               postMessage
               currentUser: currentUser
@@ -41,9 +41,9 @@ class ChatView extends Component
       Element
         size: ww: 1, h: 45
 
-        RectangleElement color: &StyleProps.palette.grayBackground
+        RectangleElement color: palette.grayBackground
 
-        TextInput
-          &StyleProps.mediumText
+        TextInputElement
+          mediumText
           padding: 10
           placeholder: "" new message from #{currentUser}

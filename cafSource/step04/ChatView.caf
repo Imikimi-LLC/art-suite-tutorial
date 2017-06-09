@@ -1,4 +1,4 @@
-import &ArtSuite
+import &ArtSuite, &StyleProps
 
 class ChatView extends FluxComponent
   @subscriptions :chat.history
@@ -15,14 +15,14 @@ class ChatView extends FluxComponent
       padding: 10
       childrenLayout: :column
 
-      RectangleElement inFlow: false &StyleProps.chatViewBackground
+      RectangleElement chatViewBackground, inFlow: false
 
       Element
         size: ww:1, hch:1
 
-        RectangleElement color: &StyleProps.palette.primaryBackground
+        RectangleElement color: palette.primaryBackground
 
-        TextElement &StyleProps.titleText, padding: 10, text: currentUser
+        TextElement titleText, padding: 10, text: currentUser
 
       PagingScrollElement
         clip: true
@@ -42,10 +42,10 @@ class ChatView extends FluxComponent
       Element
         size: ww: 1, h: 45
 
-        RectangleElement color: &StyleProps.palette.grayBackground
+        RectangleElement color: palette.grayBackground
 
-        TextInput
-          &StyleProps.mediumText
+        TextInputElement
+          mediumText
           on: enter: @postMessage
           padding: 10
           placeholder: "" new message from #{currentUser}

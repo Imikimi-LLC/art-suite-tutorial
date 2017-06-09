@@ -3,7 +3,7 @@ StyleProps = require './StyleProps'
 
 {
   defineModule, Component, Element, RectangleElement, TextElement,
-  TextInput
+  TextInputElement
 } = ArtSuite
 
 defineModule module, class ChatMessage extends Component

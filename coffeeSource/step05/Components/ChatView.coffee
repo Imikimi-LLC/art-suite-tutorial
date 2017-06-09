@@ -2,7 +2,7 @@
   defineModule
   Element
   RectangleElement
-  TextInput
+  TextInputElement
   TextElement
   PagingScrollElement
 
@@ -40,6 +40,6 @@ defineModule module, class ChatView extends FluxComponent
       Element
         size: ww:1, h:45
         RectangleElement color: StyleProps.palette.grayBackground
-        TextInput StyleProps.mediumText,
+        TextInputElement StyleProps.mediumText,
           padding: 10
           placeholder: "new message from #{currentUser}"

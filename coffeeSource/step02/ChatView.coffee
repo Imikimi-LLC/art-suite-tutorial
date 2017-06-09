@@ -2,7 +2,7 @@
   defineModule
   Element
   RectangleElement
-  TextInput
+  TextInputElement
   TextElement
 
   Component
@@ -44,7 +44,7 @@ defineModule module, class ChatView extends Component
       Element
         size: ww: 1, h: 45
         RectangleElement color: "#eee"
-        TextInput
+        TextInputElement
           fontFamily:   "sans-serif"
           padding:      10
           placeholder:  "new message from #{currentUser}"

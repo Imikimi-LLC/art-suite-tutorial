@@ -1,6 +1,6 @@
 {
   defineModule, Component, Element, RectangleElement, TextElement,
-  TextInput
+  TextInputElement
   OutlineElement, FillElement
   log
 } = require 'art-suite'
