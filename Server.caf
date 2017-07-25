@@ -1,0 +1,7 @@
+&source/Step06/DevelopmentConfig
+&source/Step06/Pipelines
+&ArtEryPusher/Server
+
+&ArtSuiteApp/Server
+.start
+  static: root: './build'

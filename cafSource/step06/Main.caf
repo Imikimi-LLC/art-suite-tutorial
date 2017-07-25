@@ -1,0 +1,3 @@
+&ArtSuiteApp.initArtSuiteClient
+  MainComponent: &App
+  title:         :Chat-App

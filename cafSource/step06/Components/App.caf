@@ -1,0 +1,18 @@
+import &ArtSuite, &StyleProps
+
+class App extends Component
+
+  render: ->
+    CanvasElement
+      childrenLayout: :row
+
+      RectangleElement inFlow: false, color: palette.grayBackground
+
+      &ChatView
+        chatRoom:     :default
+        currentUser:  randomElement w
+          ""
+            Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony
+            Ideth   Julie Kate  Laura Mary   Nate  Oliver  Polly
+            Quinn   Rob   Sally Ted   Uncle  Vera  William Xavier
+            Yolanda Zack

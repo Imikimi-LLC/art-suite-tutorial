@@ -13,9 +13,9 @@ class Development extends &ArtConfig.Config
         endpoint:         'http://localhost:8081'
 
     EryExtensions: Pusher:
-      appId:  :106635
-      key:    :6f36324ff932189e4415
-      secret: :05ab619d775b090bd145
+      appId:  :todo
+      key:    :todo
+      secret: :todo
       verbose: true
       verifyConnection: true
 
