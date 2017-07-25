@@ -4,11 +4,12 @@ class ChatView extends FluxComponent
   @subscriptions chatsByChatRoom: ({chatRoom}) -> chatRoom
 
   postMessage: ({target}) ->
-    @models.chat.create
+    log @models.chat.create
       data: {}
-        @props.currentUser
         @props.chatRoom
+        user:     @props.currentUser
         message:  target.value
+
 
     target.value = ""
 
@@ -38,7 +39,7 @@ class ChatView extends FluxComponent
 
           Element inFlow: false, size: 0 # hack ensures first added message animates in
 
-          array postMessage from @history
+          array postMessage from @chatsByChatRoom
             &ChatMessage
               postMessage
               currentUser: currentUser
