@@ -1,1 +1,3 @@
-&ArtSuite.initArtSuiteApp MainComponent: &App
+&ArtSuiteApp.initArtSuiteClient
+  MainComponent: &App
+  title:         :Chat-App

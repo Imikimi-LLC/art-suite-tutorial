@@ -1,11 +1,3 @@
-import &ArtSuite
-
-&Configs
-&Pipelines
-&ArtAws/Client
-
-initArtSuiteApp
-  MainComponent: &Components/App
-  prepare: Promise
-    .then -> &ArtEry.sendInitializeRequestToAllPipelines()
-    .then -> &ArtEry/Flux.ArtEryFluxModel.defineModelsForAllPipelines()
+&ArtSuiteApp.initArtSuiteClient
+  MainComponent: &App
+  title:         :Chat-App

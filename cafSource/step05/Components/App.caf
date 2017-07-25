@@ -9,10 +9,10 @@ class App extends Component
       RectangleElement inFlow: false, color: palette.grayBackground
 
       &ChatView
-        chatRoom:     :fans
+        chatRoom:     :default
         currentUser:  randomElement w
           ""
             Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony
-            Ideth   Julie Kate  Laura Marry  Nate  Oliver  Polly
+            Ideth   Julie Kate  Laura Mary   Nate  Oliver  Polly
             Quinn   Rob   Sally Ted   Uncle  Vera  William Xavier
             Yolanda Zack

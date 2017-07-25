@@ -4,12 +4,11 @@ class ChatView extends FluxComponent
   @subscriptions chatsByChatRoom: ({chatRoom}) -> chatRoom
 
   postMessage: ({target}) ->
-    log @models.chat.create
+    @models.chat.create
       data: {}
         @props.chatRoom
         user:     @props.currentUser
         message:  target.value
-
 
     target.value = ""
 
