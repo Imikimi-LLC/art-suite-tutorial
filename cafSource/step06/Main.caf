@@ -1,3 +1,5 @@
+&Pipelines
+&Configs
 &ArtSuiteApp.initArtSuiteClient
-  MainComponent: &App
+  MainComponent: &Components/App
   title:         :Chat-App
