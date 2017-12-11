@@ -2,17 +2,88 @@ import &ArtSuite, &StyleProps
 
 class App extends Component
 
+  @stateFields
+    currentUser:  null
+    chatRoom:     :ArtSuite
+    showLobby:    true
+
+  @getter
+    canEnter: ->
+      present @currentUser
+      && present @chatRoom
+      && true
+
+  enter: ->
+    log "Enter #{@canEnter}"
+    @showLobby = false if @canEnter
+
+  exit: -> @showLobby = true
+
   render: ->
     CanvasElement
-      childrenLayout: :row
+      draw: #eee
 
-      RectangleElement inFlow: false, color: palette.grayBackground
+      if @showLobby
+        Element
+          key: :lobby
+          padding: 10
+          childrenLayout:   :column
+          childrenMargins:  10
+          animators: axis:  toFrom: x: 1
 
-      &ChatView
-        chatRoom:     :default
-        currentUser:  randomElement w
-          ""
-            Alice   Bill  Craig Dave  Elliot Frank Greg    Harmony
-            Ideth   Julie Kate  Laura Mary   Nate  Oliver  Polly
-            Quinn   Rob   Sally Ted   Uncle  Vera  William Xavier
-            Yolanda Zack
+          Element
+            childrenLayout: :row
+            childrenMargins: 10
+            size: hch:1
+
+            TextElement
+              &StyleProps.mediumText
+              size: hh: 1
+              align: :centerLeft
+              text: "" ArtSuiteTutorial Lobby
+
+            &Button
+              action:   @enter
+              disabled: !@canEnter
+              text:     "" enter ▶︎
+
+          TextInputElement
+            draw:         :white
+            padding:      10
+            size:         hch: 1
+            key:          :usernameInput
+            placeholder:  "" select username
+            value:        @currentUser
+            on: {} @enter, valueChanged: ({target:{value}}) -> @currentUser = value
+
+          TextInputElement
+            draw:         :white
+            padding:      10
+            size:         hch: 1
+            key:          :chatRoomInput
+            placeholder:  "" select chatroom
+            value:        @chatRoom ? :ArtSuite
+            on: {} @enter, valueChanged: ({target:{value}}) -> @chatRoom = value
+
+      else
+        Element
+
+          padding: 10
+          childrenLayout:   :column
+          childrenMargins:  10
+          animators: axis:  toFrom: x: -1
+          Element
+            childrenLayout: :row
+            childrenMargins: 10
+            size: hch:1
+            &Button
+              action:   @exit
+              text:     "" ◀︎
+
+            TextElement
+              align: :centerLeft
+              size: hh: 1
+              &StyleProps.mediumText
+              text: "" #{@chatRoom} chatroom
+
+          &ChatView {} @chatRoom, @currentUser

@@ -1,0 +1,43 @@
+import &ArtSuite
+
+class Button extends PointerActionsMixin Component
+  render: ->
+    {disabled} = @props
+    {hover, pointerIsDown} = @
+    hover = pointerIsDown = false if disabled
+    Element
+      on:       @pointerHandlers
+      size:     cs:1
+      padding:  10
+      cursor:   !disabled && :pointer
+      opacity:  if disabled then .5 else 1
+      draw:
+        rectangle:  radius: 1000
+        shadow: merge
+          &StyleProps.chatViewBackground.shadow
+          if pointerIsDown
+            offset: 0
+            blur: 0
+        color:
+          if hover
+            &Palette.primary.blend :white, 1/3
+          else
+            &Palette.primary
+      animators:
+        drawOrder:  duration: .1
+        opacity:    true
+
+      TextElement
+        padding:
+          if pointerIsDown
+            top: 0
+            bottom: 2
+            h: 10
+          else
+            v: 1
+            h: 10
+        animators: padding: duration: .1
+        &StyleProps.titleText
+        size: cs: 1
+        align: :center
+        text: @props.text ? "button"

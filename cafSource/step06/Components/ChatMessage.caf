@@ -35,7 +35,7 @@ class ChatMessage extends Component
             inFlow: false
             color:
               if currentUsersMessage
-                palette.lightPrimaryBackground
+                palette.lightPrimary
               else
                 palette.grayBackground
 

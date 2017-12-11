@@ -3,8 +3,8 @@ import &ArtSuite
 class StyleProps extends HotStyleProps
 
   @palette:
-    primaryBackground:      #00bcd4
-    lightPrimaryBackground: #c7ebf0
+    primary:      #00bcd4
+    lightPrimary: #c7ebf0
     grayBackground:         #eee
     text:
       white: primary: #fffe

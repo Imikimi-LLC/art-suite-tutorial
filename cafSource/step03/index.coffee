@@ -8,4 +8,5 @@ module.exports
   ChatMessage: require './ChatMessage'
   ChatView:    require './ChatView'   
   Main:        require './Main'       
+  Palette:     require './Palette'    
   StyleProps:  require './StyleProps' 

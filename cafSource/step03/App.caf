@@ -4,9 +4,12 @@ class App extends Component
 
   render: ->
     CanvasElement
-      childrenLayout: :row
+      draw: #eee
 
-      RectangleElement inFlow: false, color: #eee
+      Element
+        childrenLayout: :row
+        childrenMargins: 10
+        padding: 10
 
-      &ChatView currentUser: :Alice
-      &ChatView currentUser: :Bill
+        &ChatView currentUser: :Alice
+        &ChatView currentUser: :Bill

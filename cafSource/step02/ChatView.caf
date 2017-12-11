@@ -6,37 +6,35 @@ class ChatView extends Component
     {currentUser} = @props
 
     Element
-      padding: 10
-      childrenLayout: :column
+      childrenLayout:     :column
 
-      RectangleElement
-        inFlow: false
-        color:  :white
+      draw:
+        color:            :white
         shadow:
-          blur:     10
-          offsetY:  3
-          color:    #0007
+          blur:           10
+          offset:         y: 3
+          color:          #0007
 
       Element
-        size: ww: 1, hch: 1
-        RectangleElement color: #00bcd4
+        size:             hch: 1
+        draw:             #00bcd4
         TextElement
-          color:      :white
-          fontFamily: :sans-serif
-          padding:    10
-          text:       currentUser
+          color:          :white
+          fontFamily:     :sans-serif
+          padding:        10
+          text:           currentUser
+
+      TextElement
+        size:             hh: 1
+        fontFamily:       :sans-serif
+        padding:          10
+        opacity:          .25
+        text:             "" (messages go here)
 
       Element
-        TextElement
-          fontFamily: :sans-serif
-          padding:    10
-          opacity:    .25
-          text:       "" (messages go here)
-
-      Element
-        size: ww: 1, h: 45
-        RectangleElement color: #eee
+        size:             h: 45
+        draw:             #eee
         TextInputElement
-          fontFamily:   :sans-serif
-          padding:      10
-          placeholder:  "" new message from #{currentUser}
+          fontFamily:     :sans-serif
+          padding:        10
+          placeholder:    "" new message from #{currentUser}

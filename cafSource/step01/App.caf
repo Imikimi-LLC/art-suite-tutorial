@@ -4,11 +4,9 @@ class App extends Component
 
   render: ->
     CanvasElement
-      RectangleElement
-        colors: #00bcd4 #eee
+      draw: #eee
 
       TextElement
-        color:    :white
         padding:  10
         fontSize: 25
         text:     "" Hello world!

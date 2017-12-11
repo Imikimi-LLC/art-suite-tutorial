@@ -24,7 +24,7 @@ class ChatView extends FluxComponent
       Element
         size: ww:1, hch:1
 
-        RectangleElement color: palette.primaryBackground
+        RectangleElement color: palette.primary
 
         TextElement titleText, padding: 10, text: currentUser
 

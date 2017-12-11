@@ -1,4 +1,5 @@
 import &ArtSuite/Node, &ArtEryAws, &ArtEryPusher
+console.log "pipeline here"
 
 class Chat extends PusherPipelineMixin DynamoDbPipeline
   @globalIndexes chatsByChatRoom: :chatRoom/createdAt

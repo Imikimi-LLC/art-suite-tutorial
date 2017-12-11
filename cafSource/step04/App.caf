@@ -1,12 +1,15 @@
-import &ArtSuite, &StyleProps
+import &ArtSuite
 
 class App extends Component
 
   render: ->
     CanvasElement
-      childrenLayout: :row
+      draw: #eee
 
-      RectangleElement inFlow: false, color: palette.grayBackground
+      Element
+        childrenLayout: :row
+        childrenMargins: 10
+        padding: 10
 
-      &ChatView currentUser: :Alice
-      &ChatView currentUser: :Bill
+        &ChatView currentUser: :Alice
+        &ChatView currentUser: :Bill

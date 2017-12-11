@@ -9,4 +9,5 @@ module.exports
   ChatModel:   require './ChatModel'  
   ChatView:    require './ChatView'   
   Main:        require './Main'       
+  Palette:     require './Palette'    
   StyleProps:  require './StyleProps' 

@@ -6,4 +6,4 @@ class Chat extends ApplicationState
     history: []
 
   postMessage: (user, message) ->
-    @history = arrayWith @history, user: user, message: message
+    @history = arrayWith @history, {} user, message

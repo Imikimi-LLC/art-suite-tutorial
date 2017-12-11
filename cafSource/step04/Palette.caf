@@ -1,0 +1,9 @@
+import &ArtSuite
+
+class Palette extends HotStyleProps
+  @primary:      #00bcd4
+  @lightPrimary: #c7ebf0
+  @grayBackground:         #eee
+
+  @white: primary: #fffe
+  @black: primary: #000e   secondary: #0007

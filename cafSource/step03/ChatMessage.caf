@@ -8,45 +8,38 @@ class ChatMessage extends Component
     currentUsersMessage = user == currentUser
 
     Element
-      margin: 10
-      size: ww: 1, hch: 1
-      childrenLayout: :row
+      margin:           10
+      size:             hch: 1
+      childrenLayout:   :row
       animators:
-        size: toFrom: ww: 1, h: 0
-        axis: toFrom: x: if currentUsersMessage then -1 else 1
+        size: toFrom:   h: 0
+        axis: toFrom:   x: if currentUsersMessage then -1 else 1
 
       Element
-        size:           hch: 1, ww: 1
-        childrenLayout: :column
-
-        childrenAlignment:
-          if currentUsersMessage
-            :right
-          else
-            :left
+        size:               hch: 1
+        childrenLayout:     :column
+        childrenMargins:    5
+        childrenAlignment:  if currentUsersMessage then :right else :left
 
         Element
-          size: cs: 1, max: ww: 1
+          size: cs: 1   max: ww: 1
           if currentUsersMessage
             axis:     x:  1
             location: xw: 1
 
-          RectangleElement
-            inFlow: false
-            color:
-              if currentUsersMessage
-                palette.lightPrimaryBackground
-              else
-                palette.grayBackground
+          draw:
+            if currentUsersMessage
+              &Palette.lightPrimary
+            else
+              &Palette.grayBackground
 
           TextElement
             mediumText
             padding:  10
             text:     message
-            size:     cs:1, max: ww:1
+            size:     cs: 1   max: ww:1
 
         TextElement
           smallText
           text:   user
-          margin: 5
-          color:  palette.text.black.secondary
+          color:  &Palette.black.secondary
