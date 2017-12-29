@@ -5,5 +5,9 @@ class Palette extends HotStyleProps
   @lightPrimary:    #c7ebf0
   @grayBackground:  #eee
 
-  @white: primary:  #fffe
-  @black: primary:  #000e   secondary: #0007
+  @white: primary:  #fffe   secondary: #fffc
+  @black:
+    primary:    #000e
+    secondary:  #0007
+    tertiary:   #0004
+    quandary:   #0002

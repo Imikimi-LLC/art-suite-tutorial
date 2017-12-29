@@ -13,6 +13,10 @@ class ChatView extends FluxComponent
       @props.chatRoom
     target.value = ""
 
+  componentWillMount: ->
+    timeout 500 -> @refs.messageInput.element.focus()
+    super
+
   render: ->
     Element
       childrenLayout: :column
@@ -46,6 +50,7 @@ class ChatView extends FluxComponent
         draw: &Palette.grayBackground
 
         TextInputElement
+          key: "messageInput"
           &StyleProps.mediumText
           on: enter: @postMessage
           padding: 10

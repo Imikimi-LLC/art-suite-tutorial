@@ -8,3 +8,4 @@ module.exports
   Button:      require './Button'     
   ChatMessage: require './ChatMessage'
   ChatView:    require './ChatView'   
+  Lobby:       require './Lobby'      
